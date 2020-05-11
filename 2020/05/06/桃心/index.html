@@ -414,12 +414,12 @@ f=matlabFunction(f);
 v = f(x,y,z);
 h = patch(isosurface(x,y,z,v,0));    %创建补片对象的句柄
 isonormals(x,y,z,v,h)        %计算法向量
-set(h,&#39;FaceColor&#39;,&#39;r&#39;,&#39;EdgeColor&#39;,&#39;None&#39;);
+set(h,'FaceColor','r','EdgeColor','None');
 alpha(1)      %设置透明度
 grid on; view([1,1,1]); axis equal; camlight; lighting gouraud  %设置光照
 axis off;
 
-pos1=get(gca,&#39;position&#39;)
+pos1=get(gca,'position')
 pos2=pos1;
 pos2(2)=pos2(2)+0.01;
 pos2(1)=pos2(1)-0.03;
@@ -428,25 +428,26 @@ pos2(4)=pos2(4)+0.08;
 
 for ii=1:10
     pause(1)
-    set(gca,&#39;position&#39;,pos1)
+    set(gca,'position',pos1)
     pause(0.1)
-    set(gca,&#39;position&#39;,pos2)
+    set(gca,'position',pos2)
     pause(0.1)
-    set(gca,&#39;position&#39;,pos1)
+    set(gca,'position',pos1)
     pause(0.1)
-    set(gca,&#39;position&#39;,pos2)
+    set(gca,'position',pos2)
     pause(0.1)
-    set(gca,&#39;position&#39;,pos1)
+    set(gca,'position',pos1)
     pause(0.1)
-    set(gca,&#39;position&#39;,pos2)
+    set(gca,'position',pos2)
     pause(0.1)
-    set(gca,&#39;position&#39;,pos1)
+    set(gca,'position',pos1)
     pause(0.1)
-    set(gca,&#39;position&#39;,pos2)
+    set(gca,'position',pos2)
     pause(0.1)
-    set(gca,&#39;position&#39;,pos1)
+    set(gca,'position',pos1)
 end
-</code></pre><iframe height=500 width=500 src="http://ww4.sinaimg.cn/mw690/e75a115bgw1f3rrbzv1m8g209v0diqv7.gif">
+</code></pre>
+<iframe height=500 width=500 src="http://ww4.sinaimg.cn/mw690/e75a115bgw1f3rrbzv1m8g209v0diqv7.gif">
 
             </div>
             <hr/>
@@ -695,8 +696,9 @@ end
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            WHUT杯数学竞赛好题几例雨中漫步(1)$\displaystyle{\int_{-\infty}^{+\infty} \frac{d x}{\left(x^{2}+2 x+2\right)^{n}}}$
-解：$x+1=\tan t\tex
+                            WHUT杯数学竞赛好题几例
+雨中漫步
+(1)∫−∞+∞dx(x2+2x+2)n\displaystyle{\int_{-\infty}^{+\infty} \frac{d x}{\left(x^{2}+2 x+2\right)^{n}}}∫
                         
                     </div>
                     <div class="publish-info">
