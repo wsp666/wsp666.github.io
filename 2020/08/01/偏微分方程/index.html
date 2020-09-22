@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="常微分方程数值解法, Python,Latex,Java,MatLab,R等">
+    <meta name="keywords" content="偏微分方程数值方法, Python,Latex,Java,MatLab,R等">
     <meta name="description" content="数学竞赛,数据分析,数学建模,机器学习,云计算">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>常微分方程数值解法 | 鹏鹏的学习乐园</title>
+    <title>偏微分方程数值方法 | 鹏鹏的学习乐园</title>
     <link rel="icon" type="image/png" href="/me.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">常微分方程数值解法</h1>
+                    <h1 class="description center-align post-title">偏微分方程数值方法</h1>
                 </div>
             </div>
         </div>
@@ -374,8 +374,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
-                                <span class="chip bg-color">微分方程</span>
+                            <a href="/tags/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
+                                <span class="chip bg-color">偏微分方程</span>
                             </a>
                         
                     </div>
@@ -390,7 +390,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-30
+                    2020-08-01
                 </div>
                 
 
@@ -406,107 +406,119 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="微分方程数值解"><a href="#微分方程数值解" class="headerlink" title="微分方程数值解"></a>微分方程数值解</h1><p>核心思想：用差分代替微分</p>
-<h2 id="常微分方程"><a href="#常微分方程" class="headerlink" title="常微分方程"></a>常微分方程</h2><p>eg1:<script type="math/tex">\begin{equation}
-\begin{cases}
-    y'=y-\frac{2x}{y},   0<x<1 \\\\
-    y\left( 0 \right) =1 \\
-\end{cases}
-\end{equation}</script></p>
-<h3 id="欧拉法"><a href="#欧拉法" class="headerlink" title="欧拉法"></a>欧拉法</h3><p>迭代方程：</p>
-<script type="math/tex; mode=display">y_{n+1}=y_n+hf\left( x_n,y_n \right)</script><p>将例题1微分方程转化为迭代方程：</p>
-<script type="math/tex; mode=display">y_{n+1}=y_n+h\left( y_n-\frac{2x_n}{y_n} \right)</script><pre><code>function yn1=myfun(xn,yn,h)
-yn1=yn+h*(yn-2*xn/yn);
+                <h1 id="偏微分方程数值解"><a href="#偏微分方程数值解" class="headerlink" title="偏微分方程数值解"></a>偏微分方程数值解</h1><h2 id="工具箱使用"><a href="#工具箱使用" class="headerlink" title="工具箱使用"></a>工具箱使用</h2><p>步骤如下：</p>
+<ol>
+<li>画区域，<code>Draw</code>或者直接在菜单栏上找，（画圆时，需要按住<code>Ctrl</code>）</li>
+<li>设置边界条件，<code>Boundary</code>进入边界模式，按住<code>shift</code>选择边界进行设置</li>
+<li>设置方程：<code>PDE Specification</code></li>
+<li>网格剖分</li>
+<li>解方程：<code>Solve PDE</code></li>
+<li>绘图：<code>Plot Parameters</code></li>
+<li>输出数值解：<code>Export Solution</code></li>
+</ol>
+<h2 id="偏微分方程模型"><a href="#偏微分方程模型" class="headerlink" title="偏微分方程模型"></a>偏微分方程模型</h2><ol>
+<li>椭圆方程<ul>
+<li>散射问题</li>
+<li>最小曲面问题（泛函极值问题）：利用变分极值转化为非线性偏微分方程</li>
+<li>非线性椭圆型方程</li>
+</ul>
+</li>
+<li>抛物型方程<ul>
+<li>热传导方程</li>
+</ul>
+</li>
+<li>双曲型方程<ul>
+<li>波动方程<h2 id="有限差分"><a href="#有限差分" class="headerlink" title="有限差分"></a>有限差分</h2>核心：用差商代替微商</li>
+</ul>
+</li>
+</ol>
+<p><strong>对于椭圆型：</strong></p>
+<ul>
+<li>五点差分格式</li>
+<li>九点差分格式</li>
+<li>极坐标下的差分格式</li>
+</ul>
+<p><strong>对于抛物型：</strong></p>
+<ol>
+<li><p>常系数扩散方程</p>
+<ul>
+<li>1.1 差分格式</li>
+<li>1.2 加权格式</li>
+<li>1.3 三层格式</li>
+<li>1.4 跳点格式</li>
+</ul>
+</li>
+<li>初值问题<ul>
+<li>Saul‘ev算法</li>
+<li>分组显示方法</li>
+</ul>
+</li>
+<li>对流扩散方程<ul>
+<li>修正中心显格式</li>
+<li>迎风差分格式</li>
+<li>Samarskii格式</li>
+<li>指数型差分格式</li>
+<li>隐式格式</li>
+<li>特征差分格式</li>
+</ul>
+</li>
+<li>变系数方程<ul>
+<li>Taylor展开法</li>
+<li>Keller盒式格式</li>
+</ul>
+</li>
+<li>多维问题<ul>
+<li>交替方向隐式格式</li>
+<li>局部一维格式</li>
+<li>预测-校正格式</li>
+<li>跳点格式</li>
+</ul>
+</li>
+<li>非线性方程<ul>
+<li>Richtmyer线性化方法</li>
+<li>拟线性扩散方程的隐式格式</li>
+<li>三层格式</li>
+<li>预测-校正法<br><strong>对于双曲型：</strong></li>
+</ul>
+</li>
+</ol>
+<p>有限元法如下：</p>
+<p><img src="https://imgkr2.cn-bj.ufileos.com/abb604ee-8a69-4146-a675-107ff61f1314.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&amp;Signature=dzxISHcvgn1cWgTxJpMySKhIqmA%253D&amp;Expires=1596254814" alt=""></p>
+<p>有限差分法如下：</p>
+<p><img src="https://imgkr2.cn-bj.ufileos.com/9c568a22-9f72-40c2-a319-3e7c1927e746.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&amp;Signature=9LF02XAVWrCIjyXTxRX4aTYX0xg%253D&amp;Expires=1596254909" alt=""></p>
+<pre><code>v0=100;%上边界
+hx=17;hy=10;%确定网格步长上下界
+v1=zeros(hy,hx);
+v1(hy,:)=ones(1,hx)*v0;%上边界
+v1(2:hy-1,2:hx-1)=ones(hy-2,hx-2);%中间的初始化
+v2=zeros(hy,hx);maxt=1;t=0;%初始化
+v2(hy,:)=v1(hy,:);%上边界
+while (maxt&gt;0.1)%由v1迭代，算出v2，迭代精度为0.1
+    for i=2:hy-1
+        for j=2:hx-1
+            v2(i,j)=(v1(i,j-1)+v1(i,j+1)+v1(i-1,j)+...
+                v1(i+1,j))/4;%五点格式差分法
+            t=v2(i,j)-v1(i,j);
+            maxt=0;
+            if(t&gt;maxt) 
+                maxt=t; 
+            end
+        end
+    end
+    v1=v2;
 end
-</code></pre><p>直接一个循环就出来了：</p>
-<pre><code>clc;clear;
-yn=1;%设置初值
-xn=0;%设置起点
-Xs=1;%设置终点
-h=0.1;%设置步长
-x(1)=xn;y(1)=yn;%用于存储变量与函数值
-i=1;
-while xn&lt;Xs             %当xn达到研究区间上限结束
-    yn=myfun(xn,yn,h);
-    xn=xn+h;
-    i=i+1;
-    x(i)=xn;y(i)=yn;
-end
-plot(x,y,x,sqrt(1+2*x));
-xlabel(&#39;自变量x&#39;)
-ylabel(&#39;函数值y&#39;)
-legend(&#39;欧拉法&#39;,&#39;实际值&#39;);
-figure;
-plot(x,y-sqrt(1+2*x))
-legend(&#39;误差值&#39;)
-</code></pre><p>结果如下：</p>
-<p><img src="https://imgkr.cn-bj.ufileos.com/5cd76778-16b1-4ee9-9bcc-9b20df5e89c2.png" alt=""></p>
-<p><img src="https://imgkr.cn-bj.ufileos.com/4babbcf7-180b-44b9-b016-349078ad9708.png" alt=""></p>
-<h3 id="改进欧拉法"><a href="#改进欧拉法" class="headerlink" title="改进欧拉法"></a>改进欧拉法</h3><p>改进欧拉法实则首先用欧拉法进行预测估计：</p>
-<script type="math/tex; mode=display">\bar{y}_{n+1}=y_n+hf\left( x_n,y_n \right)</script><p>再利用梯形公式估计：</p>
-<script type="math/tex; mode=display">y_{n+1}=y_n+\frac{h}{2}\left[ f\left( x_n,y_n \right) +f\left( x_{n+1},\bar{y}_{n+1} \right) \right]</script><p>转化为平均化形式：</p>
-<script type="math/tex; mode=display">\begin{cases}
-    y_p=y_n+hf\left( x_n,y_n \right)\\
-    y_c=y_n+hf\left( x_{n+1},y_p \right)\\
-    y_{n+1}=\frac{1}{2}\left( y_p+y_c \right)\\
-\end{cases}</script><p>相比于欧拉法只是迭代方程产生区别：</p>
-<pre><code>function yn1=myfun(xn,yn,h)
-yp=yn+h*(yn-2*xn/yn);
-yc=yn+h*(yn-2*(xn+h)/yp);
-yn1=1/2*(yp+yc);
-end
-</code></pre><p><img src="https://imgkr.cn-bj.ufileos.com/6d886a07-aa30-4407-8a7d-960ef870f2a7.png" alt=""></p>
-<p><img src="https://imgkr.cn-bj.ufileos.com/327b3ccd-9c93-4e9a-af27-143f3f64e129.png" alt=""><br>可以看出确实改善了求解精度</p>
-<h3 id="显式R-K方法"><a href="#显式R-K方法" class="headerlink" title="显式R-K方法"></a>显式R-K方法</h3><p>R-K方法是对欧拉方法的推广，只是将：</p>
-<script type="math/tex; mode=display">\varDelta y=y_{n+1}-y_n=\int_{x_n}^{x_{n+1}}{f\left( x,y\left( x \right) \right) dx}\approx h\sum_{i=1}^r{c_if\left( x_n+\lambda _ih,y\left( x_n+\lambda _ih \right) \right)}</script><p>积分的精度调高了，为了保证精度和减少计算，一般采用四阶龙格库塔法，通过待定系数可以求出四阶R-K方程模型：</p>
-<script type="math/tex; mode=display">\begin{cases}
-    y_{n+1}=y_n+\frac{h}{6}\left( K_1+2K_2+2K_3+K_4 \right)\\
-    K_1=f\left( x_n,y_n \right)\\
-    K_2=f\left( x_n+\frac{h}{2},y_n+\frac{h}{2}K_1 \right)\\
-    K_3=f\left( x_n+\frac{h}{2},y_n+\frac{h}{2}K_2 \right)\\
-    K_4=f\left( x_n+h,y_n+hK_3 \right)\\
-\end{cases}</script><p><strong><em>注意：R-K法是基于泰勒展开的方法，要求解具有较好的光滑性质，如果解得光滑性差，使用四阶龙格库塔求得的结果效果反而不如改进的欧拉方法，建模时需要对不同问题进行判断使用</em></strong></p>
-<p>结果：</p>
-<p><img src="https://imgkr.cn-bj.ufileos.com/702ff152-0d62-4d03-8a24-4cf844841024.png" alt=""></p>
-<p><img src="https://imgkr.cn-bj.ufileos.com/19239303-0579-45b1-a4a6-91c1b42eb9bd.png" alt=""></p>
-<p>其截断误差是:</p>
-<script type="math/tex; mode=display">o(h^5)</script><h3 id="刚性方程组"><a href="#刚性方程组" class="headerlink" title="刚性方程组"></a>刚性方程组</h3><p>eg2：</p>
-<script type="math/tex; mode=display">\begin{cases}
-    u'=-1000.25u+999.75v+0.5\\
-    v'=999.75u-1000.25v+0.5\\
-    u\left( 0 \right) =1\\
-    v\left( 0 \right) =-1\\
-\end{cases}</script><p>利用龙格库塔求出结果：</p>
-<p><img src="https://imgkr.cn-bj.ufileos.com/e10aa399-f659-4197-8d2d-e5fa53690154.png" alt=""></p>
-<p><img src="https://imgkr.cn-bj.ufileos.com/ebadbaa7-d6da-460e-a4c4-958a870369f5.png" alt=""></p>
-<p><img src="https://imgkr.cn-bj.ufileos.com/eba2635a-a5b0-49da-bbc6-713c24a0b37b.png" alt=""></p>
-<p><img src="https://imgkr.cn-bj.ufileos.com/de66e439-f2b0-4b5c-9809-dd3d841ef6d1.png" alt=""></p>
-<p>我针对特殊情况总结了一下流程：</p>
-<blockquote>
-<p>首先对方程组进行降阶处理转化为一阶n元微分方程组：</p>
-<script type="math/tex; mode=display">\begin{cases}
-    y_{1}^{'}=f_1\left( x,y_1,y_2\cdots y_N \right)\\
-    y_{2}^{'}=f_2\left( x,y_1,y_2\cdots y_N \right)\\
-    \vdots\\
-    y_{N}^{'}=f_N\left( x,y_1,y_2\cdots y_N \right)\\
-    y_1\left( x_0 \right) =a_1\\
-    y_2\left( x_0 \right) =a_2\\
-    \vdots\\
-    y_N\left( x_0 \right) =a_N\\
-\end{cases}</script><p>其次根据R-K公式得到：</p>
-<script type="math/tex; mode=display">\begin{cases}
-    y_{n+1}^{1}=y_{n}^{1}+\frac{h}{6}\left( K_{1}^{1}+2K_{2}^{1}+2K_{3}^{1}+K_{4}^{1} \right)\\
-    y_{n+1}^{2}=y_{n}^{2}+\frac{h}{6}\left( K_{1}^{2}+2K_{2}^{2}+2K_{3}^{2}+K_{4}^{2} \right)\\
-    \vdots\\
-    y_{n+1}^{N}=y_{n}^{N}+\frac{h}{6}\left( K_{1}^{N}+2K_{2}^{N}+2K_{3}^{N}+K_{4}^{N} \right)\\
-\end{cases}</script><p>其中：</p>
-<script type="math/tex; mode=display">\begin{cases}
-    K_{1}^{i}=f_i\left( x,y_1,y_2\cdots y_N \right)\\
-    K_{2}^{i}=f_i\left( x+\frac{h}{2},y_1+\frac{h}{2}K_{1}^{1},y_2+\frac{h}{2}K_{1}^{2},\cdots ,y_N+\frac{h}{2}K_{1}^{N} \right)\\
-    K_{3}^{i}=f_i\left( x+\frac{h}{2},y_1+\frac{h}{2}K_{2}^{1},y_2+\frac{h}{2}K_{2}^{2},\cdots ,y_N+\frac{h}{2}K_{2}^{N} \right)\\
-    K_{4}^{i}=f_i\left( x+h,y_1+hK_{3}^{1},y_2+hK_{3}^{2},\cdots ,y_N+hK_{3}^{N} \right)\\
-\end{cases}</script><p>即可</p>
-</blockquote>
+subplot(1,2,1),surf(v2);
+axis([0,17,0,10,0,100])
+subplot(122)
+contour(v2);%画等值线
+hold on;%保屏
+x=1:hx;y=1:hy;
+[xx,yy]=meshgrid(x,y);%形成栅格
+[Gx,Gy]=gradient(v2,0.6,0.6);%计算梯度
+quiver(xx,yy,Gx,Gy,&#39;r&#39;);%画矢量图
+hold off
+</code></pre><h2 id="椭圆型"><a href="#椭圆型" class="headerlink" title="椭圆型"></a>椭圆型</h2><h3 id="五点差分格式"><a href="#五点差分格式" class="headerlink" title="五点差分格式"></a>五点差分格式</h3><p><a href="https://www.cnblogs.com/xtu-hudongdong/p/6512071.html" target="_blank" rel="noopener">五点差分格式</a></p>
+<p>未完待续。。。</p>
 
             </div>
             <hr/>
@@ -532,7 +544,7 @@ end
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/07/30/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">http://yoursite.com/2020/07/30/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</a>
+                    <a href="http://yoursite.com/2020/08/01/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">http://yoursite.com/2020/08/01/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -570,8 +582,8 @@ end
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
-                                    <span class="chip bg-color">微分方程</span>
+                                <a href="/tags/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
+                                    <span class="chip bg-color">偏微分方程</span>
                                 </a>
                             
                         </div>
@@ -743,30 +755,25 @@ end
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/08/01/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
+                <a href="/2020/09/21/%E4%BF%A1%E6%81%AF%E8%AE%BA/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="偏微分方程数值方法">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="通信原理信息论">
                         
-                        <span class="card-title">偏微分方程数值方法</span>
+                        <span class="card-title">通信原理信息论</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            偏微分方程数值解工具箱使用步骤如下：
-
-画区域，Draw或者直接在菜单栏上找，（画圆时，需要按住Ctrl）
-设置边界条件，Boundary进入边界模式，按住shift选择边界进行设置
-设置方程：PDE Specification
-网格剖分
-
+                            通信原理信息论信息量$I$单位(bit)I=-log_2 P(x)平均信息量(或熵)$H(x)$单位(b/符号)描述信源的不确定性：
+H(x)=-\sum_{i=1}^M P(x_i)log_2 P(x_i)当每个符号等概率$P(x_i)=
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-01
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-21
                         </span>
                         <span class="publish-author">
                             
@@ -779,8 +786,8 @@ end
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
-                        <span class="chip bg-color">偏微分方程</span>
+                    <a href="/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">
+                        <span class="chip bg-color">通信原理</span>
                     </a>
                     
                 </div>
@@ -794,24 +801,27 @@ end
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/18/%E6%B7%B7%E6%B2%8C%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/">
+                <a href="/2020/07/30/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="混沌优化算法">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="常微分方程数值解法">
                         
-                        <span class="card-title">混沌优化算法</span>
+                        <span class="card-title">常微分方程数值解法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            混沌优化算法基于Logistic映射产生混沌运动轨道的遍历性，可将其混沌用于函数优化问题：混沌优化算法的基本思想是将变量从混沌空间变换到解空间，然后利用混沌变量所具有的丰富的非线性动力学特征————随机性、遍历性、规律性的特点进行搜索。混沌
+                            微分方程数值解核心思想：用差分代替微分
+常微分方程eg1:\begin{equation}
+\begin{cases}
+    y'=y-\frac{2x}{y},   0
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-30
                             </span>
                         <span class="publish-author">
                             
@@ -824,8 +834,8 @@ end
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/MatLab/">
-                        <span class="chip bg-color">MatLab</span>
+                    <a href="/tags/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
+                        <span class="chip bg-color">微分方程</span>
                     </a>
                     
                 </div>
