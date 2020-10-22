@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="偏微分方程数值方法, Python,Latex,Java,MatLab,R等">
+    <meta name="keywords" content="matlab标量绘图, Python,Latex,Java,MatLab,R等">
     <meta name="description" content="数学竞赛,数据分析,数学建模,机器学习,云计算">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>偏微分方程数值方法 | 鹏鹏的学习乐园</title>
+    <title>matlab标量绘图 | 鹏鹏的学习乐园</title>
     <link rel="icon" type="image/png" href="/me.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">偏微分方程数值方法</h1>
+                    <h1 class="description center-align post-title">matlab标量绘图</h1>
                 </div>
             </div>
         </div>
@@ -374,8 +374,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
-                                <span class="chip bg-color">偏微分方程</span>
+                            <a href="/tags/MatLab/">
+                                <span class="chip bg-color">MatLab</span>
                             </a>
                         
                     </div>
@@ -390,7 +390,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-01
+                    2020-10-21
                 </div>
                 
 
@@ -406,141 +406,86 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>偏微分方程数值解</h1>
-<h2 id="工具箱使用">工具箱使用</h2>
-<p>步骤如下：</p>
-<ol>
-<li>画区域，<code>Draw</code>或者直接在菜单栏上找，（画圆时，需要按住<code> Ctrl</code>）</li>
-<li>设置边界条件，<code>Boundary</code>进入边界模式，按住<code>shift</code>选择边界进行设置</li>
-<li>设置方程：<code>PDE Specification</code></li>
-<li>网格剖分</li>
-<li>解方程：<code>Solve PDE</code></li>
-<li>绘图：<code>Plot Parameters</code></li>
-<li>输出数值解：<code> Export Solution</code></li>
-</ol>
-<h2 id="偏微分方程模型">偏微分方程模型</h2>
-<ol>
-<li>椭圆方程</li>
-</ol>
-<ul>
-<li>散射问题</li>
-<li>最小曲面问题（泛函极值问题）：利用变分极值转化为非线性偏微分方程</li>
-<li>非线性椭圆型方程</li>
-</ul>
-<ol start="2">
-<li>抛物型方程</li>
-</ol>
-<ul>
-<li>热传导方程</li>
-</ul>
-<ol start="3">
-<li>双曲型方程</li>
-</ol>
-<ul>
-<li>波动方程</li>
-</ul>
-<h2 id="有限差分">有限差分</h2>
-<p>核心：用差商代替微商</p>
-<p><strong>对于椭圆型：</strong></p>
-<ul>
-<li>五点差分格式</li>
-<li>九点差分格式</li>
-<li>极坐标下的差分格式</li>
-</ul>
-<p><strong>对于抛物型：</strong></p>
-<ol>
-<li>常系数扩散方程</li>
-</ol>
-<ul>
-<li>1.1 差分格式</li>
-<li>1.2 加权格式</li>
-<li>1.3 三层格式</li>
-<li>1.4 跳点格式</li>
-</ul>
-<ol start="2">
-<li>初值问题</li>
-</ol>
-<ul>
-<li>Saul‘ev算法</li>
-<li>分组显示方法</li>
-</ul>
-<ol start="3">
-<li>对流扩散方程</li>
-</ol>
-<ul>
-<li>修正中心显格式</li>
-<li>迎风差分格式</li>
-<li>Samarskii格式</li>
-<li>指数型差分格式</li>
-<li>隐式格式</li>
-<li>特征差分格式</li>
-</ul>
-<ol start="4">
-<li>变系数方程</li>
-</ol>
-<ul>
-<li>Taylor展开法</li>
-<li>Keller盒式格式</li>
-</ul>
-<ol start="5">
-<li>多维问题</li>
-</ol>
-<ul>
-<li>交替方向隐式格式</li>
-<li>局部一维格式</li>
-<li>预测-校正格式</li>
-<li>跳点格式</li>
-</ul>
-<ol start="6">
-<li>非线性方程</li>
-</ol>
-<ul>
-<li>Richtmyer线性化方法</li>
-<li>拟线性扩散方程的隐式格式</li>
-<li>三层格式</li>
-<li>预测-校正法<br>
-<strong>对于双曲型：</strong></li>
-</ul>
-<p>有限元法如下：</p>
-<p><img src="https://imgkr2.cn-bj.ufileos.com/abb604ee-8a69-4146-a675-107ff61f1314.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&amp;Signature=dzxISHcvgn1cWgTxJpMySKhIqmA%253D&amp;Expires=1596254814" alt=""></p>
-<p>有限差分法如下：</p>
-<p><img src="https://imgkr2.cn-bj.ufileos.com/9c568a22-9f72-40c2-a319-3e7c1927e746.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&amp;Signature=9LF02XAVWrCIjyXTxRX4aTYX0xg%253D&amp;Expires=1596254909" alt=""></p>
-<pre><code>v0=100;%上边界
-hx=17;hy=10;%确定网格步长上下界
-v1=zeros(hy,hx);
-v1(hy,:)=ones(1,hx)*v0;%上边界
-v1(2:hy-1,2:hx-1)=ones(hy-2,hx-2);%中间的初始化
-v2=zeros(hy,hx);maxt=1;t=0;%初始化
-v2(hy,:)=v1(hy,:);%上边界
-while (maxt&gt;0.1)%由v1迭代，算出v2，迭代精度为0.1
-    for i=2:hy-1
-        for j=2:hx-1
-            v2(i,j)=(v1(i,j-1)+v1(i,j+1)+v1(i-1,j)+...
-                v1(i+1,j))/4;%五点格式差分法
-            t=v2(i,j)-v1(i,j);
-            maxt=0;
-            if(t&gt;maxt) 
-                maxt=t; 
-            end
-        end
-    end
-    v1=v2;
-end
-subplot(1,2,1),surf(v2);
-axis([0,17,0,10,0,100])
-subplot(122)
-contour(v2);%画等值线
-hold on;%保屏
-x=1:hx;y=1:hy;
-[xx,yy]=meshgrid(x,y);%形成栅格
-[Gx,Gy]=gradient(v2,0.6,0.6);%计算梯度
-quiver(xx,yy,Gx,Gy,'r');%画矢量图
-hold off
+                <h1>matlab标量绘图</h1>
+<h2 id="mesh-or-surf">mesh or surf</h2>
+<p>常见不多说，注意xy为网格坐标，mesh类有meshc，meshz；surf类有surfc，surfl</p>
+<pre><code class="language-matlab">x=linspace(-2,2,25);
+y=linspace(-2,2,25);
+[xx,yy]=meshgrid(x,y);
+zz=sqrt(xx.^2+yy.^2);
+subplot(221)
+mesh(xx,yy,zz);
+subplot(222)
+surf(xx,yy,zz);
+subplot(223)
+meshz(xx,yy,zz);
+subplot(224)
+surfc(xx,yy,zz);
 </code></pre>
-<h2 id="椭圆型">椭圆型</h2>
-<h3 id="五点差分格式">五点差分格式</h3>
-<p><a href="https://www.cnblogs.com/xtu-hudongdong/p/6512071.html" target="_blank" rel="noopener">五点差分格式</a></p>
-<p>未完待续。。。</p>
+<p>如图</p>
+<p><img src="https://p.pstatp.com/origin/137f70001410a6f2efe14" alt=""></p>
+<h2 id="contour">contour</h2>
+<p>contour(x,y,z)基本用法和mesh相同<br>
+contour3(x,y,z,n)其中n控制等高线的稀密</p>
+<pre><code class="language-matlab">[X,Y]=meshgrid([-3:0.3:3]);
+Z=X.*exp(-(X.^2+Y.^2));
+subplot(211)
+contour(X,Y,Z);
+title 二维等高
+subplot(212)
+contour3(X,Y,Z,30);
+title 三维等高
+</code></pre>
+<p>等高图：<br>
+<img src="https://ae01.alicdn.com/kf/U280f0beebc3f43059f8406208a3cb7ccT.jpg" alt=""></p>
+<h2 id="pcolor伪彩色图">pcolor伪彩色图</h2>
+<pre><code>x=linspace(-2,2,25);
+y=linspace(-2,2,25);
+[xx,yy]=meshgrid(x,y);
+zz=sqrt(xx.^2+yy.^2);
+pcolor(xx,yy,zz);
+hold on
+plot([0:20],[0:20],'r+');   % 绘制xx与yy相等的点
+colorbar;
+</code></pre>
+<p><img src="https://img.rruu.net/image/5f89175768de2" alt=""></p>
+<h2 id="isosurfface隐函数图或等值面">isosurfface隐函数图或等值面</h2>
+<pre><code>[X,Y,Z]=meshgrid(linspace(-10,10));
+V=X.^2+Y.^2-Z.^2;
+isosurface(X,Y,Z,V,1);%绘制隐函数图像
+axis equal
+colormap([1 0 0]);
+brighten(0.5);%进行增亮
+camlight right;%设置光源位置
+lighting phong;%设置光照模式
+figure(2);
+fv=isosurface(X,Y,Z,V,1);
+p=patch(fv);%绘制等值面
+set(p,'FaceColor','red','EdgeColor','none');
+axis equal
+</code></pre>
+<p><img src="https://ae01.alicdn.com/kf/U5e17985b212e4593abb2e40787e93152a.jpg" alt=""><br>
+<img src="https://ae01.alicdn.com/kf/U1b5e6caa482a4367a87cb6b12b944eeb7.jpg" alt=""></p>
+<h2 id="peaks多锋函数">peaks多锋函数</h2>
+<pre><code class="language-matlab">[x,y,z]=peaks;
+peaks;
+figure(2)
+meshz(x,y,z);
+figure(3)
+surfc(x,y,z);
+</code></pre>
+<p><img src="https://ae01.alicdn.com/kf/U08fe815493814b7693dadc4b7b37b71f7.jpg" alt=""><br>
+<img src="https://ae01.alicdn.com/kf/U4a17bce9ec084866a0af35ebd16736fbQ.jpg" alt=""><br>
+<img src="https://ae01.alicdn.com/kf/Ucd2df1bb6b53484c84b2743c6ce33356d.jpg" alt=""></p>
+<h2 id="slice切片函数">slice切片函数</h2>
+<p><code>slice(x,y,z,v,xi,yi,zi)</code></p>
+<pre><code>[x,y,z]=meshgrid(-2:0.16:2);
+v=x.*y.*z.*exp(-(x.^2+y.^2+z.^2));
+xslice=-1.2:0.8:2;yslice=2;zslice=[-2,0];%定义切片位置
+slice(x,y,z,v,xslice,yslice,zslice)
+colormap hsv
+</code></pre>
+<p><img src="https://ae01.alicdn.com/kf/U03d062f345ae4b109a1d6ec88af0b78bR.jpg" alt=""></p>
 
             </div>
             <hr/>
@@ -566,7 +511,7 @@ hold off
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/08/01/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">http://yoursite.com/2020/08/01/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</a>
+                    <a href="http://yoursite.com/2020/10/21/MatLab%E6%A0%87%E9%87%8F%E7%BB%98%E5%9B%BE/">http://yoursite.com/2020/10/21/MatLab%E6%A0%87%E9%87%8F%E7%BB%98%E5%9B%BE/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -604,8 +549,8 @@ hold off
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
-                                    <span class="chip bg-color">偏微分方程</span>
+                                <a href="/tags/MatLab/">
+                                    <span class="chip bg-color">MatLab</span>
                                 </a>
                             
                         </div>
@@ -777,30 +722,28 @@ hold off
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/09/21/%E4%BF%A1%E6%81%AF%E8%AE%BA/">
+                <a href="/2020/10/22/MatLab%E7%9F%A2%E9%87%8F%E7%BB%98%E5%9B%BE/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="通信原理信息论">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="matlab矢量绘图">
                         
-                        <span class="card-title">通信原理信息论</span>
+                        <span class="card-title">matlab矢量绘图</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            通信原理信息论
-信息量III单位(bit)
-I=−log2P(x)I=-log_2 P(x)
-I=−log2​P(x)
-平均信息量(或熵)H(x)H(x)H(x)单位(b/符号)
-描述信源的不确定性：
-H(x)=−∑i=1MP(xi)log
+                            matlab矢量图
+流线图streamline
+streamline(x,y,u,v,startx,starty)其中startx,starty分别为流线的坐标
+[x,y]=meshgrid(0:0.1:1,0:0.1:1);
+u=sin(
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-22
                         </span>
                         <span class="publish-author">
                             
@@ -813,8 +756,8 @@ H(x)=−∑i=1MP(xi)log
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">
-                        <span class="chip bg-color">通信原理</span>
+                    <a href="/tags/MatLab/">
+                        <span class="chip bg-color">MatLab</span>
                     </a>
                     
                 </div>
@@ -828,30 +771,28 @@ H(x)=−∑i=1MP(xi)log
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/30/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
+                <a href="/2020/09/22/%E7%A1%AE%E7%9F%A5%E4%BF%A1%E5%8F%B7/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="常微分方程数值解法">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="确知信号">
                         
-                        <span class="card-title">常微分方程数值解法</span>
+                        <span class="card-title">确知信号</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            微分方程数值解
-核心思想：用差分代替微分
-常微分方程
-eg1:$$\begin{equation}
-\begin{cases}
-y’=y-\frac{2x}{y},   0&lt;x&lt;1 \\
-y\left( 0 \right) =1
+                            确知信号
+频率分析
+周期信号的频谱
+设s(t)s(t)s(t)周期为T0T_0T0​且满足Dirichlet条件，则可以展开为指数型的傅里叶级数：
+s(t)=∑n=−∞∞Cnejnw0ts(t)=\sum_{n=-\infty}^{\inf
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-22
                             </span>
                         <span class="publish-author">
                             
@@ -864,8 +805,8 @@ y\left( 0 \right) =1
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">
-                        <span class="chip bg-color">微分方程</span>
+                    <a href="/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/">
+                        <span class="chip bg-color">通信原理</span>
                     </a>
                     
                 </div>
