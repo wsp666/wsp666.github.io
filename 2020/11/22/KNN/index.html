@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="感知机, Python,Latex,Java,MatLab,R等">
+    <meta name="keywords" content="KNN, Python,Latex,Java,MatLab,R等">
     <meta name="description" content="数学竞赛,数据分析,数学建模,机器学习,云计算">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>感知机 | 鹏鹏的学习乐园</title>
+    <title>KNN | 鹏鹏的学习乐园</title>
     <link rel="icon" type="image/png" href="/me.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -252,12 +252,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">感知机</h1>
+                    <h1 class="description center-align post-title">KNN</h1>
                 </div>
             </div>
         </div>
@@ -390,7 +390,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-08
+                    2020-11-22
                 </div>
                 
 
@@ -406,119 +406,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>统计学习笔记</h1>
-<h2 id="感知机">感知机</h2>
-<p>感知机适用于<strong>二分类</strong>是对<strong>线性的向量集合</strong>进行分类，是一种<strong>判别模型</strong>，将<strong>极小化误分点到超平面距离</strong>，<strong>把误分点到超平面距离</strong>作为学习的损失函数，利用<strong>梯度下降算法</strong>进行寻优。<br>
-其算法流程图如下：<br>
-<img src="https://ae01.alicdn.com/kf/Ue8e01b8c695149eab61d96d2518755de1.jpg" alt=""></p>
-<h3 id="matlab实现">matlab实现</h3>
-<p>其matlab程序如下：</p>
-<pre><code class="language-matlab">clear;clc;
-%% 载入数据
-data = [1 2 1 ; 2 3 1 ;3 5 1 ; 4 7 1 ; 4 2 -1; 5 1 -1; 9 5 -1; 8 6 -1];    % 测试数据
-%% 绘制数据点
-n=size(data,2)-1;% 输入变量的维度
-sample = data(:,1:n); % 每一行代表一个数据点
-label = data(:,end);% 样本判别结果
-draw(sample, label)% 绘制散点图（由于例子给定二维因此可以可视化）
-
-hold on
-%% 初始化w,b,alpha
-w = [-1,-2];
-b = 2;
-alpha = 1;  % 学习因子
-%%  更新 w,b
-while 1
-    [idx_misclass, counter] = class(sample, label, w, b);    
-    if (counter~=0)
-        R = unidrnd(counter);% 随机选择
-        % 更新w，b
-        w = w + alpha * sample(idx_misclass(R),:) * label(idx_misclass(R));
-        b = b + alpha * label(idx_misclass(R));   
-    else
-        break
-    end
-end
-%% 绘制线性分类器
-x1 = 1:0.01:10;
-x2 = (-b-w(1).*x1)./w(2);
-plot(x1, x2)
-%% 做分类处理，找到误判及其个数
-function [idx_misclass, counter] = class(sample, label, w, b)
-    counter = 0;
-    idx_misclass = [];
-    for i=1:length(label)
-        if (label(i)*(w*sample(i,:)'+b)&lt;=0)
-            idx_misclass = [idx_misclass i];
-            counter = counter + 1;        
-        end   
-    end
-end
-function draw(sample, label)% 用于区分点的类型
-    idx_pos = find(label==1);
-    idx_neg = find(label~=1);
-    plot(sample(idx_pos, 1), sample(idx_pos, 2),'ro','LineWidth',1.5)
-    hold on
-    plot(sample(idx_neg, 1), sample(idx_neg, 2),'b*','LineWidth',1.5)
-%     axis([0 10 0 10])
-    grid on
-end
-</code></pre>
-<p>测试结果如图：<br>
-<img src="https://ae01.alicdn.com/kf/Ua87ffa27578f4922a3cd65f28002ad7dA.jpg" alt=""></p>
-<h3 id="r语言实现">R语言实现</h3>
-<pre><code class="language-R">percept = function(data = data,eta = eta ){
-  x = data[,-dim(data)[2]] ## 样本输入数据点
-  y = data[,dim(data)[2]]  ## 样本输出数据
-  w = c(0,0)               ## 初始化w，b
-  b = 0
-  len = length(y)
-  i = 1  
-  while(i &lt;= len){
-    if(y[i] * (x[i,] %*% w + b) &lt;= 0){
-      ## 更新 w and b
-      w = w + eta * y[i] * x[i,]   ## 在存在误判的点处进行梯度下降
-      b = b + eta * y[i]
-      i = 1 ## 保证遍历每个样本点
-    }
-    else{
-      i = i + 1 
-    }
-  }
-  return(list(w=w,b=b))
-}
-
-
-## 主函数，eta学习率
-
-
-## 载入数据
-
-data = matrix(c(3,3,1,4,3,1,1,1,-1),nr=3,byrow=T)
-perceptron = percept(data = data,eta = 1)
-
-
-
-## 可视化，针对二维
-
-dat1 = data[,1:2]
-dat1 = as.data.frame(dat1)
-names(dat1) = c(&quot;x1&quot;,&quot;x2&quot;)
-## 分别计算系数
-a = perceptron[[&quot;w&quot;]][1]
-b = perceptron[[&quot;w&quot;]][2]
-c = perceptron[[&quot;b&quot;]]
-plot(x2~x1,data = dat1,col = ifelse(a*x1 +b*x2 + c&lt;= 0,&quot;red&quot;,&quot;blue&quot;),pch = 17,bty = &quot;l&quot;)
-if(b){
-  abline(-c/b,-a/b,lwd=2,lty=2,col=&quot;red&quot;)
-}
-
-</code></pre>
-<p><img src="https://ae01.alicdn.com/kf/U3e29abce02f44e1c858f885828ac72f0n.jpg" alt=""></p>
-<h3 id="python实现">Python实现</h3>
-<pre><code class="language-python">
-</code></pre>
-
+                
             </div>
             <hr/>
 
@@ -543,7 +431,7 @@ if(b){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/11/08/%E6%84%9F%E7%9F%A5%E6%9C%BA/">http://yoursite.com/2020/11/08/%E6%84%9F%E7%9F%A5%E6%9C%BA/</a>
+                    <a href="http://yoursite.com/2020/11/22/KNN/">http://yoursite.com/2020/11/22/KNN/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -754,24 +642,26 @@ if(b){
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/11/22/KNN/">
+                <a href="/2021/01/15/%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="KNN">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="图像增强">
                         
-                        <span class="card-title">KNN</span>
+                        <span class="card-title">图像增强</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            图像增强
+增强图像中的有用信息，它可以是一个失真的过程，其目的是要改善图像的视觉效果，因此，图像增强可以不顾增强后的图像是否失真，只要看得舒服就行。
+图像增强技术分为：空域处理和频域处理，其中空域处理有常见的灰度变换法、直方图法、空域滤波。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-22
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-15
                         </span>
                         <span class="publish-author">
                             
@@ -784,8 +674,8 @@ if(b){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">统计学习</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">
+                        <span class="chip bg-color">计算机视觉</span>
                     </a>
                     
                 </div>
@@ -799,28 +689,30 @@ if(b){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/22/MatLab%E7%9F%A2%E9%87%8F%E7%BB%98%E5%9B%BE/">
+                <a href="/2020/11/08/%E6%84%9F%E7%9F%A5%E6%9C%BA/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="matlab矢量绘图">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="感知机">
                         
-                        <span class="card-title">matlab矢量绘图</span>
+                        <span class="card-title">感知机</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            matlab矢量图
-流线图streamline
-streamline(x,y,u,v,startx,starty)其中startx,starty分别为流线的坐标
-[x,y]=meshgrid(0:0.1:1,0:0.1:1);
-u=sin(
+                            统计学习笔记
+感知机
+感知机适用于二分类是对线性的向量集合进行分类，是一种判别模型，将极小化误分点到超平面距离，把误分点到超平面距离作为学习的损失函数，利用梯度下降算法进行寻优。
+其算法流程图如下：
+
+matlab实现
+其matlab程序如
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-08
                             </span>
                         <span class="publish-author">
                             
@@ -833,8 +725,8 @@ u=sin(
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/MatLab/">
-                        <span class="chip bg-color">MatLab</span>
+                    <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">统计学习</span>
                     </a>
                     
                 </div>
