@@ -434,61 +434,84 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="连续与离散联合概率密度"><a href="#连续与离散联合概率密度" class="headerlink" title="连续与离散联合概率密度"></a>连续与离散联合概率密度</h2><p>在概率论中，教材介绍的随机变量都是连续或离散的联合概率密度，讨论了$Z=X+Y$,当$X,Y$都是离散型或都是连续型时概率分布的计算方法，下面按照我的理解方式来举例说明如何求解：</p>
-<h3 id="设-X-U-0-1-Y-服从-0-1-分布，且-X-Y-相互独立，求-Z-的概率密度。"><a href="#设-X-U-0-1-Y-服从-0-1-分布，且-X-Y-相互独立，求-Z-的概率密度。" class="headerlink" title="设$X$~$U(0,1), Y$服从$0-1$分布，且$X,Y$相互独立，求$Z$的概率密度。"></a>设$X$~$U(0,1), Y$服从$0-1$分布，且$X,Y$相互独立，求$Z$的概率密度。</h3><p>方法一：常规计算(较麻烦)</p>
-<script type="math/tex; mode=display">F_Z\left( z \right) =P\left\{ Z\le z \right\} =P\left\{ X+Y\le z \right\} =P\left\{ X\le z \right\} \left( 1-p \right) +P\left\{ X\le z-1 \right\} p</script><script type="math/tex; mode=display">=\begin{equation}
+                <h2 id="连续与离散联合概率密度">连续与离散联合概率密度</h2>
+<p>在概率论中，教材介绍的随机变量都是连续或离散的联合概率密度，讨论了<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi><mo>=</mo><mi>X</mi><mo>+</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">Z=X+Y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span></span></span></span>,当<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo separator="true">,</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X,Y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span></span></span></span>都是离散型或都是连续型时概率分布的计算方法，下面按照我的理解方式来举例说明如何求解：</p>
+<h3 id="设x-u-0-1-y服从0-1分布-且x-y相互独立-求z的概率密度">设<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span></span></span></span>~<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo><mo separator="true">,</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">U(0,1), Y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span></span></span></span>服从<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>分布，且<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo separator="true">,</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X,Y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span></span></span></span>相互独立，求<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span></span></span></span>的概率密度。</h3>
+<p>方法一：常规计算(较麻烦)</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>Z</mi></msub><mrow><mo fence="true">(</mo><mi>z</mi><mo fence="true">)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo fence="true">{</mo><mi>Z</mi><mo>≤</mo><mi>z</mi><mo fence="true">}</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo fence="true">{</mo><mi>X</mi><mo>+</mo><mi>Y</mi><mo>≤</mo><mi>z</mi><mo fence="true">}</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo fence="true">{</mo><mi>X</mi><mo>≤</mo><mi>z</mi><mo fence="true">}</mo></mrow><mrow><mo fence="true">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo fence="true">)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo fence="true">{</mo><mi>X</mi><mo>≤</mo><mi>z</mi><mo>−</mo><mn>1</mn><mo fence="true">}</mo></mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">F_Z\left( z \right) =P\left\{ Z\le z \right\} =P\left\{ X+Y\le z \right\} =P\left\{ X\le z \right\} \left( 1-p \right) +P\left\{ X\le z-1 \right\} p
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">Z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">{</span><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mclose delimcenter" style="top:0em;">}</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">{</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mclose delimcenter" style="top:0em;">}</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">{</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mclose delimcenter" style="top:0em;">}</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">p</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">{</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose delimcenter" style="top:0em;">}</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">p</span></span></span></span></span></p>
+<p class='katex-block katex-error' title='ParseError: KaTeX parse error: No such environment: equation at position 8: =\begin{̲e̲q̲u̲a̲t̲i̲o̲n̲}̲
 \begin{cases}
-    0              \,\,\,\,\,           z\le 0\\
-    z\left( 1-p \right) \,\,\,\,\,\,            0<z\le  1\\
-    1-p+\left( z-1 \right) p \,\,\,\,\,\, 1<z\le  2\\
-    1                          z>2\\
+…'>=\begin{equation}
+\begin{cases}
+	0              \,\,\,\,\,           z\le 0\\
+	z\left( 1-p \right) \,\,\,\,\,\,            0&lt;z\le  1\\
+	1-p+\left( z-1 \right) p \,\,\,\,\,\, 1&lt;z\le  2\\
+	1                          z&gt;2\\
 \end{cases}
-\end{equation}</script><script type="math/tex; mode=display">\begin{equation}
+\end{equation}</p>
+<p class='katex-block katex-error' title='ParseError: KaTeX parse error: No such environment: equation at position 7: \begin{̲e̲q̲u̲a̲t̲i̲o̲n̲}̲
+f_Z\left( z \r…'>\begin{equation}
 f_Z\left( z \right)=
 \begin{cases}
-    0     \,\,\,\,\,         z\le  0\\
-    1-p \,\,\,\,\,     0<z\le  1\\
-    p \,\,\,\,\,        1<z\le  2\\
-    0      \,\,\,\,\,         z>2\\
+	0     \,\,\,\,\,         z\le  0\\
+	1-p \,\,\,\,\,     0&lt;z\le  1\\
+	p \,\,\,\,\,        1&lt;z\le  2\\
+	0      \,\,\,\,\,         z&gt;2\\
 \end{cases}
-\end{equation}</script><p>方法二:自定义冲激函数</p>
-<script type="math/tex; mode=display">\begin{equation}
+\end{equation}</p>
+<p>方法二:自定义冲激函数</p>
+<p class='katex-block katex-error' title='ParseError: KaTeX parse error: No such environment: equation at position 7: \begin{̲e̲q̲u̲a̲t̲i̲o̲n̲}̲
+\delta \left( …'>\begin{equation}
 \delta \left( t \right) =\begin{cases}
-    1 \,\,\,\,\,   t=0\\
-    0 \,\,\,\,\,  t\ne 0\\
+	1 \,\,\,\,\,   t=0\\
+	0 \,\,\,\,\,  t\ne 0\\
 \end{cases}
-\end{equation}</script><p>( 注:这是我自定义，实际上冲激函数在$0$处冲激为无穷，冲激序列在$0$处冲激为1) </p>
+\end{equation}</p>
+<p>( 注:这是我自定义，实际上冲激函数在<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>处冲激为无穷，冲激序列在<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>处冲激为1)</p>
 <p>且有阶跃函数</p>
-<script type="math/tex; mode=display">\begin{equation}
+<p class='katex-block katex-error' title='ParseError: KaTeX parse error: No such environment: equation at position 7: \begin{̲e̲q̲u̲a̲t̲i̲o̲n̲}̲
+\varepsilon \l…'>\begin{equation}
 \varepsilon \left( t \right) =\begin{cases}
-    1 \,\,\,\,\,  t>0\\
-    0 \,\,\,\,\,  t<0\\
+	1 \,\,\,\,\,  t&gt;0\\
+	0 \,\,\,\,\,  t&lt;0\\
 \end{cases}
-\end{equation}</script><p>利用阶跃函数卷积性质，易知</p>
-<script type="math/tex; mode=display">\begin{equation}
+\end{equation}</p>
+<p>利用阶跃函数卷积性质，易知</p>
+<p class='katex-block katex-error' title='ParseError: KaTeX parse error: No such environment: equation at position 7: \begin{̲e̲q̲u̲a̲t̲i̲o̲n̲}̲
+F_Y\left( y \r…'>\begin{equation}
 F_Y\left( y \right) =\begin{cases}
-    0    \,\,\,\,\,       y<0\\
-    1-p \,\,\,\,\,  0\le  y<1\\
-    1      \,\,\,\,\,     y\ge 1\\
+	0    \,\,\,\,\,       y&lt;0\\
+	1-p \,\,\,\,\,  0\le  y&lt;1\\
+	1      \,\,\,\,\,     y\ge 1\\
 \end{cases}
-\end{equation}</script><script type="math/tex; mode=display">f_Z\left( z \right) =\left[ f_Y\left( z \right) \right] *\left[ \varepsilon \left( z \right) -\varepsilon \left( z-1 \right) \right]</script><script type="math/tex; mode=display">=F_Y\left( z \right) -F_Y\left( z-1 \right)</script><script type="math/tex; mode=display">\begin{equation}
+\end{equation}</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>Z</mi></msub><mrow><mo fence="true">(</mo><mi>z</mi><mo fence="true">)</mo></mrow><mo>=</mo><mrow><mo fence="true">[</mo><msub><mi>f</mi><mi>Y</mi></msub><mrow><mo fence="true">(</mo><mi>z</mi><mo fence="true">)</mo></mrow><mo fence="true">]</mo></mrow><mo>∗</mo><mrow><mo fence="true">[</mo><mi>ε</mi><mrow><mo fence="true">(</mo><mi>z</mi><mo fence="true">)</mo></mrow><mo>−</mo><mi>ε</mi><mrow><mo fence="true">(</mo><mi>z</mi><mo>−</mo><mn>1</mn><mo fence="true">)</mo></mrow><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">f_Z\left( z \right) =\left[ f_Y\left( z \right) \right] *\left[ \varepsilon \left( z \right) -\varepsilon \left( z-1 \right) \right] 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">Z</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">[</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.22222em;">Y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mclose delimcenter" style="top:0em;">]</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">[</span><span class="mord mathdefault">ε</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">ε</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mclose delimcenter" style="top:0em;">]</span></span></span></span></span></span></p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><msub><mi>F</mi><mi>Y</mi></msub><mrow><mo fence="true">(</mo><mi>z</mi><mo fence="true">)</mo></mrow><mo>−</mo><msub><mi>F</mi><mi>Y</mi></msub><mrow><mo fence="true">(</mo><mi>z</mi><mo>−</mo><mn>1</mn><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">=F_Y\left( z \right) -F_Y\left( z-1 \right)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.22222em;">Y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.22222em;">Y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span></span></p>
+<p class='katex-block katex-error' title='ParseError: KaTeX parse error: No such environment: equation at position 7: \begin{̲e̲q̲u̲a̲t̲i̲o̲n̲}̲
+=\begin{cases}…'>\begin{equation}
 =\begin{cases}
-    0     \,\,\,\,\,      z<0\\
-    1-p \,\,\,\,\,  0\le  z<1\\
-    1      \,\,\,\,\,     z\ge  1\\
+   0     \,\,\,\,\,      z&lt;0\\
+   1-p \,\,\,\,\,  0\le  z&lt;1\\
+   1      \,\,\,\,\,     z\ge  1\\
 \end{cases}-\begin{cases}
-    0      \,\,\,\,\,     z<1\\
-    1-p \,\,\,\,\,  1\le  z<2\\
-    1    \,\,\,\,\,       z\ge  2\\
+   0      \,\,\,\,\,     z&lt;1\\
+   1-p \,\,\,\,\,  1\le  z&lt;2\\
+   1    \,\,\,\,\,       z\ge  2\\
 \end{cases}
-\end{equation}</script><script type="math/tex; mode=display">\begin{equation}
+\end{equation}</p>
+<p class='katex-block katex-error' title='ParseError: KaTeX parse error: No such environment: equation at position 7: \begin{̲e̲q̲u̲a̲t̲i̲o̲n̲}̲
+=\begin{cases}…'>\begin{equation}
 =\begin{cases}
-    0      \,\,\,\,\,        z \le  0\\
-    1-p \,\,\,\,\,     0<z \le 1\\
-    p  \,\,\,\,\,        1<z \le 2\\
-    0        \,\,\,\,\,       z>2\\
+	0      \,\,\,\,\,        z \le  0\\
+	1-p \,\,\,\,\,     0&lt;z \le 1\\
+	p  \,\,\,\,\,        1&lt;z \le 2\\
+	0        \,\,\,\,\,       z&gt;2\\
 \end{cases}
-\end{equation}</script><p><img src="https://imgkr.cn-bj.ufileos.com/641d7bf1-17db-410a-86a8-46941b33a252.png" alt=""></p>
+\end{equation}</p>
+<p><img src="https://imgkr.cn-bj.ufileos.com/641d7bf1-17db-410a-86a8-46941b33a252.png" alt=""></p>
 
             </div>
             <hr/>
@@ -1004,9 +1027,10 @@ F_Y\left( y \right) =\begin{cases}
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            图像处理————傅里叶变换定义：对于数字图像来说，它的储存方式主要为二维矩阵，因此引进连续二元函数的二维傅里叶变换及反变换定义(学过傅里叶变换的看应该很容易理解，就不细讲)：
-\begin{array}{l}
-F(u, v)=\int_{-
+                            图像处理————傅里叶变换
+定义：
+对于数字图像来说，它的储存方式主要为二维矩阵，因此引进连续二元函数的二维傅里叶变换及反变换定义(学过傅里叶变换的看应该很容易理解，就不细讲)：
+F(u,v)=∫−∞+∞∫−∞+∞f(x,y)e−j2π(u
                         
                     </div>
                     <div class="publish-info">
@@ -1059,8 +1083,12 @@ F(u, v)=\int_{-
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            turtle绘图笔记及LaTex示例雨中漫步之前在公众号介绍过turtle绘图笔记turtle绘图笔记及LaTex示例说到五角星不得不提基于命令行界面绘图tikz的实现，下面是源于latex工作室的开源代码：
-LaTex实现\documen
+                            turtle绘图笔记及LaTex示例
+雨中漫步
+之前在公众号介绍过turtle绘图笔记turtle绘图笔记及LaTex示例
+说到五角星不得不提基于命令行界面绘图tikz的实现，下面是源于latex工作室的开源代码：
+LaTex实现
+\doc
                         
                     </div>
                     <div class="publish-info">
