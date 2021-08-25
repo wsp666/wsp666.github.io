@@ -434,14 +434,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>统计学习笔记</h1>
-<h2 id="感知机">感知机</h2>
-<p>感知机适用于<strong>二分类</strong>是对<strong>线性的向量集合</strong>进行分类，是一种<strong>判别模型</strong>，将<strong>极小化误分点到超平面距离</strong>，<strong>把误分点到超平面距离</strong>作为学习的损失函数，利用<strong>梯度下降算法</strong>进行寻优。<br>
-其算法流程图如下：<br>
-<img src="https://ae01.alicdn.com/kf/Ue8e01b8c695149eab61d96d2518755de1.jpg" alt=""></p>
-<h3 id="matlab实现">matlab实现</h3>
-<p>其matlab程序如下：</p>
-<pre><code class="language-matlab">clear;clc;
+                <h1 id="统计学习笔记"><a href="#统计学习笔记" class="headerlink" title="统计学习笔记"></a>统计学习笔记</h1><h2 id="感知机"><a href="#感知机" class="headerlink" title="感知机"></a>感知机</h2><p>感知机适用于<strong>二分类</strong>是对<strong>线性的向量集合</strong>进行分类，是一种<strong>判别模型</strong>，将<strong>极小化误分点到超平面距离</strong>，<strong>把误分点到超平面距离</strong>作为学习的损失函数，利用<strong>梯度下降算法</strong>进行寻优。<br>其算法流程图如下：<br><img src="https://ae01.alicdn.com/kf/Ue8e01b8c695149eab61d96d2518755de1.jpg" alt=""></p>
+<h3 id="matlab实现"><a href="#matlab实现" class="headerlink" title="matlab实现"></a>matlab实现</h3><p>其matlab程序如下：</p>
+<pre><code class="lang-matlab">clear;clc;
 %% 载入数据
 data = [1 2 1 ; 2 3 1 ;3 5 1 ; 4 7 1 ; 4 2 -1; 5 1 -1; 9 5 -1; 8 6 -1];    % 测试数据
 %% 绘制数据点
@@ -476,7 +471,7 @@ function [idx_misclass, counter] = class(sample, label, w, b)
     counter = 0;
     idx_misclass = [];
     for i=1:length(label)
-        if (label(i)*(w*sample(i,:)'+b)&lt;=0)
+        if (label(i)*(w*sample(i,:)&#39;+b)&lt;=0)
             idx_misclass = [idx_misclass i];
             counter = counter + 1;        
         end   
@@ -485,17 +480,15 @@ end
 function draw(sample, label)% 用于区分点的类型
     idx_pos = find(label==1);
     idx_neg = find(label~=1);
-    plot(sample(idx_pos, 1), sample(idx_pos, 2),'ro','LineWidth',1.5)
+    plot(sample(idx_pos, 1), sample(idx_pos, 2),&#39;ro&#39;,&#39;LineWidth&#39;,1.5)
     hold on
-    plot(sample(idx_neg, 1), sample(idx_neg, 2),'b*','LineWidth',1.5)
+    plot(sample(idx_neg, 1), sample(idx_neg, 2),&#39;b*&#39;,&#39;LineWidth&#39;,1.5)
 %     axis([0 10 0 10])
     grid on
 end
 </code></pre>
-<p>测试结果如图：<br>
-<img src="https://ae01.alicdn.com/kf/Ua87ffa27578f4922a3cd65f28002ad7dA.jpg" alt=""></p>
-<h3 id="r语言实现">R语言实现</h3>
-<pre><code class="language-R">percept = function(data = data,eta = eta ){
+<p>测试结果如图：<br><img src="https://ae01.alicdn.com/kf/Ua87ffa27578f4922a3cd65f28002ad7dA.jpg" alt=""></p>
+<h3 id="R语言实现"><a href="#R语言实现" class="headerlink" title="R语言实现"></a>R语言实现</h3><pre><code class="lang-R">percept = function(data = data,eta = eta ){
   x = data[,-dim(data)[2]] ## 样本输入数据点
   y = data[,dim(data)[2]]  ## 样本输出数据
   w = c(0,0)               ## 初始化w，b
@@ -540,11 +533,10 @@ plot(x2~x1,data = dat1,col = ifelse(a*x1 +b*x2 + c&lt;= 0,&quot;red&quot;,&quot;
 if(b){
   abline(-c/b,-a/b,lwd=2,lty=2,col=&quot;red&quot;)
 }
-
 </code></pre>
 <p><img src="https://ae01.alicdn.com/kf/U3e29abce02f44e1c858f885828ac72f0n.jpg" alt=""></p>
-<h3 id="python实现">Python实现</h3>
-<pre><code class="language-python">
+<h3 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a>Python实现</h3><pre><code class="lang-python">
+
 </code></pre>
 
             </div>
@@ -1114,11 +1106,9 @@ if(b){
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            matlab矢量图
-流线图streamline
-streamline(x,y,u,v,startx,starty)其中startx,starty分别为流线的坐标
+                            matlab矢量图流线图streamlinestreamline(x,y,u,v,startx,starty)其中startx,starty分别为流线的坐标
 [x,y]=meshgrid(0:0.1:1,0:0.1:1);
-u=sin(
+u=sin(x)
                         
                     </div>
                     <div class="publish-info">

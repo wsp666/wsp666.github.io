@@ -6,7 +6,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="使桃心跳动起来, Python,Latex,Java,MatLab,R等">
+    <meta name="keywords" content="SVD奇异分解, Python,Latex,Java,MatLab,R等">
     <meta name="description" content="数学竞赛,数据分析,数学建模,机器学习,云计算">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>使桃心跳动起来 | 鹏鹏的学习乐园</title>
+    <title>SVD奇异分解 | 鹏鹏的学习乐园</title>
     <link rel="icon" type="image/png" href="/me.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -267,12 +267,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">使桃心跳动起来</h1>
+                    <h1 class="description center-align post-title">SVD奇异分解</h1>
                 </div>
             </div>
         </div>
@@ -389,12 +389,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%BB%98%E5%9B%BE/">
-                                <span class="chip bg-color">绘图</span>
+                            <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">统计学习</span>
                             </a>
                         
-                            <a href="/tags/MATALB/">
-                                <span class="chip bg-color">MATALB</span>
+                            <a href="/tags/%E5%A5%87%E5%BC%82%E5%88%86%E8%A7%A3/">
+                                <span class="chip bg-color">奇异分解</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">机器学习</span>
                             </a>
                         
                     </div>
@@ -405,8 +409,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/MATALB/" class="post-category">
-                                MATALB
+                            <a href="/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                统计学习
                             </a>
                         
                     </div>
@@ -418,7 +422,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-06
+                    2021-08-26
                 </div>
                 
 
@@ -434,48 +438,124 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>代码如下，时间紧促，下次详细说明</p>
-<pre><code class="lang-matlab">syms x y z;
-f=(x^2+9/4*y^2+z^2-1)^3-x^2*z^3-9/80*y^2*z^3;
-f=matlabFunction(f);
-[x,y,z] = meshgrid(-1.5:.02:1.5,-1:.02:1,-1.5:.02:1.5);    % 画图范围,设置[-1.5,1.5]区间
-v = f(x,y,z);
-h = patch(isosurface(x,y,z,v,0));    %创建补片对象的句柄
-isonormals(x,y,z,v,h)        %计算法向量
-set(h,&#39;FaceColor&#39;,&#39;r&#39;,&#39;EdgeColor&#39;,&#39;None&#39;);
-alpha(1)      %设置透明度
-grid on; view([1,1,1]); axis equal; camlight; lighting gouraud  %设置光照
-axis off;
-
-pos1=get(gca,&#39;position&#39;)
-pos2=pos1;
-pos2(2)=pos2(2)+0.01;
-pos2(1)=pos2(1)-0.03;
-pos2(3)=pos2(3)+0.08;
-pos2(4)=pos2(4)+0.08;
-
-for ii=1:10
-    pause(1)
-    set(gca,&#39;position&#39;,pos1)
-    pause(0.1)
-    set(gca,&#39;position&#39;,pos2)
-    pause(0.1)
-    set(gca,&#39;position&#39;,pos1)
-    pause(0.1)
-    set(gca,&#39;position&#39;,pos2)
-    pause(0.1)
-    set(gca,&#39;position&#39;,pos1)
-    pause(0.1)
-    set(gca,&#39;position&#39;,pos2)
-    pause(0.1)
-    set(gca,&#39;position&#39;,pos1)
-    pause(0.1)
-    set(gca,&#39;position&#39;,pos2)
-    pause(0.1)
-    set(gca,&#39;position&#39;,pos1)
-end
-</code></pre>
-<p><img src="https://imgkr.cn-bj.ufileos.com/5f665075-497a-4bea-a27e-9f0f649c9e89.gif" alt=""></p>
+                <h1 id="SVD奇异分解"><a href="#SVD奇异分解" class="headerlink" title="SVD奇异分解"></a>SVD奇异分解</h1><p>SVD也是对矩阵进行分解，但是和特征分解不同，SVD并不要求要分解的矩阵为方阵。假设我们的矩阵A是一个m×n的矩阵，那么我们定义矩阵A的SVD为：</p>
+<script type="math/tex; mode=display">
+A=U\varSigma V^T</script><p>其中$U$是一个$m\times m$的矩阵，$\varSigma$是一个$m\times n$除了主对角线上的元素以外全为0，主对角线上的每个元素都称为<strong>奇异值</strong>，$V$是一个$n\times n$的矩阵。$U$和$V$都是酉矩阵，即满足</p>
+<script type="math/tex; mode=display">U^TU=I, \quad V^T V =I</script><p><img src="https://i.loli.net/2021/08/25/YXHyEqIoxW9tkLu.png" alt="图解.png"></p>
+<p>SVD分解步骤：</p>
+<ul>
+<li><strong>step1:求$V$</strong></li>
+</ul>
+<p>求$A^TA$(大小为$n\times n$)的特征值和特征向量：</p>
+<script type="math/tex; mode=display">(A^TA)v_i=\lambda_i v_i</script><p>所有特征向量组成矩阵$V$<br>，$V$中的每个特征向量叫做$A$的右奇异向量。</p>
+<ul>
+<li><strong>step2:求$U$</strong></li>
+</ul>
+<p>求$AA^T$(大小为$m\times m$)的特征值和特征向量：</p>
+<script type="math/tex; mode=display">(AA^T)u_i=\lambda_i u_i</script><p>所有特征向量组成矩阵$U$<br>，$U$中的每个特征向量叫做$A$的左奇异向量。</p>
+<ul>
+<li><strong>step3：求$\varSigma$</strong></li>
+</ul>
+<script type="math/tex; mode=display">
+A=U \Sigma V^{T} \Rightarrow A V=U \Sigma V^{T} V \Rightarrow A V=U \Sigma \Rightarrow A v_{i}=\sigma_{i} u_{i} \Rightarrow \sigma_{i}=A v_{i} / u_{i}</script><p>进一步我们还可以看出我们的特征值矩阵等于奇异值矩阵的平方，也就是说特征值和奇异值满足如下关系：</p>
+<script type="math/tex; mode=display">
+A=U \Sigma V^{T} \Rightarrow A^{T}=V \Sigma U^{T} \Rightarrow A^{T} A=V \Sigma U^{T} U \Sigma V^{T}=V \Sigma^{2} V^{T}</script><p>由此可以看出</p>
+<script type="math/tex; mode=display">
+\sigma_{i}=\sqrt{\lambda_{i}}</script><p>可从此计算奇异值</p>
+<h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><script type="math/tex; mode=display">
+\mathbf{A}=\left(\begin{array}{ll}
+0 & 1 \\
+1 & 1 \\
+1 & 0
+\end{array}\right)</script><p>首先求出$A^TA$和$AA^T$：</p>
+<script type="math/tex; mode=display">
+\begin{gathered}
+\mathbf{A}^{\mathbf{T}} \mathbf{A}=\left(\begin{array}{lll}
+0 & 1 & 1 \\
+1 & 1 & 0
+\end{array}\right)\left(\begin{array}{ll}
+0 & 1 \\
+1 & 1 \\
+1 & 0
+\end{array}\right)=\left(\begin{array}{ll}
+2 & 1 \\
+1 & 2
+\end{array}\right) \\
+\mathbf{A} \mathbf{A}^{\mathbf{T}}=\left(\begin{array}{ll}
+0 & 1 \\
+1 & 1 \\
+1 & 0
+\end{array}\right)\left(\begin{array}{lll}
+0 & 1 & 1 \\
+1 & 1 & 0
+\end{array}\right)=\left(\begin{array}{lll}
+1 & 1 & 0 \\
+1 & 2 & 1 \\
+0 & 1 & 1
+\end{array}\right)
+\end{gathered}</script><p>进而求出$A^TA$的特征值和特征向量：</p>
+<script type="math/tex; mode=display">
+\lambda_{1}=3 ; v_{1}=\left(\begin{array}{c}
+1 / \sqrt{2} \\
+1 / \sqrt{2}
+\end{array}\right) ; \lambda_{2}=1 ; v_{2}=\left(\begin{array}{c}
+-1 / \sqrt{2} \\
+1 / \sqrt{2}
+\end{array}\right)</script><p>接着求出$AA^T$的特征值和特征向量：</p>
+<script type="math/tex; mode=display">
+\lambda_{1}=3 ; u_{1}=\left(\begin{array}{c}
+1 / \sqrt{6} \\
+2 / \sqrt{6} \\
+1 / \sqrt{6}
+\end{array}\right) ; \lambda_{2}=1 ; u_{2}=\left(\begin{array}{c}
+1 / \sqrt{2} \\
+0 \\
+-1 / \sqrt{2}
+\end{array}\right) ; \lambda_{3}=0 ; u_{3}=\left(\begin{array}{c}
+1 / \sqrt{3} \\
+-1 / \sqrt{3} \\
+1 / \sqrt{3}
+\end{array}\right)</script><p>利用$Av_i=\sigma_i u_i , i=1,2$求奇异值：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\left(\begin{array}{ll}
+0 & 1 \\
+1 & 1 \\
+1 & 0
+\end{array}\right)\left(\begin{array}{c}
+1 / \sqrt{2} \\
+1 / \sqrt{2}
+\end{array}\right)=\sigma_{1}\left(\begin{array}{c}
+1 / \sqrt{6} \\
+2 / \sqrt{6} \\
+1 / \sqrt{6}
+\end{array}\right) \Rightarrow \sigma_{1}=\sqrt{3} \\
+&\left(\begin{array}{ll}
+0 & 1 \\
+1 & 1 \\
+1 & 0
+\end{array}\right)\left(\begin{array}{c}
+-1 / \sqrt{2} \\
+1 / \sqrt{2}
+\end{array}\right)=\sigma_{2}\left(\begin{array}{c}
+1 / \sqrt{2} \\
+0 \\
+-1 / \sqrt{2}
+\end{array}\right) \Rightarrow \sigma_{2}=1
+\end{aligned}</script><p>也可以用$\sigma_i=\sqrt{\lambda_i}$直接求出奇异值为$\sqrt{3}$和1，最终得到A的奇异值分解为：</p>
+<script type="math/tex; mode=display">
+A=U \Sigma V^{T}=\left(\begin{array}{ccc}
+1 / \sqrt{6} & 1 / \sqrt{2} & 1 / \sqrt{3} \\
+2 / \sqrt{6} & 0 & -1 / \sqrt{3} \\
+1 / \sqrt{6} & -1 / \sqrt{2} & 1 / \sqrt{3}
+\end{array}\right)\left(\begin{array}{cc}
+\sqrt{3} & 0 \\
+0 & 1 \\
+0 & 0
+\end{array}\right)\left(\begin{array}{cc}
+1 / \sqrt{2} & 1 / \sqrt{2} \\
+-1 / \sqrt{2} & 1 / \sqrt{2}
+\end{array}\right)</script><p>python和matlab都有内置的函数。</p>
 
             </div>
             <hr/>
@@ -501,7 +581,7 @@ end
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yzuf49.coding-pages.com/posts/4225a725.html">https://yzuf49.coding-pages.com/posts/4225a725.html</a>
+                    <a href="https://yzuf49.coding-pages.com/posts/563bbb46.html">https://yzuf49.coding-pages.com/posts/563bbb46.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -539,12 +619,16 @@ end
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%BB%98%E5%9B%BE/">
-                                    <span class="chip bg-color">绘图</span>
+                                <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">统计学习</span>
                                 </a>
                             
-                                <a href="/tags/MATALB/">
-                                    <span class="chip bg-color">MATALB</span>
+                                <a href="/tags/%E5%A5%87%E5%BC%82%E5%88%86%E8%A7%A3/">
+                                    <span class="chip bg-color">奇异分解</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">机器学习</span>
                                 </a>
                             
                         </div>
@@ -975,97 +1059,38 @@ end
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/655684ad.html">
+                <a href="/posts/563bbb46.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="WHUT杯数学竞赛">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="SVD奇异分解">
                         
-                        <span class="card-title">WHUT杯数学竞赛</span>
+                        <span class="card-title">SVD奇异分解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            WHUT杯数学竞赛好题几例雨中漫步(1)$\displaystyle{\int_{-\infty}^{+\infty} \frac{d x}{\left(x^{2}+2 x+2\right)^{n}}}$
-解：$x+1=\tan t\tex
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-06
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%95%B0%E5%AD%A6/" class="post-category">
-                                    数学
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
-                        <span class="chip bg-color">数学</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B/">
-                        <span class="chip bg-color">数学竞赛</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AE%9A%E7%A7%AF%E5%88%86/">
-                        <span class="chip bg-color">定积分</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/4225a725.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="使桃心跳动起来">
-                        
-                        <span class="card-title">使桃心跳动起来</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            代码如下，时间紧促，下次详细说明
-syms x y z;
-f=(x^2+9/4*y^2+z^2-1)^3-x^2*z^3-9/80*y^2*z^3;
-f=matlabFunction(f);
-[x,y,z] = meshgrid(-1.5:
+                            SVD奇异分解SVD也是对矩阵进行分解，但是和特征分解不同，SVD并不要求要分解的矩阵为方阵。假设我们的矩阵A是一个m×n的矩阵，那么我们定义矩阵A的SVD为：
+
+A=U\varSigma V^T其中$U$是一个$m\times m$的矩阵
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/MATALB/" class="post-category">
-                                    MATALB
+                            <a href="/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    统计学习
                                 </a>
                             
                             
@@ -1076,12 +1101,66 @@ f=matlabFunction(f);
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BB%98%E5%9B%BE/">
-                        <span class="chip bg-color">绘图</span>
+                    <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">统计学习</span>
                     </a>
                     
-                    <a href="/tags/MATALB/">
-                        <span class="chip bg-color">MATALB</span>
+                    <a href="/tags/%E5%A5%87%E5%BC%82%E5%88%86%E8%A7%A3/">
+                        <span class="chip bg-color">奇异分解</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/3c3e1a2a.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="PAT代替密码密码验证">
+                        
+                        <span class="card-title">PAT代替密码密码验证</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            PAT代替密码验证2021年8月13日git终止密码验证提交程序，强制使用PAT验证方式，这是一件好事，减少密码泄露。
+fatal: unable to access &#39;https://github.com/wsp666/wsp66
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/git/" class="post-category">
+                                    git
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
                     </a>
                     
                 </div>
@@ -1252,6 +1331,13 @@ f=matlabFunction(f);
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
