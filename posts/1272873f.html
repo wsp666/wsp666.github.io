@@ -438,9 +438,12 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="PyTorch训练神经网络"><a href="#PyTorch训练神经网络" class="headerlink" title="PyTorch训练神经网络"></a>PyTorch训练神经网络</h1><p>可以使用<code>torch.nn</code>包来构建神经网络。</p>
+                <h1>PyTorch训练神经网络</h1>
+<p>可以使用<code>torch.nn</code>包来构建神经网络。</p>
 <p><code>nn</code>包则依赖于<code>autograd</code>包来定义模型并对它们求导。一个<code>nn.Module</code>包含各个层和一个<code>forward(input)</code>方法，该方法返回<code>output</code>。</p>
-<p>如图这个神经网络可以对数字进行分类：<br><img src="https://i.loli.net/2021/08/13/2GZXPvR6bwWI9i5.png" alt="image.png"><br>这是一个简单的前馈神经网络 (feed-forward network）。它接受一个输入，然后将它送入下一层，一层接一层的传递，最后给出输出。</p>
+<p>如图这个神经网络可以对数字进行分类：<br>
+<img src="https://i.loli.net/2021/08/13/2GZXPvR6bwWI9i5.png" alt="image.png"><br>
+这是一个简单的前馈神经网络 (feed-forward network）。它接受一个输入，然后将它送入下一层，一层接一层的传递，最后给出输出。</p>
 <p>一个神经网络的典型训练过程如下：</p>
 <ul>
 <li>定义包含一些可学习参数(或者叫权重）的神经网络</li>
@@ -448,13 +451,15 @@
 <li>通过网络处理输入</li>
 <li>计算 loss (输出和正确答案的距离）</li>
 <li>将梯度反向传播给网络的参数</li>
-<li>更新网络的权重，一般使用一个简单的规则：<script type="math/tex">weight = weight - learning_rate * gradient。</script><h2 id="定义神经网络"><a href="#定义神经网络" class="headerlink" title="定义神经网络"></a>定义神经网络</h2><pre><code class="lang-python">import torch
+<li>更新网络的权重，一般使用一个简单的规则：$$weight = weight - learning_rate * gradient。$$</li>
+</ul>
+<h2 id="定义神经网络">定义神经网络</h2>
+<pre><code class="language-python">import torch
 import torch.nn as nn
 import torch.nn.functional as F
 </code></pre>
-导包后定义神经网络：</li>
-</ul>
-<pre><code class="lang-python">class Net(nn.Module):
+<p>导包后定义神经网络：</p>
+<pre><code class="language-python">class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
         # 输入图像channel：1；输出channel：6；5x5卷积核
@@ -483,11 +488,11 @@ import torch.nn.functional as F
         return num_features
 </code></pre>
 <p>测试：</p>
-<pre><code class="lang-python">net = Net()
+<pre><code class="language-python">net = Net()
 print(net)
 </code></pre>
 <p>输出：</p>
-<pre><code class="lang-python">Net(
+<pre><code class="language-python">Net(
   (conv1): Conv2d(1, 6, kernel_size=(5, 5), stride=(1, 1))
   (conv2): Conv2d(6, 16, kernel_size=(5, 5), stride=(1, 1))
   (fc1): Linear(in_features=400, out_features=120, bias=True)
@@ -496,31 +501,32 @@ print(net)
 )
 </code></pre>
 <p>个模型的可学习参数可以通过<code>net.parameters()</code>返回:</p>
-<pre><code class="lang-python">params = list(net.parameters())
+<pre><code class="language-python">params = list(net.parameters())
 print(len(params))
-print(params[0].size())  # conv1&#39;s .weight
+print(params[0].size())  # conv1's .weight
 </code></pre>
 <p>输出：</p>
-<pre><code class="lang-python">10
+<pre><code class="language-python">10
 torch.Size([6, 1, 5, 5])
 </code></pre>
 <p>将一个随机的 32x32作为输入。这个网络 (LeNet）的期待输入是 32x32 的张量。如果使用 MNIST 数据集来训练这个网络，要把图片大小重新调整到 32x32。</p>
-<pre><code class="lang-python">input = torch.randn(1, 1, 32, 32)
+<pre><code class="language-python">input = torch.randn(1, 1, 32, 32)
 out = net(input)
 print(out)
 </code></pre>
 <p>输出为：</p>
-<pre><code class="lang-python">tensor([[ 0.0399, -0.0856,  0.0668,  0.0915,  0.0453, -0.0680, -0.1024,  0.0493,
+<pre><code class="language-python">tensor([[ 0.0399, -0.0856,  0.0668,  0.0915,  0.0453, -0.0680, -0.1024,  0.0493,
          -0.1043, -0.1267]], grad_fn=&lt;AddmmBackward&gt;)
 </code></pre>
 <p>清零所有参数的梯度缓存，然后进行随机梯度的反向传播：</p>
-<pre><code class="lang-python">net.zero_grad()
+<pre><code class="language-python">net.zero_grad()
 out.backward(torch.randn(1, 10))
 </code></pre>
 <p><code>torch.nn</code>只支持小批量处理 (mini-batches）。整个 <code>torch.nn</code> 包只支持小批量样本的输入，不支持单个样本的输入。比如，<code>nn.Conv2d</code> 接受一个4维的张量，即<code>nSamples x nChannels x Height x Width</code> 如果是一个单独的样本，只需要使用<code>input.unsqueeze(0)</code>来添加一个“假的”批大小维度。</p>
-<h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p>一个损失函数接受一对<code>(output, target)</code>作为输入，计算一个值来估计网络的输出和目标值相差多少。</p>
+<h2 id="损失函数">损失函数</h2>
+<p>一个损失函数接受一对<code>(output, target)</code>作为输入，计算一个值来估计网络的输出和目标值相差多少。</p>
 <p><code>nn</code>包中有很多不同的损失函数。<code>nn.MSELoss</code>是比较简单的一种，它计算输出和目标的均方误差。例如：</p>
-<pre><code class="lang-python">output = net(input)
+<pre><code class="language-python">output = net(input)
 target = torch.randn(10)  # 本例子中使用模拟数据
 target = target.view(1, -1)  # 使目标值与数据值尺寸一致
 criterion = nn.MSELoss()
@@ -529,36 +535,38 @@ loss = criterion(output, target)
 print(loss)
 </code></pre>
 <p>输出：</p>
-<pre><code class="lang-python">tensor(1.0263, grad_fn=&lt;MseLossBackward&gt;)
+<pre><code class="language-python">tensor(1.0263, grad_fn=&lt;MseLossBackward&gt;)
 </code></pre>
 <p>现在，如果使用<code>loss</code>的<code>.grad_fn</code>属性跟踪反向传播过程，会看到计算图如下：</p>
-<pre><code class="lang-python">input -&gt; conv2d -&gt; relu -&gt; maxpool2d -&gt; conv2d -&gt; relu -&gt; maxpool2d
+<pre><code class="language-python">input -&gt; conv2d -&gt; relu -&gt; maxpool2d -&gt; conv2d -&gt; relu -&gt; maxpool2d
       -&gt; view -&gt; linear -&gt; relu -&gt; linear -&gt; relu -&gt; linear
       -&gt; MSELoss
       -&gt; loss
 </code></pre>
-<h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><p>我们只需要调用<code>loss.backward()</code>来反向传播误差。我们需要清零现有的梯度，否则梯度将会与已有的梯度累加。</p>
+<h2 id="反向传播">反向传播</h2>
+<p>我们只需要调用<code>loss.backward()</code>来反向传播误差。我们需要清零现有的梯度，否则梯度将会与已有的梯度累加。</p>
 <p>现在，我们将调用<code>loss.backward()</code>，并查看 <code>conv1</code>层的偏置在反向传播前后的梯度。</p>
-<pre><code class="lang-python">net.zero_grad()     # 清零所有参数(parameter）的梯度缓存
+<pre><code class="language-python">net.zero_grad()     # 清零所有参数(parameter）的梯度缓存
 
-print(&#39;conv1.bias.grad before backward&#39;)
+print('conv1.bias.grad before backward')
 print(net.conv1.bias.grad)
 
 loss.backward()
 
-print(&#39;conv1.bias.grad after backward&#39;)
+print('conv1.bias.grad after backward')
 print(net.conv1.bias.grad)
 </code></pre>
 <p>输出：</p>
-<pre><code class="lang-python">conv1.bias.grad before backward
+<pre><code class="language-python">conv1.bias.grad before backward
 tensor([0., 0., 0., 0., 0., 0.])
 conv1.bias.grad after backward
 tensor([ 0.0084,  0.0019, -0.0179, -0.0212,  0.0067, -0.0096])
 </code></pre>
-<h2 id="更新权重"><a href="#更新权重" class="headerlink" title="更新权重"></a>更新权重</h2><p>最简单的更新规则是随机梯度下降法 (SGD）:</p>
+<h2 id="更新权重">更新权重</h2>
+<p>最简单的更新规则是随机梯度下降法 (SGD）:</p>
 <p><code>weight = weight - learning_rate * gradient</code></p>
 <p><code>torch.optim</code>中实现了所有的这些方法。使用它很简单：</p>
-<pre><code class="lang-python">import torch.optim as optim
+<pre><code class="language-python">import torch.optim as optim
 
 # 创建优化器(optimizer）
 optimizer = optim.SGD(net.parameters(), lr=0.01)
@@ -570,8 +578,10 @@ loss = criterion(output, target)
 loss.backward()
 optimizer.step()    # 更新参数
 </code></pre>
-<h2 id="训练一个图片分类器"><a href="#训练一个图片分类器" class="headerlink" title="训练一个图片分类器"></a>训练一个图片分类器</h2><p>以训练一个图片分类器为实例，按照上述步骤进行：</p>
-<h3 id="加载数据集"><a href="#加载数据集" class="headerlink" title="加载数据集"></a>加载数据集</h3><pre><code class="lang-python">import torch
+<h2 id="训练一个图片分类器">训练一个图片分类器</h2>
+<p>以训练一个图片分类器为实例，按照上述步骤进行：</p>
+<h3 id="加载数据集">加载数据集</h3>
+<pre><code class="language-python">import torch
 import torchvision
 import torchvision.transforms as transforms
 
@@ -579,16 +589,17 @@ transform = transforms.Compose(
     [transforms.ToTensor(),
      transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 
-trainset = torchvision.datasets.CIFAR10(root=&#39;./data&#39;, train=True, download=True, transform=transform)
+trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=transform)
 trainloader = torch.utils.data.DataLoader(trainset, batch_size=4, shuffle=True, num_workers=2)
 
-testset = torchvision.datasets.CIFAR10(root=&#39;./data&#39;, train=False, download=True, transform=transform)
+testset = torchvision.datasets.CIFAR10(root='./data', train=False, download=True, transform=transform)
 testloader = torch.utils.data.DataLoader(testset, batch_size=4, shuffle=False, num_workers=2)
 
-classes = (&#39;plane&#39;, &#39;car&#39;, &#39;bird&#39;, &#39;cat&#39;,
-           &#39;deer&#39;, &#39;dog&#39;, &#39;frog&#39;, &#39;horse&#39;, &#39;ship&#39;, &#39;truck&#39;)
+classes = ('plane', 'car', 'bird', 'cat',
+           'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 </code></pre>
-<h3 id="可视化数据"><a href="#可视化数据" class="headerlink" title="可视化数据"></a>可视化数据</h3><pre><code class="lang-python">import matplotlib.pyplot as plt
+<h3 id="可视化数据">可视化数据</h3>
+<pre><code class="language-python">import matplotlib.pyplot as plt
 import numpy as np
 
 # 输出图像的函数
@@ -606,10 +617,11 @@ images, labels = dataiter.next()
 # 显示图片
 imshow(torchvision.utils.make_grid(images))
 # 打印图片标签
-print(&#39; &#39;.join(&#39;%5s&#39; % classes[labels[j]] for j in range(4)))
+print(' '.join('%5s' % classes[labels[j]] for j in range(4)))
 </code></pre>
-<h3 id="定义一个卷积神经网络"><a href="#定义一个卷积神经网络" class="headerlink" title="定义一个卷积神经网络"></a>定义一个卷积神经网络</h3><p>将最初定义的神经网络拿过来，并将其修改成输入为3通道图像(替代原来定义的单通道图像）。</p>
-<pre><code class="lang-python">import torch.nn as nn
+<h3 id="定义一个卷积神经网络">定义一个卷积神经网络</h3>
+<p>将最初定义的神经网络拿过来，并将其修改成输入为3通道图像(替代原来定义的单通道图像）。</p>
+<pre><code class="language-python">import torch.nn as nn
 import torch.nn.functional as F
 
 
@@ -635,14 +647,16 @@ class Net(nn.Module):
 
 net = Net()
 </code></pre>
-<h3 id="定义损失函数和优化器"><a href="#定义损失函数和优化器" class="headerlink" title="定义损失函数和优化器"></a>定义损失函数和优化器</h3><p>使用多分类的交叉熵损失函数和随机梯度下降优化器：</p>
-<pre><code class="lang-python">import torch.optim as optim
+<h3 id="定义损失函数和优化器">定义损失函数和优化器</h3>
+<p>使用多分类的交叉熵损失函数和随机梯度下降优化器：</p>
+<pre><code class="language-python">import torch.optim as optim
 
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 </code></pre>
-<h3 id="训练网络"><a href="#训练网络" class="headerlink" title="训练网络"></a>训练网络</h3><p>遍历数据迭代器，并将输入“喂”给网络和优化函数。</p>
-<pre><code class="lang-python">for epoch in range(2):  # loop over the dataset multiple times
+<h3 id="训练网络">训练网络</h3>
+<p>遍历数据迭代器，并将输入“喂”给网络和优化函数。</p>
+<pre><code class="language-python">for epoch in range(2):  # loop over the dataset multiple times
 
     running_loss = 0.0
     for i, data in enumerate(trainloader, 0):
@@ -661,39 +675,41 @@ optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
         # print statistics
         running_loss += loss.item()
         if i % 2000 == 1999:    # print every 2000 mini-batches
-            print(&#39;[%d, %5d] loss: %.3f&#39; % (epoch + 1, i + 1, running_loss / 2000))
+            print('[%d, %5d] loss: %.3f' % (epoch + 1, i + 1, running_loss / 2000))
             running_loss = 0.0
 
-print(&#39;Finished Training&#39;)
+print('Finished Training')
 </code></pre>
 <p>保存训练好的模型：</p>
-<pre><code class="lang-python">PATH = &#39;./cifar_net.pth&#39;
+<pre><code class="language-python">PATH = './cifar_net.pth'
 torch.save(net.state_dict(), PATH)
 </code></pre>
-<h3 id="使用测试数据测试网络"><a href="#使用测试数据测试网络" class="headerlink" title="使用测试数据测试网络"></a>使用测试数据测试网络</h3><p>将通过预测神经网络输出的标签来检查这个问题，并和正确样本进行对比。如果预测是正确的，将样本添加到正确预测的列表中。</p>
-<pre><code class="lang-python">dataiter = iter(testloader)
+<h3 id="使用测试数据测试网络">使用测试数据测试网络</h3>
+<p>将通过预测神经网络输出的标签来检查这个问题，并和正确样本进行对比。如果预测是正确的，将样本添加到正确预测的列表中。</p>
+<pre><code class="language-python">dataiter = iter(testloader)
 images, labels = dataiter.next()
 
 # 输出图片
 imshow(torchvision.utils.make_grid(images))
-print(&#39;GroundTruth: &#39;, &#39; &#39;.join(&#39;%5s&#39; % classes[labels[j]] for j in range(4)))
+print('GroundTruth: ', ' '.join('%5s' % classes[labels[j]] for j in range(4)))
 </code></pre>
 <p>加载保存的模型：</p>
-<pre><code class="lang-python">net = Net()
+<pre><code class="language-python">net = Net()
 net.load_state_dict(torch.load(PATH))
 </code></pre>
 <p>神经网络认为上面的例子是:</p>
-<pre><code class="lang-python">outputs = net(images)
+<pre><code class="language-python">outputs = net(images)
 </code></pre>
 <p>输出是10个类别的量值。一个类的值越高，网络就越认为这个图像属于这个特定的类。让我们得到最高量值的下标/索引；</p>
-<pre><code class="lang-python">_, predicted = torch.max(outputs, 1)
+<pre><code class="language-python">_, predicted = torch.max(outputs, 1)
 
-print(&#39;Predicted: &#39;, &#39; &#39;.join(&#39;%5s&#39; % classes[predicted[j]] for j in range(4)))
+print('Predicted: ', ' '.join('%5s' % classes[predicted[j]] for j in range(4)))
 </code></pre>
 <p>结果对比：</p>
 <pre><code>GroundTruth:    cat  ship  ship plane
 Predicted:    dog  ship  ship plane
-</code></pre><pre><code class="lang-python">correct = 0
+</code></pre>
+<pre><code class="language-python">correct = 0
 total = 0
 with torch.no_grad():
     for data in testloader:
@@ -703,11 +719,11 @@ with torch.no_grad():
         total += labels.size(0)
         correct += (predicted == labels).sum().item()
 
-print(&#39;Accuracy of the network on the 10000 test images: %d %%&#39; % (
+print('Accuracy of the network on the 10000 test images: %d %%' % (
     100 * correct / total))
 </code></pre>
 <p>观测整个数据集上的表现：</p>
-<pre><code class="lang-python">correct = 0
+<pre><code class="language-python">correct = 0
 total = 0
 with torch.no_grad():
     for data in testloader:
@@ -717,13 +733,14 @@ with torch.no_grad():
         total += labels.size(0)
         correct += (predicted == labels).sum().item()
 
-print(&#39;Accuracy of the network on the 10000 test images: %d %%&#39; % (
+print('Accuracy of the network on the 10000 test images: %d %%' % (
     100 * correct / total))
 </code></pre>
 <p>输出结果：</p>
 <pre><code>Accuracy of the network on the 10000 test images: 55 %
-</code></pre><p>这比随机选取(即从10个类中随机选择一个类，正确率是10%）要好很多。看来网络确实学到了一些东西。接着看看具体是哪些表现的差的类呢？</p>
-<pre><code class="lang-python">class_correct = list(0. for i in range(10))
+</code></pre>
+<p>这比随机选取(即从10个类中随机选择一个类，正确率是10%）要好很多。看来网络确实学到了一些东西。接着看看具体是哪些表现的差的类呢？</p>
+<pre><code class="language-python">class_correct = list(0. for i in range(10))
 class_total = list(0. for i in range(10))
 with torch.no_grad():
     for data in testloader:
@@ -738,24 +755,30 @@ with torch.no_grad():
 
 
 for i in range(10):
-    print(&#39;Accuracy of %5s : %2d %%&#39; % (
+    print('Accuracy of %5s : %2d %%' % (
         classes[i], 100 * class_correct[i] / class_total[i]))
 </code></pre>
-<h3 id="GPU跑pytorch"><a href="#GPU跑pytorch" class="headerlink" title="GPU跑pytorch"></a>GPU跑pytorch</h3><p>用GPU跑pytorch程序就3点：</p>
+<h3 id="gpu跑pytorch">GPU跑pytorch</h3>
+<p>用GPU跑pytorch程序就3点：</p>
 <ol>
 <li>申明用GPU</li>
 <li>把你的model放到GPU上</li>
-<li>把数据和标签放到GPU上<h4 id="申明"><a href="#申明" class="headerlink" title="申明"></a>申明</h4><pre><code class="lang-python">device=torch.device(&#39;cuda&#39; if torch.cuda.is_available() else &#39;cpu&#39;)
+<li>把数据和标签放到GPU上</li>
+</ol>
+<h4 id="申明">申明</h4>
+<pre><code class="language-python">device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
 </code></pre>
-<h4 id="将模型放到GPU上"><a href="#将模型放到GPU上" class="headerlink" title="将模型放到GPU上"></a>将模型放到GPU上</h4>在创建完网络 或者引用网络之后，我们需要实体化我们的网络。直接在后面加一句话就可以<pre><code class="lang-python">net= Net ()
+<h4 id="将模型放到gpu上">将模型放到GPU上</h4>
+<p>在创建完网络 或者引用网络之后，我们需要实体化我们的网络。直接在后面加一句话就可以</p>
+<pre><code class="language-python">net= Net ()
 net.to(device)
 </code></pre>
-<h4 id="把数据放到GPU上"><a href="#把数据放到GPU上" class="headerlink" title="把数据放到GPU上"></a>把数据放到GPU上</h4><pre><code class="lang-python">inputs, labels = data
-         inputs, labels = inputs.to(device), labels.to(device)
+<h4 id="把数据放到gpu上">把数据放到GPU上</h4>
+<pre><code class="language-python">inputs, labels = data
+            inputs, labels = inputs.to(device), labels.to(device)
 </code></pre>
-最后可以用<code>nvidia-smi</code>查看是否利用gpu训练。</li>
-</ol>
+<p>最后可以用<code>nvidia-smi</code>查看是否利用gpu训练。</p>
 
             </div>
             <hr/>
@@ -1275,8 +1298,9 @@ net.to(device)
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            PAT代替密码验证2021年8月13日git终止密码验证提交程序，强制使用PAT验证方式，这是一件好事，减少密码泄露。
-fatal: unable to access &#39;https://github.com/wsp666/wsp66
+                            PAT代替密码验证
+2021年8月13日git终止密码验证提交程序，强制使用PAT验证方式，这是一件好事，减少密码泄露。
+fatal: unable to access 'https://github.com/wsp666/wsp666.g
                         
                     </div>
                     <div class="publish-info">
@@ -1325,7 +1349,9 @@ fatal: unable to access &#39;https://github.com/wsp666/wsp66
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            pytorch深度学习基础Tensor对象及其运算Tensor对象是一个维度任意的矩阵，但是一个Tensor中所有元素的数据类型必须一致。torch包含的数据类型和普遍编程语言的数据类型类似，包含浮点型，有符号整型和无符号整形，这些类型既可
+                            pytorch深度学习基础
+Tensor对象及其运算
+Tensor对象是一个维度任意的矩阵，但是一个Tensor中所有元素的数据类型必须一致。torch包含的数据类型和普遍编程语言的数据类型类似，包含浮点型，有符号整型和无符号整形，这些类型
                         
                     </div>
                     <div class="publish-info">
