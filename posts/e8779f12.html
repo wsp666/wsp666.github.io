@@ -6,7 +6,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="使桃心跳动起来, Python,Latex,Java,MatLab,R等">
+    <meta name="keywords" content="正交与二次型, Python,Latex,Java,MatLab,R等">
     <meta name="description" content="数学竞赛,数据分析,数学建模,机器学习,云计算">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>使桃心跳动起来 | 鹏鹏的学习乐园</title>
+    <title>正交与二次型 | 鹏鹏的学习乐园</title>
     <link rel="icon" type="image/png" href="/me.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -267,12 +267,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">使桃心跳动起来</h1>
+                    <h1 class="description center-align post-title">正交与二次型</h1>
                 </div>
             </div>
         </div>
@@ -389,12 +389,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%BB%98%E5%9B%BE/">
-                                <span class="chip bg-color">绘图</span>
+                            <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                                <span class="chip bg-color">数学</span>
                             </a>
                         
-                            <a href="/tags/MATALB/">
-                                <span class="chip bg-color">MATALB</span>
+                            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+                                <span class="chip bg-color">线性代数</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%AD%A3%E4%BA%A4/">
+                                <span class="chip bg-color">正交</span>
                             </a>
                         
                     </div>
@@ -405,8 +409,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/MATALB/" class="post-category">
-                                MATALB
+                            <a href="/categories/%E6%95%B0%E5%AD%A6/" class="post-category">
+                                数学
                             </a>
                         
                     </div>
@@ -418,7 +422,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-06
+                    2021-08-30
                 </div>
                 
 
@@ -434,48 +438,71 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>代码如下，时间紧促，下次详细说明</p>
-<pre><code class="lang-matlab">syms x y z;
-f=(x^2+9/4*y^2+z^2-1)^3-x^2*z^3-9/80*y^2*z^3;
-f=matlabFunction(f);
-[x,y,z] = meshgrid(-1.5:.02:1.5,-1:.02:1,-1.5:.02:1.5);    % 画图范围,设置[-1.5,1.5]区间
-v = f(x,y,z);
-h = patch(isosurface(x,y,z,v,0));    %创建补片对象的句柄
-isonormals(x,y,z,v,h)        %计算法向量
-set(h,&#39;FaceColor&#39;,&#39;r&#39;,&#39;EdgeColor&#39;,&#39;None&#39;);
-alpha(1)      %设置透明度
-grid on; view([1,1,1]); axis equal; camlight; lighting gouraud  %设置光照
-axis off;
-
-pos1=get(gca,&#39;position&#39;)
-pos2=pos1;
-pos2(2)=pos2(2)+0.01;
-pos2(1)=pos2(1)-0.03;
-pos2(3)=pos2(3)+0.08;
-pos2(4)=pos2(4)+0.08;
-
-for ii=1:10
-    pause(1)
-    set(gca,&#39;position&#39;,pos1)
-    pause(0.1)
-    set(gca,&#39;position&#39;,pos2)
-    pause(0.1)
-    set(gca,&#39;position&#39;,pos1)
-    pause(0.1)
-    set(gca,&#39;position&#39;,pos2)
-    pause(0.1)
-    set(gca,&#39;position&#39;,pos1)
-    pause(0.1)
-    set(gca,&#39;position&#39;,pos2)
-    pause(0.1)
-    set(gca,&#39;position&#39;,pos1)
-    pause(0.1)
-    set(gca,&#39;position&#39;,pos2)
-    pause(0.1)
-    set(gca,&#39;position&#39;,pos1)
-end
-</code></pre>
-<p><img src="https://imgkr.cn-bj.ufileos.com/5f665075-497a-4bea-a27e-9f0f649c9e89.gif" alt=""></p>
+                <h1 id="正交与二次型"><a href="#正交与二次型" class="headerlink" title="正交与二次型"></a>正交与二次型</h1><p>正交矩阵其实就是空间的旋转，先说结论：<br>椭圆的长短轴分别沿着矩阵$\boldsymbol{A}$的两个特征向量的方向，而两个与之对应的特征值分别是半长轴和半短轴的长度的平方的倒数。</p>
+<p>拿我们最熟悉的椭圆方程举例：</p>
+<script type="math/tex; mode=display">ax^2+2bxy+cy^2=1</script><p>化为矩阵形式：</p>
+<script type="math/tex; mode=display">
+\left[\begin{array}{l}
+x \\
+y
+\end{array}\right]^{T}\left[\begin{array}{ll}
+a & b \\
+b & c
+\end{array}\right]\left[\begin{array}{l}
+x \\
+y
+\end{array}\right]=x^{T} A x=1</script><p>这个方程可能是双曲线也可能是椭圆或抛物线，如果是椭圆，则$\boldsymbol{A}$是正定矩阵，举例：</p>
+<script type="math/tex; mode=display">5x^2+8xy+5y^2=1</script><p>可以转化为：</p>
+<script type="math/tex; mode=display">
+\left[\begin{array}{l}
+x \\
+y
+\end{array}\right]^{T}\left[\begin{array}{ll}
+5 & 4 \\
+4 & 5
+\end{array}\right]\left[\begin{array}{l}
+x \\
+y
+\end{array}\right]=x^{T} A x=1</script><p>$\boldsymbol{A}$的特征值为：</p>
+<script type="math/tex; mode=display">\lambda_1=1, \lambda_2=9</script><p>$\boldsymbol{A}$的归一化特征向量为：</p>
+<script type="math/tex; mode=display">
+\mu_{1}=\left[\begin{array}{c}
+1 / \sqrt{2} \\
+-1 / \sqrt{2}
+\end{array}\right] \mu_{2}=\left[\begin{array}{c}
+1 / \sqrt{2} \\
+1 / \sqrt{2}
+\end{array}\right]</script><p>于是可以将$\boldsymbol{A}$正交分解：</p>
+<script type="math/tex; mode=display">
+A=Q \Lambda Q^{-1}=Q \Lambda Q^{T}=\left[\begin{array}{cc}
+1 / \sqrt{2} & 1 / \sqrt{2} \\
+-1 / \sqrt{2} & 1 / \sqrt{2}
+\end{array}\right]\left[\begin{array}{cc}
+1 & 0 \\
+0 & 9
+\end{array}\right]\left[\begin{array}{cc}
+1 / \sqrt{2} & -1 / \sqrt{2} \\
+1 / \sqrt{2} & 1 / \sqrt{2}
+\end{array}\right]</script><p>因此：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+P(f) &=x^{T} A x=x^{T} Q \Lambda Q^{T} x \\
+&=\left(Q^{T} x\right)^{T} \Lambda\left(Q^{T} x\right) \\
+&=1\left(\frac{x-y}{\sqrt{2}}\right)^{2}+9\left(\frac{x+y}{\sqrt{2}}\right)^{2}\\
+&=m^2+9n^2
+\end{aligned}</script><p>且：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+    m=\frac{1}{\sqrt{2}}x-\frac{1}{\sqrt{2}}y\\
+    n=\frac{1}{\sqrt{2}}x+\frac{1}{\sqrt{2}}y\\
+\end{cases}</script><p>相当于$(x,y)$逆时针旋转了45°得到$(m,n)$,这样就得到了旋转后的方程，以及旋转方向。</p>
+<ul>
+<li>注意：二维的旋转矩阵是:<script type="math/tex; mode=display">
+\begin{cases}
+  m=\cos \theta \cdot x-\sin \theta \cdot y\\
+  n=\sin \theta \cdot x+\cos \theta \cdot y\\
+\end{cases}</script></li>
+</ul>
 
             </div>
             <hr/>
@@ -501,7 +528,7 @@ end
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yzuf49.coding-pages.com/posts/4225a725.html">https://yzuf49.coding-pages.com/posts/4225a725.html</a>
+                    <a href="https://yzuf49.coding-pages.com/posts/e8779f12.html">https://yzuf49.coding-pages.com/posts/e8779f12.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -539,12 +566,16 @@ end
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%BB%98%E5%9B%BE/">
-                                    <span class="chip bg-color">绘图</span>
+                                <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                                    <span class="chip bg-color">数学</span>
                                 </a>
                             
-                                <a href="/tags/MATALB/">
-                                    <span class="chip bg-color">MATALB</span>
+                                <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+                                    <span class="chip bg-color">线性代数</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%AD%A3%E4%BA%A4/">
+                                    <span class="chip bg-color">正交</span>
                                 </a>
                             
                         </div>
@@ -975,30 +1006,32 @@ end
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/655684ad.html">
+                <a href="/posts/e8779f12.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="WHUT杯数学竞赛">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="正交与二次型">
                         
-                        <span class="card-title">WHUT杯数学竞赛</span>
+                        <span class="card-title">正交与二次型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            WHUT杯数学竞赛好题几例雨中漫步(1)$\displaystyle{\int_{-\infty}^{+\infty} \frac{d x}{\left(x^{2}+2 x+2\right)^{n}}}$
-解：$x+1=\tan t\tex
+                            正交与二次型正交矩阵其实就是空间的旋转，先说结论：椭圆的长短轴分别沿着矩阵$\boldsymbol{A}$的两个特征向量的方向，而两个与之对应的特征值分别是半长轴和半短轴的长度的平方的倒数。
+拿我们最熟悉的椭圆方程举例：
+ax^2+2bxy
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1011,6 +1044,7 @@ end
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1018,12 +1052,12 @@ end
                         <span class="chip bg-color">数学</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B/">
-                        <span class="chip bg-color">数学竞赛</span>
+                    <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+                        <span class="chip bg-color">线性代数</span>
                     </a>
                     
-                    <a href="/tags/%E5%AE%9A%E7%A7%AF%E5%88%86/">
-                        <span class="chip bg-color">定积分</span>
+                    <a href="/tags/%E6%AD%A3%E4%BA%A4/">
+                        <span class="chip bg-color">正交</span>
                     </a>
                     
                 </div>
@@ -1034,54 +1068,55 @@ end
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/4225a725.html">
+                <a href="/posts/563bbb46.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="使桃心跳动起来">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="SVD奇异分解">
                         
-                        <span class="card-title">使桃心跳动起来</span>
+                        <span class="card-title">SVD奇异分解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            代码如下，时间紧促，下次详细说明
-syms x y z;
-f=(x^2+9/4*y^2+z^2-1)^3-x^2*z^3-9/80*y^2*z^3;
-f=matlabFunction(f);
-[x,y,z] = meshgrid(-1.5:
+                            SVD奇异分解SVD也是对矩阵进行分解，但是和特征分解不同，SVD并不要求要分解的矩阵为方阵。假设我们的矩阵A是一个m×n的矩阵，那么我们定义矩阵A的SVD为：
+
+A=U\varSigma V^T其中$U$是一个$m\times m$的矩阵
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/MATALB/" class="post-category">
-                                    MATALB
+                            <a href="/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    统计学习
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BB%98%E5%9B%BE/">
-                        <span class="chip bg-color">绘图</span>
+                    <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">统计学习</span>
                     </a>
                     
-                    <a href="/tags/MATALB/">
-                        <span class="chip bg-color">MATALB</span>
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%A5%87%E5%BC%82%E5%88%86%E8%A7%A3/">
+                        <span class="chip bg-color">奇异分解</span>
                     </a>
                     
                 </div>
@@ -1252,6 +1287,13 @@ f=matlabFunction(f);
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 

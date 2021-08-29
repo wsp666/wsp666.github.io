@@ -438,10 +438,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>pytorch深度学习基础</h1>
-<h2 id="tensor对象及其运算">Tensor对象及其运算</h2>
-<p>Tensor对象是一个维度任意的矩阵，但是一个Tensor中所有元素的数据类型必须一致。torch包含的数据类型和普遍编程语言的数据类型类似，包含浮点型，有符号整型和无符号整形，这些类型既可以定义在CPU上，也可以定义在GPU上。在使用Tensor数据类型时，可以通过dtype属性指定它的数据类型，device指定它的设备（CPU或者GPU）。</p>
-<pre><code class="language-python">import torch
+                <h1 id="pytorch深度学习基础"><a href="#pytorch深度学习基础" class="headerlink" title="pytorch深度学习基础"></a>pytorch深度学习基础</h1><h2 id="Tensor对象及其运算"><a href="#Tensor对象及其运算" class="headerlink" title="Tensor对象及其运算"></a>Tensor对象及其运算</h2><p>Tensor对象是一个维度任意的矩阵，但是一个Tensor中所有元素的数据类型必须一致。torch包含的数据类型和普遍编程语言的数据类型类似，包含浮点型，有符号整型和无符号整形，这些类型既可以定义在CPU上，也可以定义在GPU上。在使用Tensor数据类型时，可以通过dtype属性指定它的数据类型，device指定它的设备（CPU或者GPU）。</p>
+<pre><code class="lang-python">import torch
 import numpy as np
 
 a = torch.tensor([[1, 2], [3, 4]])
@@ -451,31 +449,30 @@ print(a*b)
 print(torch.mm(a, b))
 </code></pre>
 <p>显示：</p>
-<pre><code class="language-python">tensor([[ 1,  4],
+<pre><code class="lang-python">tensor([[ 1,  4],
         [ 9, 16]])
 tensor([[ 7, 10],
         [15, 22]])
 </code></pre>
 <p><code>torch.clamp</code>起的是分段函数的作用，可用于去掉矩阵中过小或者过大的元素。</p>
 <p>PyTorch提供了大量的对<code>Tensor</code>进行操作的函数或方法，这些函数内部使用指针实现对矩阵的形状变换，拼接，拆分等操作，使得我们无须关心<code>Tensor</code>在内存的物理结构或者管理指针就可以方便且快速的执行这些操作。<code>Tensor.nelement()</code>，<code>Tensor.ndimension()</code>，<code>ndimension.size()</code>可分别用来查看矩阵元素的个数，轴的个数以及维度，属性<code>Tensor.shape</code>也可以用来查看Tensor的维度。</p>
-<h2 id="tensor的变换-拼接和拆分">Tensor的变换、拼接和拆分</h2>
-<p>在PyTorch中，<code>Tensor.reshape</code>和<code>Tensor.view</code>都能被用来更改<code>Tensor</code>的维度。它们的区别在于，<code>Tensor.view</code>要求<code>Tensor</code>的物理存储必须是连续的，否则将报错，而<code>Tensor.reshape</code>则没有这种要求。但是，<code>Tensor.view</code>返回的一定是一个索引，更改返回值，则原始值同样被更改，<code>Tensor.reshape</code>返回的是引用还是拷贝是不确定的。它们的相同之处都接收要输出的维度作为参数，切输出的矩阵元素个数不能改变，可以在维度中输入<code>-1</code>，PyTorch会自动推断它的数值。</p>
+<h2 id="Tensor的变换、拼接和拆分"><a href="#Tensor的变换、拼接和拆分" class="headerlink" title="Tensor的变换、拼接和拆分"></a>Tensor的变换、拼接和拆分</h2><p>在PyTorch中，<code>Tensor.reshape</code>和<code>Tensor.view</code>都能被用来更改<code>Tensor</code>的维度。它们的区别在于，<code>Tensor.view</code>要求<code>Tensor</code>的物理存储必须是连续的，否则将报错，而<code>Tensor.reshape</code>则没有这种要求。但是，<code>Tensor.view</code>返回的一定是一个索引，更改返回值，则原始值同样被更改，<code>Tensor.reshape</code>返回的是引用还是拷贝是不确定的。它们的相同之处都接收要输出的维度作为参数，切输出的矩阵元素个数不能改变，可以在维度中输入<code>-1</code>，PyTorch会自动推断它的数值。</p>
 <p>在PyTorch中，Tensor.reshape和Tensor.view都能被用来更改Tensor的维度。它们的区别在于，Tensor.view要求Tensor的物理存储必须是连续的，否则将报错，而Tensor.reshape则没有这种要求。但是，Tensor.view返回的一定是一个索引，更改返回值，则原始值同样被更改，Tensor.reshape返回的是引用还是拷贝是不确定的。它们的相同之处都接收要输出的维度作为参数，切输出的矩阵元素个数不能改变，可以在维度中输入-1，PyTorch会自动推断它的数值。</p>
-<pre><code class="language-python">b =torch.squeeze(a)
+<pre><code class="lang-python">b =torch.squeeze(a)
 print(b.shape)
 </code></pre>
 <p>返回值：</p>
-<pre><code class="language-python">torch.Size([2, 3, 4, 5])
+<pre><code class="lang-python">torch.Size([2, 3, 4, 5])
 </code></pre>
 <p>二维转置用<code>torch.t</code>，多维度可以用<code>permute()</code>函数实现：</p>
-<pre><code class="language-python">a = torch.rand([1,  224, 224, 3])
+<pre><code class="lang-python">a = torch.rand([1,  224, 224, 3])
 print(a)
 print(a.shape)
 b = a.permute(0,3,1,2)
 print(b.shape)
 </code></pre>
 <p>返回值为：</p>
-<pre><code class="language-python">tensor([[[[3.6860e-01, 2.8806e-01, 2.1226e-01],
+<pre><code class="lang-python">tensor([[[[3.6860e-01, 2.8806e-01, 2.1226e-01],
           [8.5628e-04, 8.3488e-01, 5.4180e-01],
           [5.0457e-01, 7.1150e-01, 1.8034e-02],
           ...,
@@ -528,7 +525,7 @@ torch.Size([1, 224, 224, 3])
 torch.Size([1, 3, 224, 224])
 </code></pre>
 <p>PyTorch提供了<code>torch.cat</code>和<code>torch.stack</code>用于拼接矩阵，不同的是,<code>torch.cat</code>在已有的轴dim上拼接矩阵，给定轴的维度可以不同，而其他轴的维度必须相同。<code>torch.stack</code>在新的轴上拼接，它要求被拼接的矩阵所有维度都相同。</p>
-<pre><code class="language-python">a =torch.randn(2,3)
+<pre><code class="lang-python">a =torch.randn(2,3)
 b =torch.randn(3,3)
 
 #默认维度为dim=0
@@ -539,39 +536,39 @@ print(c.shape)
 print(d.shape)
 </code></pre>
 <p>返回：</p>
-<pre><code class="language-python">torch.Size([5, 3])
+<pre><code class="lang-python">torch.Size([5, 3])
 torch.Size([3, 9])
 </code></pre>
-<pre><code class="language-python">c=torch.stack((b,b), dim=1)
+<pre><code class="lang-python">c=torch.stack((b,b), dim=1)
 d=torch.stack((b,b), dim=0)
 
 print(c.shape)
 print(d.shape)
 </code></pre>
 <p>返回：</p>
-<pre><code class="language-python">torch.Size([3, 2, 3])
+<pre><code class="lang-python">torch.Size([3, 2, 3])
 torch.Size([2, 3, 3])
 </code></pre>
 <p>除了拼接矩阵，PyTorch还提供了<code>torch.split</code>和<code>torch.chunk</code>用于拆分矩阵。它们的不同之处在于，<code>torch.split</code>传入的是拆分后每个矩阵的大小，可以传入<code>list</code>，也可以传入整数，而<code>torch.chunk</code>传入的是拆分的矩阵个数。</p>
 <p>Reduction运算的特点是它往往对一个<code>Tensor</code>内的元素做归约操作，比如<code>torch.max</code>找极大值，<code>torch.cumsum</code>计算累加，它还提供了dim参数来指定沿矩阵的哪个维度执行操作。</p>
 <p>将<code>Tensor</code>的<code>requires_grad</code>属性设置为<code>True</code>时，PyTorch的<code>torch.autograd</code>会自动的追踪它的计算轨迹，当需要计算微分的时候，只需要对最终计算结果的<code>Tensor</code>调用<code>backward</code>方法,中间所有计算结点的微分就会被保存在<code>grad</code>属性中了。</p>
-<pre><code class="language-python">x = torch.arange(9).view(3,3)
+<pre><code class="lang-python">x = torch.arange(9).view(3,3)
 print(x.requires_grad)
-print('*******************************************')
+print(&#39;*******************************************&#39;)
 x = torch.rand(3, 3, requires_grad = True)
 print(x)
-print('*******************************************')
+print(&#39;*******************************************&#39;)
 w = torch.ones(3, 3, requires_grad=True)
 y = torch.sum(torch.mm(w,x))
 print(y)
-print('*******************************************')
+print(&#39;*******************************************&#39;)
 y.backward()
 print(y.grad)
 print(x.grad)
 print(w.grad)
 </code></pre>
 <p>返回：</p>
-<pre><code class="language-python">False
+<pre><code class="lang-python">False
 *******************************************
 tensor([[0.6608, 0.0725, 0.9230],
         [0.8255, 0.2638, 0.0431],
@@ -588,7 +585,6 @@ tensor([[1.6564, 1.1323, 1.5202],
         [1.6564, 1.1323, 1.5202]])
 
 Process finished with exit code 0
-
 </code></pre>
 
             </div>
@@ -1109,10 +1105,9 @@ Process finished with exit code 0
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            PyTorch训练神经网络
-可以使用torch.nn包来构建神经网络。
+                            PyTorch训练神经网络可以使用torch.nn包来构建神经网络。
 nn包则依赖于autograd包来定义模型并对它们求导。一个nn.Module包含各个层和一个forward(input)方法，该方法返回output。
-如图这个神经网
+如图这个神经网络
                         
                     </div>
                     <div class="publish-info">
@@ -1169,9 +1164,7 @@ nn包则依赖于autograd包来定义模型并对它们求导。一个nn.Module�
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            机器学习基础知识
-模型评估与参数选择
-若对于给定的输入xxx，若某个模型的输出y^=f(x)\hat{y}=f(x)y^​=f(x)偏离真实目标值yyy，那么就说明模型存在误差；y^\hat{y}y^​偏离yyy的程度可以用关于y^\hat
+                            机器学习基础知识模型评估与参数选择若对于给定的输入$x$，若某个模型的输出$\hat{y}=f(x)$偏离真实目标值$y$，那么就说明模型存在误差；$\hat{y}$偏离$y$的程度可以用关于$\hat{y}$和$y$某个函数$L(y,\h
                         
                     </div>
                     <div class="publish-info">
