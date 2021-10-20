@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>组合数</title>
+      <link href="/posts/9ac1aea8.html"/>
+      <url>/posts/9ac1aea8.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="组合数一列等式"><a href="#组合数一列等式" class="headerlink" title="组合数一列等式"></a>组合数一列等式</h1><p>求解：</p><script type="math/tex; mode=display">\sum_{k=1}^{n-1}{k\left( \begin{array}{c}    n-1\\    k-1\\\end{array} \right)}m^{n-k}</script><p>联想到二次项恒等式：</p><script type="math/tex; mode=display">\sum_{k=0}^n{\left( \begin{array}{c}    n\\    k\\\end{array} \right)}x^km^{n-k}=\left( x+m \right) ^n</script><script type="math/tex; mode=display">\therefore \left( x+m \right) ^{n-1}=\sum_{k=1}^{n-1}{\left( \begin{array}{c}    n-1\\    k-1\\\end{array} \right)}x^{k-1}m^{n-k}</script><script type="math/tex; mode=display">\therefore x\left( x+m \right) ^{n-1}=\sum_{k=1}^{n-1}{\left( \begin{array}{c}    n-1\\    k-1\\\end{array} \right)}x^km^{n-k}</script><script type="math/tex; mode=display">\therefore \frac{\partial \left[ x\left( x+m \right) ^{n-1} \right]}{\partial x}=\frac{\partial \left[ \sum_{k=1}^{n-1}{\left( \begin{array}{c}    n-1\\    k-1\\\end{array} \right)}x^km^{n-k} \right]}{\partial x}</script><script type="math/tex; mode=display">\therefore \left( x+m \right) ^{n-1}+x\left( n-1 \right) \left( x+m \right) ^{n-2}=\sum_{k=1}^{n-1}{k\left( \begin{array}{c}    n-1\\    k-1\\\end{array} \right)}x^{k-1}m^{n-k}</script><script type="math/tex; mode=display">\therefore \sum_{k=1}^{n-1}{k\left( \begin{array}{c}    n-1\\    k-1\\\end{array} \right)}m^{n-k}=\left( m+1 \right) ^{n-1}+\left( n-1 \right) \left( m+1 \right) ^{n-2}</script><script type="math/tex; mode=display">\therefore \sum_{k=1}^{n-1}{k\left( \begin{array}{c}    n-1\\    k-1\\\end{array} \right)}9^{n-k}=\left( n+9 \right) \cdot 10^{n-2}</script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 恒等式 </tag>
+            
+            <tag> 组合数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>正交与二次型</title>
       <link href="/posts/e8779f12.html"/>
       <url>/posts/e8779f12.html</url>
@@ -51,9 +78,9 @@
             
             <tag> 统计学习 </tag>
             
-            <tag> 机器学习 </tag>
-            
             <tag> 奇异分解 </tag>
+            
+            <tag> 机器学习 </tag>
             
         </tags>
       
@@ -843,9 +870,9 @@
             
             <tag> MATLAB </tag>
             
-            <tag> 微分方程 </tag>
-            
             <tag> 数学 </tag>
+            
+            <tag> 微分方程 </tag>
             
         </tags>
       
@@ -1036,11 +1063,11 @@
       
         <tags>
             
-            <tag> 数学 </tag>
-            
             <tag> 数学竞赛 </tag>
             
             <tag> 定积分 </tag>
+            
+            <tag> 数学 </tag>
             
         </tags>
       

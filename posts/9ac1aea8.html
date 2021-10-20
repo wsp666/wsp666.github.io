@@ -6,7 +6,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="使桃心跳动起来, Python,Latex,Java,MatLab,R等">
+    <meta name="keywords" content="组合数, Python,Latex,Java,MatLab,R等">
     <meta name="description" content="数学竞赛,数据分析,数学建模,机器学习,云计算">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>使桃心跳动起来 | 鹏鹏的学习乐园</title>
+    <title>组合数 | 鹏鹏的学习乐园</title>
     <link rel="icon" type="image/png" href="/me.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -267,12 +267,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">使桃心跳动起来</h1>
+                    <h1 class="description center-align post-title">组合数</h1>
                 </div>
             </div>
         </div>
@@ -389,12 +389,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%BB%98%E5%9B%BE/">
-                                <span class="chip bg-color">绘图</span>
+                            <a href="/tags/%E6%81%92%E7%AD%89%E5%BC%8F/">
+                                <span class="chip bg-color">恒等式</span>
                             </a>
                         
-                            <a href="/tags/MATALB/">
-                                <span class="chip bg-color">MATALB</span>
+                            <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0/">
+                                <span class="chip bg-color">组合数</span>
                             </a>
                         
                     </div>
@@ -405,8 +405,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/MATALB/" class="post-category">
-                                MATALB
+                            <a href="/categories/%E6%95%B0%E5%AD%A6/" class="post-category">
+                                数学
                             </a>
                         
                     </div>
@@ -418,7 +418,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-06
+                    2021-10-20
                 </div>
                 
 
@@ -427,7 +427,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    231
+                    264
                 </div>
                 
 
@@ -439,49 +439,41 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>代码如下，时间紧促，下次详细说明</p>
-<pre><code class="language-matlab">syms x y z;
-f=(x^2+9/4*y^2+z^2-1)^3-x^2*z^3-9/80*y^2*z^3;
-f=matlabFunction(f);
-[x,y,z] = meshgrid(-1.5:.02:1.5,-1:.02:1,-1.5:.02:1.5);    % 画图范围,设置[-1.5,1.5]区间
-v = f(x,y,z);
-h = patch(isosurface(x,y,z,v,0));    %创建补片对象的句柄
-isonormals(x,y,z,v,h)        %计算法向量
-set(h,'FaceColor','r','EdgeColor','None');
-alpha(1)      %设置透明度
-grid on; view([1,1,1]); axis equal; camlight; lighting gouraud  %设置光照
-axis off;
-
-pos1=get(gca,'position')
-pos2=pos1;
-pos2(2)=pos2(2)+0.01;
-pos2(1)=pos2(1)-0.03;
-pos2(3)=pos2(3)+0.08;
-pos2(4)=pos2(4)+0.08;
-
-for ii=1:10
-    pause(1)
-    set(gca,'position',pos1)
-    pause(0.1)
-    set(gca,'position',pos2)
-    pause(0.1)
-    set(gca,'position',pos1)
-    pause(0.1)
-    set(gca,'position',pos2)
-    pause(0.1)
-    set(gca,'position',pos1)
-    pause(0.1)
-    set(gca,'position',pos2)
-    pause(0.1)
-    set(gca,'position',pos1)
-    pause(0.1)
-    set(gca,'position',pos2)
-    pause(0.1)
-    set(gca,'position',pos1)
-end
-</code></pre>
-<p><img src="https://imgkr.cn-bj.ufileos.com/5f665075-497a-4bea-a27e-9f0f649c9e89.gif" alt=""></p>
-
+                <h1 id="组合数一列等式"><a href="#组合数一列等式" class="headerlink" title="组合数一列等式"></a>组合数一列等式</h1><p>求解：</p>
+<script type="math/tex; mode=display">
+\sum_{k=1}^{n-1}{k\left( \begin{array}{c}
+    n-1\\
+    k-1\\
+\end{array} \right)}m^{n-k}</script><p>联想到二次项恒等式：</p>
+<script type="math/tex; mode=display">
+\sum_{k=0}^n{\left( \begin{array}{c}
+    n\\
+    k\\
+\end{array} \right)}x^km^{n-k}=\left( x+m \right) ^n</script><script type="math/tex; mode=display">
+\therefore \left( x+m \right) ^{n-1}=\sum_{k=1}^{n-1}{\left( \begin{array}{c}
+    n-1\\
+    k-1\\
+\end{array} \right)}x^{k-1}m^{n-k}</script><script type="math/tex; mode=display">
+\therefore x\left( x+m \right) ^{n-1}=\sum_{k=1}^{n-1}{\left( \begin{array}{c}
+    n-1\\
+    k-1\\
+\end{array} \right)}x^km^{n-k}</script><script type="math/tex; mode=display">
+\therefore \frac{\partial \left[ x\left( x+m \right) ^{n-1} \right]}{\partial x}=\frac{\partial \left[ \sum_{k=1}^{n-1}{\left( \begin{array}{c}
+    n-1\\
+    k-1\\
+\end{array} \right)}x^km^{n-k} \right]}{\partial x}</script><script type="math/tex; mode=display">
+\therefore \left( x+m \right) ^{n-1}+x\left( n-1 \right) \left( x+m \right) ^{n-2}=\sum_{k=1}^{n-1}{k\left( \begin{array}{c}
+    n-1\\
+    k-1\\
+\end{array} \right)}x^{k-1}m^{n-k}</script><script type="math/tex; mode=display">
+\therefore \sum_{k=1}^{n-1}{k\left( \begin{array}{c}
+    n-1\\
+    k-1\\
+\end{array} \right)}m^{n-k}=\left( m+1 \right) ^{n-1}+\left( n-1 \right) \left( m+1 \right) ^{n-2}</script><script type="math/tex; mode=display">
+\therefore \sum_{k=1}^{n-1}{k\left( \begin{array}{c}
+    n-1\\
+    k-1\\
+\end{array} \right)}9^{n-k}=\left( n+9 \right) \cdot 10^{n-2}</script>
             </div>
             <hr/>
 
@@ -506,7 +498,7 @@ end
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yzuf49.coding-pages.com/posts/4225a725.html">https://yzuf49.coding-pages.com/posts/4225a725.html</a>
+                    <a href="https://yzuf49.coding-pages.com/posts/9ac1aea8.html">https://yzuf49.coding-pages.com/posts/9ac1aea8.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -544,12 +536,12 @@ end
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%BB%98%E5%9B%BE/">
-                                    <span class="chip bg-color">绘图</span>
+                                <a href="/tags/%E6%81%92%E7%AD%89%E5%BC%8F/">
+                                    <span class="chip bg-color">恒等式</span>
                                 </a>
                             
-                                <a href="/tags/MATALB/">
-                                    <span class="chip bg-color">MATALB</span>
+                                <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0/">
+                                    <span class="chip bg-color">组合数</span>
                                 </a>
                             
                         </div>
@@ -980,31 +972,95 @@ end
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/655684ad.html">
+                <a href="/posts/9ac1aea8.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="WHUT杯数学竞赛">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="组合数">
                         
-                        <span class="card-title">WHUT杯数学竞赛</span>
+                        <span class="card-title">组合数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            WHUT杯数学竞赛好题几例
-雨中漫步
-(1)∫−∞+∞dx(x2+2x+2)n\displaystyle{\int_{-\infty}^{+\infty} \frac{d x}{\left(x^{2}+2 x+2\right)^{n}}}∫
+                            组合数一列等式求解：
+
+\sum_{k=1}^{n-1}{k\left( \begin{array}{c}
+    n-1\\
+    k-1\\
+\end{array} \right)}m^{n-k}联想到二次项恒等式：
+
+\sum_{k
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-06
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E5%AD%A6/" class="post-category">
+                                    数学
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%81%92%E7%AD%89%E5%BC%8F/">
+                        <span class="chip bg-color">恒等式</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0/">
+                        <span class="chip bg-color">组合数</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/e8779f12.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="正交与二次型">
+                        
+                        <span class="card-title">正交与二次型</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            正交与二次型
+正交矩阵其实就是空间的旋转，先说结论：
+椭圆的长短轴分别沿着矩阵A\boldsymbol{A}A的两个特征向量的方向，而两个与之对应的特征值分别是半长轴和半短轴的长度的平方的倒数。
+拿我们最熟悉的椭圆方程举例：
+ax2+2bx
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1020,74 +1076,16 @@ end
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B/">
-                        <span class="chip bg-color">数学竞赛</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AE%9A%E7%A7%AF%E5%88%86/">
-                        <span class="chip bg-color">定积分</span>
-                    </a>
-                    
                     <a href="/tags/%E6%95%B0%E5%AD%A6/">
                         <span class="chip bg-color">数学</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/4225a725.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="使桃心跳动起来">
-                        
-                        <span class="card-title">使桃心跳动起来</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            代码如下，时间紧促，下次详细说明
-syms x y z;
-f=(x^2+9/4*y^2+z^2-1)^3-x^2*z^3-9/80*y^2*z^3;
-f=matlabFunction(f);
-[x,y,z] = meshgrid(-1.5:
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-06
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/MATALB/" class="post-category">
-                                    MATALB
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%BB%98%E5%9B%BE/">
-                        <span class="chip bg-color">绘图</span>
+                    <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+                        <span class="chip bg-color">线性代数</span>
                     </a>
                     
-                    <a href="/tags/MATALB/">
-                        <span class="chip bg-color">MATALB</span>
+                    <a href="/tags/%E6%AD%A3%E4%BA%A4/">
+                        <span class="chip bg-color">正交</span>
                     </a>
                     
                 </div>
@@ -1258,6 +1256,13 @@ f=matlabFunction(f);
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
