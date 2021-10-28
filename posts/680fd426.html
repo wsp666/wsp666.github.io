@@ -1,0 +1,4147 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<link rel="stylesheet" href="/js/prism/prism.css">
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="pandas教程, Python,Latex,Java,MatLab,R等">
+    <meta name="description" content="数学竞赛,数据分析,数学建模,机器学习,云计算">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>pandas教程 | 鹏鹏的学习乐园</title>
+    <link rel="icon" type="image/png" href="/me.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+
+
+     <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
+
+<meta name="generator" content="Hexo 4.2.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+# <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/me.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">鹏鹏的学习乐园</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/me.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">鹏鹏的学习乐园</div>
+        <div class="logo-desc">
+            
+            数学竞赛,数据分析,数学建模,机器学习,云计算
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('机密内容，请输入密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">pandas教程</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/pandas/">
+                                <span class="chip bg-color">pandas</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python/" class="post-category">
+                                python
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-10-29
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.2k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <pre><code class="language-python">import numpy as np
+import pandas as pd
+</code></pre>
+<h2 id="生成对象">生成对象</h2>
+<ul>
+<li>Series：维度——1；带标签的一维同构数组</li>
+<li>DataFrame：维度——2；带标签的，大小可变的，二维异构表格</li>
+</ul>
+<pre><code class="language-python">s = pd.Series([1, 3, 5, np.nan, 6, 8])
+s
+</code></pre>
+<pre><code>0    1.0
+1    3.0
+2    5.0
+3    NaN
+4    6.0
+5    8.0
+dtype: float64
+</code></pre>
+<p>含日期时间：</p>
+<pre><code class="language-python">datas = pd.date_range('20130101', periods=6)
+datas
+</code></pre>
+<pre><code>DatetimeIndex(['2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04',
+               '2013-01-05', '2013-01-06'],
+              dtype='datetime64[ns]', freq='D')
+</code></pre>
+<p>含日期时间索引与标签的 NumPy 数组生成<code>DataFrame</code></p>
+<pre><code class="language-python">df = pd.DataFrame(np.random.randn(6,4),index=datas, columns=list('ABCD'))
+df
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>0.477423</td>
+      <td>0.183968</td>
+      <td>-0.139705</td>
+      <td>-0.727223</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>-0.168761</td>
+      <td>-0.922938</td>
+      <td>0.396889</td>
+      <td>-2.779128</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>-0.618984</td>
+      <td>0.576812</td>
+      <td>1.900378</td>
+      <td>-0.624996</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>-1.395511</td>
+      <td>0.525819</td>
+      <td>0.112159</td>
+      <td>-0.160826</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>0.280020</td>
+      <td>-2.186553</td>
+      <td>-0.644597</td>
+      <td>1.163917</td>
+    </tr>
+    <tr>
+      <th>2013-01-06</th>
+      <td>1.945874</td>
+      <td>0.014268</td>
+      <td>-1.506800</td>
+      <td>0.405446</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>用字典对象生成DataFrame</p>
+<pre><code class="language-python">df2 = pd.DataFrame({'A': 1.,
+                    'B': pd.Timestamp('20130102'),
+                    'C': pd.Series(1,index=list(range(4))),
+                    'D': np.array([3]*4, dtype='int32'),
+                    'E': pd.Categorical([&quot;test&quot;, &quot;train&quot;, &quot;test&quot;, &quot;train&quot;]),
+                    'F': 'foo'})
+df2
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+      <th>F</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>2013-01-02</td>
+      <td>1</td>
+      <td>3</td>
+      <td>test</td>
+      <td>foo</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>2013-01-02</td>
+      <td>1</td>
+      <td>3</td>
+      <td>train</td>
+      <td>foo</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>2013-01-02</td>
+      <td>1</td>
+      <td>3</td>
+      <td>test</td>
+      <td>foo</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>2013-01-02</td>
+      <td>1</td>
+      <td>3</td>
+      <td>train</td>
+      <td>foo</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">df2.dtypes
+</code></pre>
+<pre><code>A           float64
+B    datetime64[ns]
+C             int64
+D             int32
+E          category
+F            object
+dtype: object
+</code></pre>
+<pre><code class="language-python">df.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>0.477423</td>
+      <td>0.183968</td>
+      <td>-0.139705</td>
+      <td>-0.727223</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>-0.168761</td>
+      <td>-0.922938</td>
+      <td>0.396889</td>
+      <td>-2.779128</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>-0.618984</td>
+      <td>0.576812</td>
+      <td>1.900378</td>
+      <td>-0.624996</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>-1.395511</td>
+      <td>0.525819</td>
+      <td>0.112159</td>
+      <td>-0.160826</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>0.280020</td>
+      <td>-2.186553</td>
+      <td>-0.644597</td>
+      <td>1.163917</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">df.info
+</code></pre>
+<pre><code>&lt;bound method DataFrame.info of                    A         B         C         D
+2013-01-01  0.477423  0.183968 -0.139705 -0.727223
+2013-01-02 -0.168761 -0.922938  0.396889 -2.779128
+2013-01-03 -0.618984  0.576812  1.900378 -0.624996
+2013-01-04 -1.395511  0.525819  0.112159 -0.160826
+2013-01-05  0.280020 -2.186553 -0.644597  1.163917
+2013-01-06  1.945874  0.014268 -1.506800  0.405446&gt;
+</code></pre>
+<pre><code class="language-python">df.tail(3)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-04</th>
+      <td>-1.395511</td>
+      <td>0.525819</td>
+      <td>0.112159</td>
+      <td>-0.160826</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>0.280020</td>
+      <td>-2.186553</td>
+      <td>-0.644597</td>
+      <td>1.163917</td>
+    </tr>
+    <tr>
+      <th>2013-01-06</th>
+      <td>1.945874</td>
+      <td>0.014268</td>
+      <td>-1.506800</td>
+      <td>0.405446</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">df.index
+</code></pre>
+<pre><code>DatetimeIndex(['2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04',
+               '2013-01-05', '2013-01-06'],
+              dtype='datetime64[ns]', freq='D')
+</code></pre>
+<pre><code class="language-python">df.columns
+</code></pre>
+<pre><code>Index(['A', 'B', 'C', 'D'], dtype='object')
+</code></pre>
+<p><code>DataFrame.to_numpy() </code>输出底层数据的 <code>NumPy</code> 对象。注意，<code>DataFrame</code>的列由多种数据类型组成时，该操作耗费系统资源较大，这也是<code>Pandas</code>和<code>NumPy</code>的本质区别：<code>NumPy</code>数组只有一种数据类型，<code>DataFrame</code>每列的数据类型各不相同。调用 <code>DataFrame.to_numpy()</code>时，Pandas 查找支持<code>DataFrame</code>里所有数据类型的<code>NumPy</code>数据类型。还有一种数据类型是<code>object</code>，可以把<code>DataFrame</code>列里的值强制转换为<code>Python</code>对象。</p>
+<pre><code class="language-python">df.to_numpy()
+</code></pre>
+<pre><code>array([[ 0.47742267,  0.18396775, -0.13970455, -0.72722311],
+       [-0.168761  , -0.92293827,  0.3968894 , -2.77912839],
+       [-0.6189843 ,  0.57681245,  1.90037812, -0.62499646],
+       [-1.3955112 ,  0.52581862,  0.11215897, -0.16082579],
+       [ 0.2800197 , -2.18655291, -0.64459677,  1.16391673],
+       [ 1.94587401,  0.01426759, -1.50679977,  0.40544621]])
+</code></pre>
+<pre><code class="language-python">df2.to_numpy()
+</code></pre>
+<pre><code>array([[1.0, Timestamp('2013-01-02 00:00:00'), 1, 3, 'test', 'foo'],
+       [1.0, Timestamp('2013-01-02 00:00:00'), 1, 3, 'train', 'foo'],
+       [1.0, Timestamp('2013-01-02 00:00:00'), 1, 3, 'test', 'foo'],
+       [1.0, Timestamp('2013-01-02 00:00:00'), 1, 3, 'train', 'foo']],
+      dtype=object)
+</code></pre>
+<pre><code class="language-python">df.describe()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>6.000000</td>
+      <td>6.000000</td>
+      <td>6.000000</td>
+      <td>6.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.086677</td>
+      <td>-0.301437</td>
+      <td>0.019721</td>
+      <td>-0.453802</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.131969</td>
+      <td>1.070597</td>
+      <td>1.138830</td>
+      <td>1.338086</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>-1.395511</td>
+      <td>-2.186553</td>
+      <td>-1.506800</td>
+      <td>-2.779128</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>-0.506428</td>
+      <td>-0.688637</td>
+      <td>-0.518374</td>
+      <td>-0.701666</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.055629</td>
+      <td>0.099118</td>
+      <td>-0.013773</td>
+      <td>-0.392911</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.428072</td>
+      <td>0.440356</td>
+      <td>0.325707</td>
+      <td>0.263878</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1.945874</td>
+      <td>0.576812</td>
+      <td>1.900378</td>
+      <td>1.163917</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">df.T
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2013-01-01</th>
+      <th>2013-01-02</th>
+      <th>2013-01-03</th>
+      <th>2013-01-04</th>
+      <th>2013-01-05</th>
+      <th>2013-01-06</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>0.477423</td>
+      <td>-0.168761</td>
+      <td>-0.618984</td>
+      <td>-1.395511</td>
+      <td>0.280020</td>
+      <td>1.945874</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.183968</td>
+      <td>-0.922938</td>
+      <td>0.576812</td>
+      <td>0.525819</td>
+      <td>-2.186553</td>
+      <td>0.014268</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>-0.139705</td>
+      <td>0.396889</td>
+      <td>1.900378</td>
+      <td>0.112159</td>
+      <td>-0.644597</td>
+      <td>-1.506800</td>
+    </tr>
+    <tr>
+      <th>D</th>
+      <td>-0.727223</td>
+      <td>-2.779128</td>
+      <td>-0.624996</td>
+      <td>-0.160826</td>
+      <td>1.163917</td>
+      <td>0.405446</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>按轴排序</p>
+<pre><code class="language-python">df2.sort_index(axis=1,ascending=False)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>F</th>
+      <th>E</th>
+      <th>D</th>
+      <th>C</th>
+      <th>B</th>
+      <th>A</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>foo</td>
+      <td>test</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2013-01-02</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>foo</td>
+      <td>train</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2013-01-02</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>foo</td>
+      <td>test</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2013-01-02</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>foo</td>
+      <td>train</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2013-01-02</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>按值排序</p>
+<pre><code class="language-python">df.sort_values(by='B')
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-05</th>
+      <td>0.280020</td>
+      <td>-2.186553</td>
+      <td>-0.644597</td>
+      <td>1.163917</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>-0.168761</td>
+      <td>-0.922938</td>
+      <td>0.396889</td>
+      <td>-2.779128</td>
+    </tr>
+    <tr>
+      <th>2013-01-06</th>
+      <td>1.945874</td>
+      <td>0.014268</td>
+      <td>-1.506800</td>
+      <td>0.405446</td>
+    </tr>
+    <tr>
+      <th>2013-01-01</th>
+      <td>0.477423</td>
+      <td>0.183968</td>
+      <td>-0.139705</td>
+      <td>-0.727223</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>-1.395511</td>
+      <td>0.525819</td>
+      <td>0.112159</td>
+      <td>-0.160826</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>-0.618984</td>
+      <td>0.576812</td>
+      <td>1.900378</td>
+      <td>-0.624996</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h2 id="选择">选择</h2>
+<pre><code class="language-python">df['A']
+</code></pre>
+<pre><code>2013-01-01    0.477423
+2013-01-02   -0.168761
+2013-01-03   -0.618984
+2013-01-04   -1.395511
+2013-01-05    0.280020
+2013-01-06    1.945874
+Freq: D, Name: A, dtype: float64
+</code></pre>
+<pre><code class="language-python">df[0:3]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>0.477423</td>
+      <td>0.183968</td>
+      <td>-0.139705</td>
+      <td>-0.727223</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>-0.168761</td>
+      <td>-0.922938</td>
+      <td>0.396889</td>
+      <td>-2.779128</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>-0.618984</td>
+      <td>0.576812</td>
+      <td>1.900378</td>
+      <td>-0.624996</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">df['2013-01-02':'20130104']       ## 时间的这两种书写方式一样
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-02</th>
+      <td>-0.168761</td>
+      <td>-0.922938</td>
+      <td>0.396889</td>
+      <td>-2.779128</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>-0.618984</td>
+      <td>0.576812</td>
+      <td>1.900378</td>
+      <td>-0.624996</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>-1.395511</td>
+      <td>0.525819</td>
+      <td>0.112159</td>
+      <td>-0.160826</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h3 id="按标签选择">按标签选择</h3>
+<pre><code class="language-python">df.loc[datas[0]]
+</code></pre>
+<pre><code>A    0.477423
+B    0.183968
+C   -0.139705
+D   -0.727223
+Name: 2013-01-01 00:00:00, dtype: float64
+</code></pre>
+<pre><code class="language-python">df.loc[:,['A','B']]
+# df[['A','B']]       ## 等同
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>0.477423</td>
+      <td>0.183968</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>-0.168761</td>
+      <td>-0.922938</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>-0.618984</td>
+      <td>0.576812</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>-1.395511</td>
+      <td>0.525819</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>0.280020</td>
+      <td>-2.186553</td>
+    </tr>
+    <tr>
+      <th>2013-01-06</th>
+      <td>1.945874</td>
+      <td>0.014268</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">df.loc[datas[1]:datas[3], ['A', 'B']]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-02</th>
+      <td>-0.168761</td>
+      <td>-0.922938</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>-0.618984</td>
+      <td>0.576812</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>-1.395511</td>
+      <td>0.525819</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">df.loc[datas[0], 'A']   # 等同于df.at[datas[0], 'A']
+</code></pre>
+<pre><code>0.4774226701301457
+</code></pre>
+<h3 id="按位置选择-重要">按位置选择(重要)</h3>
+<pre><code class="language-python">df.iloc[3]
+</code></pre>
+<pre><code>A   -1.395511
+B    0.525819
+C    0.112159
+D   -0.160826
+Name: 2013-01-04 00:00:00, dtype: float64
+</code></pre>
+<pre><code class="language-python">df.iloc[[1,2,4],[0,2]]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-02</th>
+      <td>-0.168761</td>
+      <td>0.396889</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>-0.618984</td>
+      <td>1.900378</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>0.280020</td>
+      <td>-0.644597</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">df.iloc[:, 1:3]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>0.183968</td>
+      <td>-0.139705</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>-0.922938</td>
+      <td>0.396889</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>0.576812</td>
+      <td>1.900378</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>0.525819</td>
+      <td>0.112159</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>-2.186553</td>
+      <td>-0.644597</td>
+    </tr>
+    <tr>
+      <th>2013-01-06</th>
+      <td>0.014268</td>
+      <td>-1.506800</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h3 id="布尔索引-重要">布尔索引(重要)</h3>
+<pre><code class="language-python"># df.A
+df[df.A &gt; 0]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>0.477423</td>
+      <td>0.183968</td>
+      <td>-0.139705</td>
+      <td>-0.727223</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>0.280020</td>
+      <td>-2.186553</td>
+      <td>-0.644597</td>
+      <td>1.163917</td>
+    </tr>
+    <tr>
+      <th>2013-01-06</th>
+      <td>1.945874</td>
+      <td>0.014268</td>
+      <td>-1.506800</td>
+      <td>0.405446</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">df[df &gt; 0]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>0.477423</td>
+      <td>0.183968</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.396889</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>NaN</td>
+      <td>0.576812</td>
+      <td>1.900378</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>NaN</td>
+      <td>0.525819</td>
+      <td>0.112159</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>0.280020</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.163917</td>
+    </tr>
+    <tr>
+      <th>2013-01-06</th>
+      <td>1.945874</td>
+      <td>0.014268</td>
+      <td>NaN</td>
+      <td>0.405446</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h3 id="isin-筛选-重要">isin()筛选(重要)</h3>
+<pre><code class="language-python">df2 = df.copy()
+df2['E'] = ['one', 'one', 'two', 'three', 'four', 'three']
+df2[df2['E'].isin(['two', 'four'])]
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-03</th>
+      <td>-0.618984</td>
+      <td>0.576812</td>
+      <td>1.900378</td>
+      <td>-0.624996</td>
+      <td>two</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>0.280020</td>
+      <td>-2.186553</td>
+      <td>-0.644597</td>
+      <td>1.163917</td>
+      <td>four</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h3 id="缺失值">缺失值</h3>
+<pre><code class="language-python">df1 = df.reindex(index=datas[0:4], columns=list(df.columns))
+df1.iloc[[1,3],[0,2]] = np.nan
+df1
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>0.477423</td>
+      <td>0.183968</td>
+      <td>-0.139705</td>
+      <td>-0.727223</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>NaN</td>
+      <td>-0.922938</td>
+      <td>NaN</td>
+      <td>-2.779128</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>-0.618984</td>
+      <td>0.576812</td>
+      <td>1.900378</td>
+      <td>-0.624996</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>NaN</td>
+      <td>0.525819</td>
+      <td>NaN</td>
+      <td>-0.160826</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>删除所有含缺失值的行：</p>
+<pre><code class="language-python">df1.dropna(how='any')
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>0.477423</td>
+      <td>0.183968</td>
+      <td>-0.139705</td>
+      <td>-0.727223</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>-0.618984</td>
+      <td>0.576812</td>
+      <td>1.900378</td>
+      <td>-0.624996</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>填充缺失值</p>
+<pre><code class="language-python">df1.fillna(value=5)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>0.477423</td>
+      <td>0.183968</td>
+      <td>-0.139705</td>
+      <td>-0.727223</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>5.000000</td>
+      <td>-0.922938</td>
+      <td>5.000000</td>
+      <td>-2.779128</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>-0.618984</td>
+      <td>0.576812</td>
+      <td>1.900378</td>
+      <td>-0.624996</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>5.000000</td>
+      <td>0.525819</td>
+      <td>5.000000</td>
+      <td>-0.160826</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>提取nan值的布尔掩码</p>
+<pre><code class="language-python">pd.isna(df1)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h2 id="运算">运算</h2>
+<h3 id="统计">统计</h3>
+<p>求每列的均值</p>
+<pre><code class="language-python">df.mean()
+</code></pre>
+<pre><code>A    0.086677
+B   -0.301437
+C    0.019721
+D   -0.453802
+dtype: float64
+</code></pre>
+<p>求每行的均值</p>
+<pre><code class="language-python">df.mean(1)
+</code></pre>
+<pre><code>2013-01-01   -0.051384
+2013-01-02   -0.868485
+2013-01-03    0.308302
+2013-01-04   -0.229590
+2013-01-05   -0.346803
+2013-01-06    0.214697
+Freq: D, dtype: float64
+</code></pre>
+<pre><code class="language-python">s = pd.Series([1, 3, 5, np.nan, 6, 8], index=datas)
+s.shift(3)
+</code></pre>
+<pre><code>2013-01-01    NaN
+2013-01-02    NaN
+2013-01-03    NaN
+2013-01-04    1.0
+2013-01-05    3.0
+2013-01-06    5.0
+Freq: D, dtype: float64
+</code></pre>
+<pre><code class="language-python">df.sub(s, axis='index')           # 减法运算
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>-0.522577</td>
+      <td>-0.816032</td>
+      <td>-1.139705</td>
+      <td>-1.727223</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>-3.168761</td>
+      <td>-3.922938</td>
+      <td>-2.603111</td>
+      <td>-5.779128</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>-5.618984</td>
+      <td>-4.423188</td>
+      <td>-3.099622</td>
+      <td>-5.624996</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>-5.719980</td>
+      <td>-8.186553</td>
+      <td>-6.644597</td>
+      <td>-4.836083</td>
+    </tr>
+    <tr>
+      <th>2013-01-06</th>
+      <td>-6.054126</td>
+      <td>-7.985732</td>
+      <td>-9.506800</td>
+      <td>-7.594554</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">df
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>0.477423</td>
+      <td>0.183968</td>
+      <td>-0.139705</td>
+      <td>-0.727223</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>-0.168761</td>
+      <td>-0.922938</td>
+      <td>0.396889</td>
+      <td>-2.779128</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>-0.618984</td>
+      <td>0.576812</td>
+      <td>1.900378</td>
+      <td>-0.624996</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>-1.395511</td>
+      <td>0.525819</td>
+      <td>0.112159</td>
+      <td>-0.160826</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>0.280020</td>
+      <td>-2.186553</td>
+      <td>-0.644597</td>
+      <td>1.163917</td>
+    </tr>
+    <tr>
+      <th>2013-01-06</th>
+      <td>1.945874</td>
+      <td>0.014268</td>
+      <td>-1.506800</td>
+      <td>0.405446</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">df.apply(np.cumsum)                 # 累加操作
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>0.477423</td>
+      <td>0.183968</td>
+      <td>-0.139705</td>
+      <td>-0.727223</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>0.308662</td>
+      <td>-0.738971</td>
+      <td>0.257185</td>
+      <td>-3.506352</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>-0.310323</td>
+      <td>-0.162158</td>
+      <td>2.157563</td>
+      <td>-4.131348</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>-1.705834</td>
+      <td>0.363661</td>
+      <td>2.269722</td>
+      <td>-4.292174</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>-1.425814</td>
+      <td>-1.822892</td>
+      <td>1.625125</td>
+      <td>-3.128257</td>
+    </tr>
+    <tr>
+      <th>2013-01-06</th>
+      <td>0.520060</td>
+      <td>-1.808625</td>
+      <td>0.118325</td>
+      <td>-2.722811</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">df.apply(lambda x: x.max() - x.min())
+</code></pre>
+<pre><code>A    3.341385
+B    2.763365
+C    3.407178
+D    3.943045
+dtype: float64
+</code></pre>
+<h2 id="直方图">直方图</h2>
+<pre><code class="language-python">s = pd.Series(np.random.randint(0, 7, size=10))
+s
+</code></pre>
+<pre><code>0    4
+1    3
+2    4
+3    1
+4    3
+5    1
+6    6
+7    2
+8    6
+9    0
+dtype: int32
+</code></pre>
+<pre><code class="language-python">s.value_counts()
+</code></pre>
+<pre><code>4    2
+3    2
+1    2
+6    2
+2    1
+0    1
+dtype: int64
+</code></pre>
+<h2 id="删除与合并-重要">删除与合并(重要)</h2>
+<pre><code class="language-python">df.loc[:,'E']=1.
+# df.drop(labels=['E'],axis=0)
+df
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01 00:00:00</th>
+      <td>0.477423</td>
+      <td>0.183968</td>
+      <td>-0.139705</td>
+      <td>-0.727223</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2013-01-02 00:00:00</th>
+      <td>-0.168761</td>
+      <td>-0.922938</td>
+      <td>0.396889</td>
+      <td>-2.779128</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2013-01-03 00:00:00</th>
+      <td>-0.618984</td>
+      <td>0.576812</td>
+      <td>1.900378</td>
+      <td>-0.624996</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2013-01-04 00:00:00</th>
+      <td>-1.395511</td>
+      <td>0.525819</td>
+      <td>0.112159</td>
+      <td>-0.160826</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2013-01-05 00:00:00</th>
+      <td>0.280020</td>
+      <td>-2.186553</td>
+      <td>-0.644597</td>
+      <td>1.163917</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2013-01-06 00:00:00</th>
+      <td>1.945874</td>
+      <td>0.014268</td>
+      <td>-1.506800</td>
+      <td>0.405446</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">pieces = [df[:3], df[3:]]
+pieces
+</code></pre>
+<pre><code>[                            A         B         C         D    E
+ 2013-01-01 00:00:00  0.477423  0.183968 -0.139705 -0.727223  1.0
+ 2013-01-02 00:00:00 -0.168761 -0.922938  0.396889 -2.779128  1.0
+ 2013-01-03 00:00:00 -0.618984  0.576812  1.900378 -0.624996  1.0,
+                             A         B         C         D    E
+ 2013-01-04 00:00:00 -1.395511  0.525819  0.112159 -0.160826  1.0
+ 2013-01-05 00:00:00  0.280020 -2.186553 -0.644597  1.163917  1.0
+ 2013-01-06 00:00:00  1.945874  0.014268 -1.506800  0.405446  1.0]
+</code></pre>
+<pre><code class="language-python">pd.concat(pieces)
+</code></pre>
+<h3 id="连接">连接</h3>
+<pre><code class="language-python">left = pd.DataFrame({'key': ['foo', 'foo'], 'lval': [1, 2]})
+right = pd.DataFrame({'key': ['foo', 'foo'], 'rval': [4, 5]})
+pd.merge(left, right, on='key')
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key</th>
+      <th>lval</th>
+      <th>rval</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>foo</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>foo</td>
+      <td>1</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>foo</td>
+      <td>2</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>foo</td>
+      <td>2</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">left = pd.DataFrame({'key': ['foo', 'bar'], 'lval': [1, 2]})
+right = pd.DataFrame({'key': ['foo', 'bar'], 'rval': [4, 5]})
+pd.merge(left, right, on='key')
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key</th>
+      <th>lval</th>
+      <th>rval</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>foo</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>bar</td>
+      <td>2</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h2 id="添加-append">添加（Append）</h2>
+<pre><code class="language-python">df = pd.DataFrame(np.random.randn(8, 4), columns=['A', 'B', 'C', 'D'])
+s = df.iloc[3]
+df.append(s, ignore_index=True)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-1.282560</td>
+      <td>1.578933</td>
+      <td>-1.835089</td>
+      <td>-0.570793</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.129816</td>
+      <td>0.697800</td>
+      <td>0.418487</td>
+      <td>-0.253009</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-1.009696</td>
+      <td>-0.800243</td>
+      <td>0.324064</td>
+      <td>0.574360</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.162016</td>
+      <td>0.497039</td>
+      <td>0.298132</td>
+      <td>-1.076649</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.630602</td>
+      <td>-1.781916</td>
+      <td>0.668464</td>
+      <td>0.663769</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.737596</td>
+      <td>-1.690360</td>
+      <td>-0.545418</td>
+      <td>-0.846643</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.418491</td>
+      <td>-1.698654</td>
+      <td>0.474682</td>
+      <td>-0.825363</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-1.020948</td>
+      <td>1.351000</td>
+      <td>1.288640</td>
+      <td>-0.098584</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>-0.162016</td>
+      <td>0.497039</td>
+      <td>0.298132</td>
+      <td>-1.076649</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h2 id="分组-grouping">分组（Grouping）</h2>
+<p>“group by” 指的是涵盖下列一项或多项步骤的处理流程：</p>
+<ul>
+<li>分割：按条件把数据分割成多组；</li>
+<li>应用：为每组单独应用函数；</li>
+<li>组合：将处理结果组合成一个数据结构。</li>
+</ul>
+<pre><code class="language-python">df = pd.DataFrame({'A': ['foo', 'bar', 'foo', 'bar',
+                          'foo', 'bar', 'foo', 'foo'],
+                   'B': ['one', 'one', 'two', 'three',
+                          'two', 'two', 'one', 'three'],
+                   'C': np.random.randn(8),
+                   'D': np.random.randn(8)})
+df
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>foo</td>
+      <td>one</td>
+      <td>0.452364</td>
+      <td>0.296516</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>bar</td>
+      <td>one</td>
+      <td>-0.469170</td>
+      <td>-0.143944</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>foo</td>
+      <td>two</td>
+      <td>1.295369</td>
+      <td>-0.269286</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>bar</td>
+      <td>three</td>
+      <td>-0.198760</td>
+      <td>-0.871319</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>foo</td>
+      <td>two</td>
+      <td>0.726845</td>
+      <td>-0.584794</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>bar</td>
+      <td>two</td>
+      <td>-0.384160</td>
+      <td>0.197542</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>foo</td>
+      <td>one</td>
+      <td>-0.844166</td>
+      <td>2.579093</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>foo</td>
+      <td>three</td>
+      <td>-0.665659</td>
+      <td>-0.728335</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">df.groupby(['A', 'B']).sum()
+
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">bar</th>
+      <th>one</th>
+      <td>-0.469170</td>
+      <td>-0.143944</td>
+    </tr>
+    <tr>
+      <th>three</th>
+      <td>-0.198760</td>
+      <td>-0.871319</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>-0.384160</td>
+      <td>0.197542</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">foo</th>
+      <th>one</th>
+      <td>-0.391803</td>
+      <td>2.875609</td>
+    </tr>
+    <tr>
+      <th>three</th>
+      <td>-0.665659</td>
+      <td>-0.728335</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>2.022214</td>
+      <td>-0.854080</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h2 id="重塑">重塑</h2>
+<pre><code class="language-python">tuples = list(zip(*[['bar', 'bar', 'baz', 'baz',
+               'foo', 'foo', 'qux', 'qux'],
+              ['one', 'two', 'one', 'two',
+               'one', 'two', 'one', 'two']]))
+tuples
+</code></pre>
+<pre><code>[('bar', 'one'),
+ ('bar', 'two'),
+ ('baz', 'one'),
+ ('baz', 'two'),
+ ('foo', 'one'),
+ ('foo', 'two'),
+ ('qux', 'one'),
+ ('qux', 'two')]
+</code></pre>
+<pre><code class="language-python">index = pd.MultiIndex.from_tuples(tuples, names=['first', 'second'])
+index
+</code></pre>
+<pre><code>MultiIndex([('bar', 'one'),
+            ('bar', 'two'),
+            ('baz', 'one'),
+            ('baz', 'two'),
+            ('foo', 'one'),
+            ('foo', 'two'),
+            ('qux', 'one'),
+            ('qux', 'two')],
+           names=['first', 'second'])
+</code></pre>
+<pre><code class="language-python">df = pd.DataFrame(np.random.randn(8, 2), index=index, columns=['A', 'B'])
+df
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+    <tr>
+      <th>first</th>
+      <th>second</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">bar</th>
+      <th>one</th>
+      <td>-1.922649</td>
+      <td>1.871875</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>-0.092881</td>
+      <td>0.888805</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">baz</th>
+      <th>one</th>
+      <td>-0.663312</td>
+      <td>-0.247438</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>0.199572</td>
+      <td>0.828977</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">foo</th>
+      <th>one</th>
+      <td>-0.247583</td>
+      <td>-0.673409</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>-1.241566</td>
+      <td>0.452144</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">qux</th>
+      <th>one</th>
+      <td>0.848055</td>
+      <td>2.258369</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>1.171787</td>
+      <td>1.768933</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">df2 = df[:4]
+df2
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+    <tr>
+      <th>first</th>
+      <th>second</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">bar</th>
+      <th>one</th>
+      <td>-1.922649</td>
+      <td>1.871875</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>-0.092881</td>
+      <td>0.888805</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">baz</th>
+      <th>one</th>
+      <td>-0.663312</td>
+      <td>-0.247438</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>0.199572</td>
+      <td>0.828977</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p><img src="https://pic.rmb.bdstatic.com/bjh/8d777d647dd67bdd05a0eaeb99bc6f8b.jpeg" alt="image.png"></p>
+<pre><code class="language-python">stacked = df2.stack()
+stacked
+</code></pre>
+<pre><code>first  second   
+bar    one     A   -1.922649
+               B    1.871875
+       two     A   -0.092881
+               B    0.888805
+baz    one     A   -0.663312
+               B   -0.247438
+       two     A    0.199572
+               B    0.828977
+dtype: float64
+</code></pre>
+<p>解压：</p>
+<pre><code class="language-python">stacked.unstack()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+    <tr>
+      <th>first</th>
+      <th>second</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">bar</th>
+      <th>one</th>
+      <td>-1.922649</td>
+      <td>1.871875</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>-0.092881</td>
+      <td>0.888805</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">baz</th>
+      <th>one</th>
+      <td>-0.663312</td>
+      <td>-0.247438</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>0.199572</td>
+      <td>0.828977</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">stacked.unstack(1)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>second</th>
+      <th>one</th>
+      <th>two</th>
+    </tr>
+    <tr>
+      <th>first</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">bar</th>
+      <th>A</th>
+      <td>-1.922649</td>
+      <td>-0.092881</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>1.871875</td>
+      <td>0.888805</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">baz</th>
+      <th>A</th>
+      <td>-0.663312</td>
+      <td>0.199572</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>-0.247438</td>
+      <td>0.828977</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">stacked.unstack(0)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>first</th>
+      <th>bar</th>
+      <th>baz</th>
+    </tr>
+    <tr>
+      <th>second</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">one</th>
+      <th>A</th>
+      <td>-1.922649</td>
+      <td>-0.663312</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>1.871875</td>
+      <td>-0.247438</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">two</th>
+      <th>A</th>
+      <td>-0.092881</td>
+      <td>0.199572</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.888805</td>
+      <td>0.828977</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h2 id="数据透视表">数据透视表</h2>
+<pre><code class="language-python">df = pd.DataFrame({'A': ['one', 'one', 'two', 'three'] * 3,
+                   'B': ['A', 'B', 'C'] * 4,
+                   'C': ['foo', 'foo', 'foo', 'bar', 'bar', 'bar'] * 2,
+                   'D': np.random.randn(12),
+                   'E': np.random.randn(12)})
+df
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>one</td>
+      <td>A</td>
+      <td>foo</td>
+      <td>-1.123799</td>
+      <td>-1.098840</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>one</td>
+      <td>B</td>
+      <td>foo</td>
+      <td>-1.913548</td>
+      <td>-0.119521</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>two</td>
+      <td>C</td>
+      <td>foo</td>
+      <td>-0.639072</td>
+      <td>0.099824</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>three</td>
+      <td>A</td>
+      <td>bar</td>
+      <td>-0.359609</td>
+      <td>1.435979</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>one</td>
+      <td>B</td>
+      <td>bar</td>
+      <td>0.423144</td>
+      <td>0.761188</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>one</td>
+      <td>C</td>
+      <td>bar</td>
+      <td>0.043997</td>
+      <td>0.928556</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>two</td>
+      <td>A</td>
+      <td>foo</td>
+      <td>0.025243</td>
+      <td>-0.610217</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>three</td>
+      <td>B</td>
+      <td>foo</td>
+      <td>-0.455484</td>
+      <td>-0.454505</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>one</td>
+      <td>C</td>
+      <td>foo</td>
+      <td>2.812657</td>
+      <td>-0.321527</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>one</td>
+      <td>A</td>
+      <td>bar</td>
+      <td>0.842464</td>
+      <td>-0.108601</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>two</td>
+      <td>B</td>
+      <td>bar</td>
+      <td>0.075289</td>
+      <td>0.824193</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>three</td>
+      <td>C</td>
+      <td>bar</td>
+      <td>0.352810</td>
+      <td>1.169305</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">pd.pivot_table(df, values='D', index=['A', 'B'], columns=['C'])
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>C</th>
+      <th>bar</th>
+      <th>foo</th>
+    </tr>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">one</th>
+      <th>A</th>
+      <td>0.842464</td>
+      <td>-1.123799</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.423144</td>
+      <td>-1.913548</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>0.043997</td>
+      <td>2.812657</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">three</th>
+      <th>A</th>
+      <td>-0.359609</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>NaN</td>
+      <td>-0.455484</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>0.352810</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">two</th>
+      <th>A</th>
+      <td>NaN</td>
+      <td>0.025243</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.075289</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>NaN</td>
+      <td>-0.639072</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">王胜鹏</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://yzuf49.coding-pages.com/posts/680fd426.html">https://yzuf49.coding-pages.com/posts/680fd426.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">王胜鹏</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/pandas/">
+                                    <span class="chip bg-color">pandas</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'wOtIacT0qt6IzERm2mGaBkFw-gzGzoHsz',
+        appKey: 'JEGICexiMGUNqNmOxlnTrzaA',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '填写昵称(qq邮箱)可以显示昵称和qq头像哦~'
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/e2002213.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="A City-Wide Crowdsourcing Delivery System with Reinforcement Learning">
+                        
+                        <span class="card-title">A City-Wide Crowdsourcing Delivery System with Reinforcement Learning</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            A City-Wide Crowdsourcing Delivery System with Reinforcement Learning
+背景
+众包交付系统
+众包交付的实际因素
+
+时间限制：订单到顾客接受货物的时间具有限制
+多跳：从送货站
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-29
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%BA%E6%96%87/" class="post-category">
+                                    论文
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">强化学习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/15abeb29.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="机器学习(一)">
+                        
+                        <span class="card-title">机器学习(一)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            简要
+
+统计学习或机器学习一般包括监督学习、无监督学习、强化学习，有时还包括半监督学习、主动学习
+
+监督学习
+
+监督学习指从标注数据中学习预测模型的机器学习问题，其本质是学习输入到输出的映射的统计规律。
+输入变量XXX和输出变量YYY有不同
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    机器学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9D%8E%E8%88%AA%E7%89%88/">
+                        <span class="chip bg-color">李航版</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 鹏鹏的学习乐园<br />'
+            + '文章作者: 王胜鹏<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="1047441449"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">王胜鹏</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://blog.csdn.net/abcwsp" class="tooltipped" target="_blank" data-tooltip="关注我的CSDN: https://blog.csdn.net/abcwsp" data-position="top" data-delay="50">
+        <i class="fab fa-csdn">C</i>
+    </a>
+
+
+
+    <a href="https://github.com/wsp666" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="https://www.zhihu.com/people/yu-zhong-man-bu-25-82/activities" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/yu-zhong-man-bu-25-82/activities" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=694848081" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 694848081" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="mailto:694848081@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="https://mp.weixin.qq.com/s?__biz=MzU5OTg4NjkxNg==&amp;mid=2247484666&amp;idx=1&amp;sn=07655cd886f08f511532f966d40a233b&amp;chksm=feaf59d1c9d8d0c769ccf8afad202b47bc9d6fc906e1c08182b7265cafc5bb87ea6f4d2f9d8e&amp;mpshare=1&amp;scene=23&amp;srcid=&amp;sharer_sharetime=1588749318133&amp;sharer_shareid=c2c0a6d0a611bf713410b4cff21b2c8e#rd" class="tooltipped" target="_blank" data-tooltip="关注我的公众号: whut数学" data-position="top" data-delay="50">
+        <i class="fab fa-csdn">微</i>
+    </a>
+
+
+
+</div>
+        <script src="/js/prism/prism.js" async></script>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+
+</body>
+
+</html>
+
+
+<script type="text/javascript">
+    var OriginTitile=document.title,st;
+	document.addEventListener("visibilitychange",function(){
+        document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+    })
+</script>
+
+
+<script src="/js/cursor.js"></script>
+
+
+<!-- weather -->
+<script type="text/javascript">
+WIDGET = {FID: 'gNXD1LwR09'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="122 103 238" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+}
+</script>
+
+
+
+
+
+
