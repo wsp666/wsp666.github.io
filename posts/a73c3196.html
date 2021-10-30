@@ -435,7 +435,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    286
+                    282
                 </div>
                 
 
@@ -447,8 +447,12 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="turtle绘图笔记及LaTex示例"><a href="#turtle绘图笔记及LaTex示例" class="headerlink" title="turtle绘图笔记及LaTex示例"></a>turtle绘图笔记及LaTex示例</h2><h3 id="雨中漫步"><a href="#雨中漫步" class="headerlink" title="雨中漫步"></a>雨中漫步</h3><p>之前在公众号介绍过turtle绘图笔记<a href="https://mp.weixin.qq.com/s?__biz=MzU5OTg4NjkxNg==&amp;mid=2247484459&amp;idx=1&amp;sn=f29a2eef1b89999f444acb711835c095&amp;chksm=feaf5900c9d8d01655377f67df504aacabbcaaf324f37256215c6c93012a43fb46e7f0547733&amp;token=1232526020&amp;lang=zh_CN#rd" target="_blank" rel="noopener">turtle绘图笔记及LaTex示例</a><br>说到五角星不得不提基于命令行界面绘图tikz的实现，下面是源于latex工作室的开源代码：</p>
-<h4 id="LaTex实现"><a href="#LaTex实现" class="headerlink" title="LaTex实现"></a>LaTex实现</h4><pre><code>\documentclass[tikz, svgnames]{standalone}
+                <h2 id="turtle绘图笔记及latex示例">turtle绘图笔记及LaTex示例</h2>
+<h3 id="雨中漫步">雨中漫步</h3>
+<p>之前在公众号介绍过turtle绘图笔记<a href="https://mp.weixin.qq.com/s?__biz=MzU5OTg4NjkxNg==&amp;mid=2247484459&amp;idx=1&amp;sn=f29a2eef1b89999f444acb711835c095&amp;chksm=feaf5900c9d8d01655377f67df504aacabbcaaf324f37256215c6c93012a43fb46e7f0547733&amp;token=1232526020&amp;lang=zh_CN#rd" target="_blank" rel="noopener">turtle绘图笔记及LaTex示例</a><br>
+说到五角星不得不提基于命令行界面绘图tikz的实现，下面是源于latex工作室的开源代码：</p>
+<h4 id="latex实现">LaTex实现</h4>
+<pre><code>\documentclass[tikz, svgnames]{standalone}
 \usepackage{tikz, verbatim}
 \usetikzlibrary{shapes.geometric}
 \def\largo{30}
@@ -458,18 +462,19 @@
 \tikzstyle{estrella}=[fill=Gorse, star point ratio=2.617, minimum size=2 cm]
 \begin{document}
 \begin{tikzpicture}
-    \fill[Fire Engine Red] rectangle (\largo, \alto); 
+	\fill[Fire Engine Red] rectangle (\largo, \alto); 
     \node[star,fill=Gorse, minimum size=6 cm, rotate=0, star point ratio=2.617] at (5,15) {}; 
     \foreach \x/\y/\z in {10/18/50, 12/16/25, 12/13/0, 10/11/50}{
-    \node[star, estrella, rotate=\z] at (\x, \y){};
+	\node[star, estrella, rotate=\z] at (\x, \y){};
     }
 \end{tikzpicture}
 \end{document}
-</code></pre><p>利用turtle也是可以完美解决，具体案例很多，可以去官网看看：</p>
+</code></pre>
+<p>利用turtle也是可以完美解决，具体案例很多，可以去官网看看：</p>
 <pre><code>import turtle as t
 t.setup(600, 400,0,0)
-t.color(&#39;yellow&#39;,&#39;yellow&#39;)
-t.bgcolor(&#39;red&#39;)
+t.color('yellow','yellow')
+t.bgcolor('red')
 
 
 def mygoto(x, y):
@@ -500,6 +505,7 @@ mygoto(0, 0)
 t.hideturtle()
 t.done()
 </code></pre>
+
             </div>
             <hr/>
 
@@ -1022,8 +1028,9 @@ t.done()
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            连续与离散联合概率密度在概率论中，教材介绍的随机变量都是连续或离散的联合概率密度，讨论了$Z=X+Y$,当$X,Y$都是离散型或都是连续型时概率分布的计算方法，下面按照我的理解方式来举例说明如何求解：
-设$X$~$U(0,1), Y$服从$
+                            连续与离散联合概率密度
+在概率论中，教材介绍的随机变量都是连续或离散的联合概率密度，讨论了Z=X+YZ=X+YZ=X+Y,当X,YX,YX,Y都是离散型或都是连续型时概率分布的计算方法，下面按照我的理解方式来举例说明如何求解：
+设XXX~U
                         
                     </div>
                     <div class="publish-info">
@@ -1076,8 +1083,11 @@ t.done()
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            DFS，DTFT，DFT，FFT（一）DFS对于离散序列，我们首先得研究出标准序列的完备性正交性：这里我们使用正交集$\phi _i$:
-\phi _i=\left( 1,e^{ji\frac{2\pi}{N}},\cdots ,e^{ji
+                            DFS，DTFT，DFT，FFT（一）
+DFS
+对于离散序列，我们首先得研究出标准序列的完备性正交性：
+这里我们使用正交集ϕi\phi _iϕi​:
+ϕi=(1,eji2πN,⋯ ,eji2πN(N−1))T\phi _i=\left( 1
                         
                     </div>
                     <div class="publish-info">

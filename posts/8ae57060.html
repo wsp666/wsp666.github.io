@@ -427,7 +427,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    235
+                    238
                 </div>
                 
 
@@ -439,28 +439,44 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Windows版本更新nodejs"><a href="#Windows版本更新nodejs" class="headerlink" title="Windows版本更新nodejs"></a>Windows版本更新nodejs</h2><p>Windows版本更新nodejs有坑，不能像mac系统直接使用<code>n latest</code>即可完成最新版更新，需要手动进行添加</p>
-<h3 id="手动下载"><a href="#手动下载" class="headerlink" title="手动下载"></a>手动下载</h3><p>找到<a href="http://nodejs.cn/download/" target="_blank" rel="noopener">官网</a>，根据需要下载相应版本。</p>
-<h3 id="查看当前node安装位置"><a href="#查看当前node安装位置" class="headerlink" title="查看当前node安装位置"></a>查看当前node安装位置</h3><p> 查看当前node版本</p>
+                <h2 id="windows版本更新nodejs">Windows版本更新nodejs</h2>
+<p>Windows版本更新nodejs有坑，不能像mac系统直接使用<code>n latest</code>即可完成最新版更新，需要手动进行添加</p>
+<h3 id="手动下载">手动下载</h3>
+<p>找到<a href="http://nodejs.cn/download/" target="_blank" rel="noopener">官网</a>，根据需要下载相应版本。</p>
+<h3 id="查看当前node安装位置">查看当前node安装位置</h3>
+<p>查看当前node版本</p>
 <pre><code>node -v
-</code></pre><p>查看当前node安装位置</p>
+</code></pre>
+<p>查看当前node安装位置</p>
 <pre><code>where node
-</code></pre><h3 id="将下载下来的node安装到相同路径即可"><a href="#将下载下来的node安装到相同路径即可" class="headerlink" title="将下载下来的node安装到相同路径即可"></a>将下载下来的node安装到相同路径即可</h3><h3 id="更好的方法是安装nvmw"><a href="#更好的方法是安装nvmw" class="headerlink" title="更好的方法是安装nvmw"></a>更好的方法是安装nvmw</h3><pre><code>npm install -g nvmw
-</code></pre><p>使用nvmw很简单。帮助说明：</p>
-<pre><code>nvmw -h
-</code></pre><p>版本查看</p>
-<pre><code>nvmw -v
-</code></pre><p>安装相应版本的nodejs：</p>
+</code></pre>
+<h3 id="将下载下来的node安装到相同路径即可">将下载下来的node安装到相同路径即可</h3>
+<h3 id="更好的方法是安装nvmw">更好的方法是安装nvmw</h3>
+<pre><code>npm install -g nvmw
+</code></pre>
+<p>使用nvmw很简单。帮助说明：</p>
+<pre><code>nvmw -h 
+</code></pre>
+<p>版本查看</p>
+<pre><code>nvmw -v 
+</code></pre>
+<p>安装相应版本的nodejs：</p>
 <pre><code>nvmw install v16.5.0
-</code></pre><p>切换版本</p>
+</code></pre>
+<p>切换版本</p>
 <pre><code>nvmw use &lt;version&gt;
-</code></pre><p>最后查看nodejs的版本：</p>
+</code></pre>
+<p>最后查看nodejs的版本：</p>
 <pre><code>node -v
-</code></pre><p>由于nvm也可用于Windows，因此可以采用nvm进行版本管理。其使用方法类似于nvmw。<br>首先采用<code>nvm list</code>查看当前可用(已安装)的nodejs版本，安装相应版本：</p>
+</code></pre>
+<p>由于nvm也可用于Windows，因此可以采用nvm进行版本管理。其使用方法类似于nvmw。<br>
+首先采用<code>nvm list</code>查看当前可用(已安装)的nodejs版本，安装相应版本：</p>
 <pre><code>nvm install 13.0.1
-</code></pre><p>再使用相应版本如：</p>
+</code></pre>
+<p>再使用相应版本如：</p>
 <pre><code>nvm ues 13.0.1
 </code></pre>
+
             </div>
             <hr/>
 
@@ -976,13 +992,15 @@
                     <div class="summary block-with-text">
                         
                             通信系统的组成
+
+
 信源：把待传输的消息转换成原始电信号（基带信号），即完成非电到电的。
+
 
 发送设备：将信源和信道匹配起来，即将信源产生的基带信号变换成适合在信道中传输的。
 
-信道：信号传输的通道，同时对所传输的信号产生损耗、时延和干。
 
-噪声
+信道：信号传输的通道，同时对所传输的信号产生损耗、时延和干。
                         
                     </div>
                     <div class="publish-info">
@@ -1035,10 +1053,12 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            概率论之前被问一个概率论的题目，这里分享一下我的解法：
-问题问题一：
-
-\left( 1 \right) x_1+x_2+x_3+x_4\le 1, 0\le x_i\le 1求：$\mathbb{E} \left( x_1x_2x_3x_
+                            概率论
+之前被问一个概率论的题目，这里分享一下我的解法：
+问题
+问题一：
+(1)x1+x2+x3+x4≤1,0≤xi≤1\left( 1 \right) x_1+x_2+x_3+x_4\le 1, 0\le x_i\le 1
+(1)x1​+
                         
                     </div>
                     <div class="publish-info">

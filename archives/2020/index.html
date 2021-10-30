@@ -481,9 +481,13 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    统计学习笔记感知机感知机适用于二分类是对线性的向量集合进行分类，是一种判别模型，将极小化误分点到超平面距离，把误分点到超平面距离作为学习的损失函数，利用梯度下降算法进行寻优。其算法流程图如下：
-matlab实现其matlab程序如下：
-cl
+                                    统计学习笔记
+感知机
+感知机适用于二分类是对线性的向量集合进行分类，是一种判别模型，将极小化误分点到超平面距离，把误分点到超平面距离作为学习的损失函数，利用梯度下降算法进行寻优。
+其算法流程图如下：
+
+matlab实现
+其matlab程序如
                                 
                             </div>
                             <div class="publish-info">
@@ -549,9 +553,11 @@ cl
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    matlab矢量图流线图streamlinestreamline(x,y,u,v,startx,starty)其中startx,starty分别为流线的坐标
+                                    matlab矢量图
+流线图streamline
+streamline(x,y,u,v,startx,starty)其中startx,starty分别为流线的坐标
 [x,y]=meshgrid(0:0.1:1,0:0.1:1);
-u=sin(x)
+u=sin(
                                 
                             </div>
                             <div class="publish-info">
@@ -612,10 +618,12 @@ u=sin(x)
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    matlab标量绘图mesh or surf常见不多说，注意xy为网格坐标，mesh类有meshc，meshz；surf类有surfc，surfl
+                                    matlab标量绘图
+mesh or surf
+常见不多说，注意xy为网格坐标，mesh类有meshc，meshz；surf类有surfc，surfl
 x=linspace(-2,2,25);
 y=linspace(-2,2,25);
-[xx,
+[x
                                 
                             </div>
                             <div class="publish-info">
@@ -681,9 +689,11 @@ y=linspace(-2,2,25);
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    确知信号频率分析周期信号的频谱设$s(t)$周期为$T_0$且满足Dirichlet条件，则可以展开为指数型的傅里叶级数：
-s(t)=\sum_{n=-\infty}^{\infty} C_n e^{jnw_0 t}其中傅里叶系数为：
-C_
+                                    确知信号
+频率分析
+周期信号的频谱
+设s(t)s(t)s(t)周期为T0T_0T0​且满足Dirichlet条件，则可以展开为指数型的傅里叶级数：
+s(t)=∑n=−∞∞Cnejnw0ts(t)=\sum_{n=-\infty}^{\inf
                                 
                             </div>
                             <div class="publish-info">
@@ -744,8 +754,13 @@ C_
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    通信原理信息论信息量$I$单位(bit)I=-log_2 P(x)平均信息量(或熵)$H(x)$单位(b/符号)描述信源的不确定性：
-H(x)=-\sum_{i=1}^M P(x_i)log_2 P(x_i)当每个符号等概率$P(x_i)=
+                                    通信原理信息论
+信息量III单位(bit)
+I=−log2P(x)I=-log_2 P(x)
+I=−log2​P(x)
+平均信息量(或熵)H(x)H(x)H(x)单位(b/符号)
+描述信源的不确定性：
+H(x)=−∑i=1MP(xi)log
                                 
                             </div>
                             <div class="publish-info">
@@ -811,13 +826,14 @@ H(x)=-\sum_{i=1}^M P(x_i)log_2 P(x_i)当每个符号等概率$P(x_i)=
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    偏微分方程数值解工具箱使用步骤如下：
+                                    偏微分方程数值解
+工具箱使用
+步骤如下：
 
-画区域，Draw或者直接在菜单栏上找，（画圆时，需要按住Ctrl）
+画区域，Draw或者直接在菜单栏上找，（画圆时，需要按住 Ctrl）
 设置边界条件，Boundary进入边界模式，按住shift选择边界进行设置
 设置方程：PDE Specification
-网格剖分
-
+网格
                                 
                             </div>
                             <div class="publish-info">
@@ -885,10 +901,13 @@ H(x)=-\sum_{i=1}^M P(x_i)log_2 P(x_i)当每个符号等概率$P(x_i)=
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    微分方程数值解核心思想：用差分代替微分
-常微分方程eg1:\begin{equation}
+                                    微分方程数值解
+核心思想：用差分代替微分
+常微分方程
+eg1:$$\begin{equation}
 \begin{cases}
-    y'=y-\frac{2x}{y},   0
+y’=y-\frac{2x}{y},   0&lt;x&lt;1 \\
+y\left( 0 \right) =1
                                 
                             </div>
                             <div class="publish-info">
@@ -951,7 +970,9 @@ H(x)=-\sum_{i=1}^M P(x_i)log_2 P(x_i)当每个符号等概率$P(x_i)=
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    混沌优化算法基于Logistic映射产生混沌运动轨道的遍历性，可将其混沌用于函数优化问题：混沌优化算法的基本思想是将变量从混沌空间变换到解空间，然后利用混沌变量所具有的丰富的非线性动力学特征————随机性、遍历性、规律性的特点进行搜索。混沌
+                                    混沌优化算法
+基于Logistic映射产生混沌运动轨道的遍历性，可将其混沌用于函数优化问题：
+混沌优化算法的基本思想是将变量从混沌空间变换到解空间，然后利用混沌变量所具有的丰富的非线性动力学特征————随机性、遍历性、规律性的特点进行搜索。
                                 
                             </div>
                             <div class="publish-info">
@@ -1017,9 +1038,10 @@ H(x)=-\sum_{i=1}^M P(x_i)log_2 P(x_i)当每个符号等概率$P(x_i)=
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    图像处理————傅里叶变换定义：对于数字图像来说，它的储存方式主要为二维矩阵，因此引进连续二元函数的二维傅里叶变换及反变换定义(学过傅里叶变换的看应该很容易理解，就不细讲)：
-\begin{array}{l}
-F(u, v)=\int_{-
+                                    图像处理————傅里叶变换
+定义：
+对于数字图像来说，它的储存方式主要为二维矩阵，因此引进连续二元函数的二维傅里叶变换及反变换定义(学过傅里叶变换的看应该很容易理解，就不细讲)：
+F(u,v)=∫−∞+∞∫−∞+∞f(x,y)e−j2π(u
                                 
                             </div>
                             <div class="publish-info">

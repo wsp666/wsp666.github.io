@@ -427,7 +427,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    638
+                    642
                 </div>
                 
 
@@ -439,8 +439,10 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="pytorch模板"><a href="#pytorch模板" class="headerlink" title="pytorch模板"></a>pytorch模板</h1><h2 id="torch-nn-Module"><a href="#torch-nn-Module" class="headerlink" title="torch.nn.Module"></a><code>torch.nn.Module</code></h2><p>我们有时候不需要很复杂的网络或者想自己搭建一个网络，这时候我们就可以继承torch.nn.Module类，快速构建一个前向传播的网络结构，当然torch.nn.Module类还可以构建损失函数：</p>
-<pre><code class="lang-python">import torch
+                <h1>pytorch模板</h1>
+<h2 id="torch-nn-module"><code>torch.nn.Module</code></h2>
+<p>我们有时候不需要很复杂的网络或者想自己搭建一个网络，这时候我们就可以继承torch.nn.Module类，快速构建一个前向传播的网络结构，当然torch.nn.Module类还可以构建损失函数：</p>
+<pre><code class="language-python">import torch
 class net_name(torch.nn.Module):
     def __init__(self,other_arguments):
         super(net_name,self).__init__()
@@ -451,13 +453,13 @@ class net_name(torch.nn.Module):
         # torch.nn.MaxPool2d()
         # torch.nn.Dropout()
         # torch.nn.BatchNorm2d()
-
+        
     def forward(self, x):
         x = self.conv1(x)
         return x
 </code></pre>
 <p><code>torch.nn.Module</code>也很容易构建损失函数，如多分类交叉熵，二分类交叉熵，均方误差等，以下列举几种：</p>
-<pre><code class="lang-python">import torch
+<pre><code class="language-python">import torch
 loss_function = torch.nn.CrossEntropyLoss()
 loss_function = torch.nn.BCELoss()
 loss_function = torch.nn.MSELoss()
@@ -466,8 +468,9 @@ loss_function = torch.nn.L1Loss()
 loss = loss_function(output, target)
 loss.backward()
 </code></pre>
-<h2 id="torch-optim"><a href="#torch-optim" class="headerlink" title="torch.optim"></a><code>torch.optim</code></h2><p><code>torch.optim</code>里面有很多的可以实现模型参数自动优化的类，我们可以很方便地调用，例如有随机梯度下降SGD（stochastic gradient descent），适应性矩估计Adam（adaptive moment estimation），适应性梯度算法（AdaGrad），均方根传播（RMSProp）:</p>
-<pre><code class="lang-python">import torch
+<h2 id="torch-optim"><code>torch.optim</code></h2>
+<p><code>torch.optim</code>里面有很多的可以实现模型参数自动优化的类，我们可以很方便地调用，例如有随机梯度下降SGD（stochastic gradient descent），适应性矩估计Adam（adaptive moment estimation），适应性梯度算法（AdaGrad），均方根传播（RMSProp）:</p>
+<pre><code class="language-python">import torch
 optimizer = torch.optim.SGD(models.parameters,lr)
 optimizer = torch.optim.Adam(models.parameters,lr)
 optimizer = torch.optim.Adagrad(models.parameters,lr)
@@ -475,8 +478,9 @@ optimizer = torch.optim.RMSprop(models.parameters,lr)
 # 训练时
 optimizer.zero_grad()
 </code></pre>
-<h2 id="torch-autograd"><a href="#torch-autograd" class="headerlink" title="torch.autograd"></a><code>torch.autograd</code></h2><p><code>torch.autograd</code>包主要的功能是完成神经网络后向传播中的链式求导，在前向传播的时候构建了一张计算图，在后向传播的时候完成对参数的更新。</p>
-<pre><code class="lang-python">import torch
+<h2 id="torch-autograd"><code>torch.autograd</code></h2>
+<p><code>torch.autograd</code>包主要的功能是完成神经网络后向传播中的链式求导，在前向传播的时候构建了一张计算图，在后向传播的时候完成对参数的更新。</p>
+<pre><code class="language-python">import torch
 from torch.autograd import Variable
 use_gpu = torch.cuda.is_available()
 if use_gpu:
@@ -484,14 +488,16 @@ if use_gpu:
 else:
     data,y = Variable(data),Variable(y)
 </code></pre>
-<h2 id="torchvision"><a href="#torchvision" class="headerlink" title="torchvision"></a><code>torchvision</code></h2><p>在pytorch里面有两个核心的包，分别为<code>torch</code>和<code>torchvision</code>，<code>torchvision</code>包的主要功能是实现数据的处理，导入，里面也有预训练的常见模型，例如下面的<code>datasets</code>,<code>transforms</code>:</p>
-<pre><code class="lang-python">from torchvision import datasets,models,transforms
+<h2 id="torchvision"><code>torchvision</code></h2>
+<p>在pytorch里面有两个核心的包，分别为<code>torch</code>和<code>torchvision</code>，<code>torchvision</code>包的主要功能是实现数据的处理，导入，里面也有预训练的常见模型，例如下面的<code>datasets</code>,<code>transforms</code>:</p>
+<pre><code class="language-python">from torchvision import datasets,models,transforms
 data = datasets.MNIST(root=save_path,train=True,transform=self_defined_transform)
 model = models.vgg16(pretrained=False)
 transform = transforms.Normalize(mean=mean,std=std)
 </code></pre>
-<h2 id="torch-save-amp-torch-load"><a href="#torch-save-amp-torch-load" class="headerlink" title="torch.save &amp; torch.load"></a><code>torch.save &amp; torch.load</code></h2><p>训练模型完事之后肯定就是要保存模型了呀，之后调用就可以之间测试了呀，在pytorch里面模型的保存和加载都有两种方法：</p>
-<pre><code class="lang-python">import torch
+<h2 id="torch-save-torch-load"><code>torch.save &amp; torch.load</code></h2>
+<p>训练模型完事之后肯定就是要保存模型了呀，之后调用就可以之间测试了呀，在pytorch里面模型的保存和加载都有两种方法：</p>
+<pre><code class="language-python">import torch
 #保存整个模型，包括结构信息和参数信息
 torch.save(model_name,&quot;model_saved_path/model_name.pth&quot;)
 #只保存参数信息
@@ -502,7 +508,8 @@ load_model = torch.load(&quot;model_saved_path/model_name.pth&quot;)
 #对应第二种模型保存方法，只加载模型参数，结构需要在上面先定义或导入
 model.load_state_dict(torch.load(&quot;model_saved_path/model_name.pth&quot;))
 </code></pre>
-<p>另外一种可以参考：<br><a href="https://jishuin.proginn.com/p/763bfbd63554" target="_blank" rel="noopener">pytorch代码模板</a></p>
+<p>另外一种可以参考：<br>
+<a href="https://jishuin.proginn.com/p/763bfbd63554" target="_blank" rel="noopener">pytorch代码模板</a></p>
 
             </div>
             <hr/>
@@ -1018,8 +1025,9 @@ model.load_state_dict(torch.load(&quot;model_saved_path/model_name.pth&quot;))
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            加载数据PyTorch有两个处理数据的库:torch.utils.data.DataLoader和torch.utils.data.Dataset。数据集存储样本及其对应的标签，DataLoader在数据集周围包装一个可迭代对象。
-impo
+                            加载数据
+PyTorch有两个处理数据的库:torch.utils.data.DataLoader和torch.utils.data.Dataset。数据集存储样本及其对应的标签，DataLoader在数据集周围包装一个可迭代对象。
+imp
                         
                     </div>
                     <div class="publish-info">
@@ -1072,14 +1080,13 @@ impo
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            组合数一列等式求解：
-
-\sum_{k=1}^{n-1}{k\left( \begin{array}{c}
-    n-1\\
-    k-1\\
-\end{array} \right)}m^{n-k}联想到二次项恒等式：
-
-\sum_{k
+                            组合数一列等式
+求解：
+∑k=1n−1k(n−1k−1)mn−k\sum_{k=1}^{n-1}{k\left( \begin{array}{c}
+	n-1\\
+	k-1\\
+\end{array} \right)}m^{n-k}
+k=1∑
                         
                     </div>
                     <div class="publish-info">

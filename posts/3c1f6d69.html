@@ -427,7 +427,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    973
+                    1k
                 </div>
                 
 
@@ -439,32 +439,42 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="混沌优化算法"><a href="#混沌优化算法" class="headerlink" title="混沌优化算法"></a>混沌优化算法</h1><p>基于Logistic映射产生混沌运动轨道的遍历性，可将其混沌用于函数优化问题：<br>混沌优化算法的基本思想是将变量从混沌空间变换到解空间，然后利用混沌变量所具有的丰富的非线性动力学特征————随机性、遍历性、规律性的特点进行搜索。混沌优化算法易跳出局部最优解，不需要优化问题具有连续性和可微性。</p>
-<h2 id="变尺度混沌优化算法"><a href="#变尺度混沌优化算法" class="headerlink" title="变尺度混沌优化算法"></a>变尺度混沌优化算法</h2><p>以求目标函数：</p>
-<script type="math/tex; mode=display">\max f\left( x \right) =1-\left( 2x_{1}^{2}+2x_{2}^{2}+x_{3}^{2}+2x_1x_2+2x_1x_3-8x_1-6x_2-4x_3+9 \right)</script><p>带条件约束：</p>
-<script type="math/tex; mode=display">\begin{equation}
+                <h1>混沌优化算法</h1>
+<p>基于Logistic映射产生混沌运动轨道的遍历性，可将其混沌用于函数优化问题：<br>
+混沌优化算法的基本思想是将变量从混沌空间变换到解空间，然后利用混沌变量所具有的丰富的非线性动力学特征————随机性、遍历性、规律性的特点进行搜索。混沌优化算法易跳出局部最优解，不需要优化问题具有连续性和可微性。</p>
+<h2 id="变尺度混沌优化算法">变尺度混沌优化算法</h2>
+<p>以求目标函数：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>max</mi><mo>⁡</mo><mi>f</mi><mrow><mo fence="true">(</mo><mi>x</mi><mo fence="true">)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><mrow><mo fence="true">(</mo><mn>2</mn><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><mn>2</mn><msubsup><mi>x</mi><mn>2</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>x</mi><mn>3</mn><mn>2</mn></msubsup><mo>+</mo><mn>2</mn><msub><mi>x</mi><mn>1</mn></msub><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mn>2</mn><msub><mi>x</mi><mn>1</mn></msub><msub><mi>x</mi><mn>3</mn></msub><mo>−</mo><mn>8</mn><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><mn>6</mn><msub><mi>x</mi><mn>2</mn></msub><mo>−</mo><mn>4</mn><msub><mi>x</mi><mn>3</mn></msub><mo>+</mo><mn>9</mn><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\max f\left( x \right) =1-\left( 2x_{1}^{2}+2x_{2}^{2}+x_{3}^{2}+2x_1x_2+2x_1x_3-8x_1-6x_2-4x_3+9 \right) 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault">x</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.2141179999999998em;vertical-align:-0.35001em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mord">2</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">8</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">6</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">4</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">9</span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span></span></span></span></span></p>
+<p>带条件约束：</p>
+<p class='katex-block katex-error' title='ParseError: KaTeX parse error: No such environment: equation at position 7: \begin{̲e̲q̲u̲a̲t̲i̲o̲n̲}̲
+s.t.
+\begin{ca…'>\begin{equation}
 s.t.
 \begin{cases}
-    x_1+x_2+2x_3\le 3\\
-    x_1,x_2,x_3\ge 0\\
+	x_1+x_2+2x_3\le 3\\
+	x_1,x_2,x_3\ge 0\\
 \end{cases}
-\end{equation}</script><p>step 1:应用Logistic方程产生混沌变量进行优化搜索：</p>
-<script type="math/tex; mode=display">x_{k+1} = \mu \cdot x_k (1.0 -x_k)</script><p>step 2:随机产生初始为[0,1]区间内n个相异初值<script type="math/tex">x_{0i}</script>，得到n个轨迹不同的混沌变量。计算性能指标<script type="math/tex">f(x_{0i})</script>，<script type="math/tex">x_{0i} =a+x_{0i}(b-a)</script>。</p>
-<p>step 3:根据混沌方程进行迭代，产生新解<script type="math/tex">x_i\in \left[ 0,1 \right]</script>。计算相应的性能指标<script type="math/tex">f(x_{i})，x_{i} =a+x_{i}(b-a)</script>。</p>
-<p>step 4:如果<script type="math/tex">f(x_i) < f(x_{i0})</script>则接受新解<script type="math/tex">x_{i0}=x_i</script>(用于复制运算)</p>
-<p>step 5:随机对新种群中部分解按照概率<script type="math/tex">P_c</script>进行交换运算</p>
-<p>step 6:随机对新种群中部分解按照概率<script type="math/tex">P_m</script>进行变异运算，经过4~6后得到<script type="math/tex">x_{1i} \in \left[ 0,1 \right]</script></p>
-<p>step 7:如果<script type="math/tex">f(x_{1i}) < f(x_{i0})</script>，则接受新解<script type="math/tex">x_{i0}=x_{1i}</script>从中找出性能最好的个体<script type="math/tex">X_c</script>。转跳到步骤3.如果<script type="math/tex">X_c</script>在规定的迭代次数m里没有满足指定的误差要求搜索条件，则进行下一步骤8，否则结束。</p>
-<p>step 8:以上一搜索结果<script type="math/tex">X_c</script>为中心，以<script type="math/tex">\frac{r}{a}</script>为半径，r为前一步的搜索半径，即前一步解空间的半径，a为r的衰减因子。以<script type="math/tex">x_{k+1} = \mu \cdot x_k (1.0 -x_k)</script>为搜索函数，重复步骤3~7，缩小范围进行搜索，直到满足误差要求。最终所得到的<script type="math/tex">X_c,f(X_c)</script>为全局最优。</p>
-<p>注意：若<script type="math/tex">x_i</script>定义域包含负数，则可以通过混沌函数：<script type="math/tex">x_{k+1} = \mu \cdot x^{3}_n - \mu x_n+x_n</script>此时<script type="math/tex">x_i</script>在[-1,1]上遍历，目标函数为<script type="math/tex">f(X),X=ax</script></p>
+\end{equation}</p>
+<p>step 1:应用Logistic方程产生混沌变量进行优化搜索：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>μ</mi><mo>⋅</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">(</mo><mn>1.0</mn><mo>−</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">x_{k+1} = \mu \cdot x_k (1.0 -x_k)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.638891em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.63889em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">μ</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">.</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
+<p>step 2:随机产生初始为[0,1]区间内n个相异初值$$x_{0i}$$，得到n个轨迹不同的混沌变量。计算性能指标$$f(x_{0i})$$，$$x_{0i} =a+x_{0i}(b-a)$$。</p>
+<p>step 3:根据混沌方程进行迭代，产生新解$$x_i\in \left[ 0,1 \right] $$。计算相应的性能指标$$f(x_{i})，x_{i} =a+x_{i}(b-a)$$。</p>
+<p>step 4:如果$$f(x_i) &lt; f(x_{i0})$$则接受新解$$x_{i0}=x_i$$(用于复制运算)</p>
+<p>step 5:随机对新种群中部分解按照概率$$P_c$$进行交换运算</p>
+<p>step 6:随机对新种群中部分解按照概率$$P_m$$进行变异运算，经过4~6后得到$$x_{1i} \in \left[ 0,1 \right] $$</p>
+<p>step 7:如果$$f(x_{1i}) &lt; f(x_{i0})$$，则接受新解$$x_{i0}=x_{1i}$$从中找出性能最好的个体$$X_c$$。转跳到步骤3.如果$$X_c$$在规定的迭代次数m里没有满足指定的误差要求搜索条件，则进行下一步骤8，否则结束。</p>
+<p>step 8:以上一搜索结果$$X_c$$为中心，以$$\frac{r}{a}$$为半径，r为前一步的搜索半径，即前一步解空间的半径，a为r的衰减因子。以$$x_{k+1} = \mu \cdot x_k (1.0 -x_k)$$为搜索函数，重复步骤3~7，缩小范围进行搜索，直到满足误差要求。最终所得到的$$X_c,f(X_c)$$为全局最优。</p>
+<p>注意：若$$x_i$$定义域包含负数，则可以通过混沌函数：$$x_{k+1} = \mu \cdot x^{3}_n - \mu x_n+x_n$$此时$$x_i$$在[-1,1]上遍历，目标函数为$$f(X),X=ax$$</p>
 <p>代码如下：</p>
 <p>(1)函数定义：</p>
-<pre><code class="lang-matlab">function myfunction=myfunction(x1,x2,x3)
+<pre><code class="language-matlab">function myfunction=myfunction(x1,x2,x3)
 myfunction=1-(2*x1^2+2*x2^2+x3^2+2*x1*x2+2*x1*x3-8*x1-6*x2-4*x3+9)
 end
 </code></pre>
 <p>（2）设置吸收域：</p>
-<pre><code class="lang-matlab">function myjudge=myjudge(x1,x2,x3)
+<pre><code class="language-matlab">function myjudge=myjudge(x1,x2,x3)
 a=-x1-x2-2*x3+3;
 if x1&gt;0&amp;&amp;x2&gt;0&amp;&amp;x3&gt;0&amp;&amp;a&gt;=0
     myjudge=1;
@@ -473,7 +483,7 @@ else
 end
 </code></pre>
 <p>(3)主函数：</p>
-<pre><code class="lang-matlab">%参数设置
+<pre><code class="language-matlab">%参数设置
 num=3;                                           %混沌变量
 r=2;
 for k=1:100
@@ -494,7 +504,7 @@ for i = 2:5000
     X(j, i) = 4 * X(j, i - 1) * (1 - X(j, i - 1));   %logistic迭代
    TempX(j) = r * X(j, i);                           %搜索半径为2
    end
-
+   
    if myjudge(TempX(1), TempX(2), TempX(3))==1              %如果可行且性能更好，更换新解
       TempF = myfun(TempX(1), TempX(2), TempX(3));
         if TempF &gt; MaxF 
@@ -514,7 +524,7 @@ end
 
 for i = 1:5000
       TempX = MaxX + 0.0001 * X(:, i);
-
+      
     if myjudge(TempX(1), TempX(2), TempX(3))==1 
     TempF = myfun(TempX(1), TempX(2), TempX(3));
         if TempF &gt; MaxF
@@ -1049,10 +1059,13 @@ X=MaxX;%解
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            微分方程数值解核心思想：用差分代替微分
-常微分方程eg1:\begin{equation}
+                            微分方程数值解
+核心思想：用差分代替微分
+常微分方程
+eg1:$$\begin{equation}
 \begin{cases}
-    y'=y-\frac{2x}{y},   0
+y’=y-\frac{2x}{y},   0&lt;x&lt;1 \\
+y\left( 0 \right) =1
                         
                     </div>
                     <div class="publish-info">
@@ -1109,9 +1122,10 @@ X=MaxX;%解
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            图像处理————傅里叶变换定义：对于数字图像来说，它的储存方式主要为二维矩阵，因此引进连续二元函数的二维傅里叶变换及反变换定义(学过傅里叶变换的看应该很容易理解，就不细讲)：
-\begin{array}{l}
-F(u, v)=\int_{-
+                            图像处理————傅里叶变换
+定义：
+对于数字图像来说，它的储存方式主要为二维矩阵，因此引进连续二元函数的二维傅里叶变换及反变换定义(学过傅里叶变换的看应该很容易理解，就不细讲)：
+F(u,v)=∫−∞+∞∫−∞+∞f(x,y)e−j2π(u
                         
                     </div>
                     <div class="publish-info">

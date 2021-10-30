@@ -423,7 +423,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.5k
+                    4.2k
                 </div>
                 
 
@@ -435,14 +435,15 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre><code class="lang-python">import numpy as np
+                <pre><code class="language-python">import numpy as np
 import pandas as pd
 </code></pre>
-<h2 id="生成对象"><a href="#生成对象" class="headerlink" title="生成对象"></a>生成对象</h2><ul>
+<h2 id="生成对象">生成对象</h2>
+<ul>
 <li>Series：维度——1；带标签的一维同构数组</li>
 <li>DataFrame：维度——2；带标签的，大小可变的，二维异构表格</li>
 </ul>
-<pre><code class="lang-python">s = pd.Series([1, 3, 5, np.nan, 6, 8])
+<pre><code class="language-python">s = pd.Series([1, 3, 5, np.nan, 6, 8])
 s
 </code></pre>
 <pre><code>0    1.0
@@ -452,15 +453,17 @@ s
 4    6.0
 5    8.0
 dtype: float64
-</code></pre><p>含日期时间：</p>
-<pre><code class="lang-python">datas = pd.date_range(&#39;20130101&#39;, periods=6)
+</code></pre>
+<p>含日期时间：</p>
+<pre><code class="language-python">datas = pd.date_range('20130101', periods=6)
 datas
 </code></pre>
-<pre><code>DatetimeIndex([&#39;2013-01-01&#39;, &#39;2013-01-02&#39;, &#39;2013-01-03&#39;, &#39;2013-01-04&#39;,
-               &#39;2013-01-05&#39;, &#39;2013-01-06&#39;],
-              dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
-</code></pre><p>含日期时间索引与标签的 NumPy 数组生成<code>DataFrame</code></p>
-<pre><code class="lang-python">df = pd.DataFrame(np.random.randn(6,4),index=datas, columns=list(&#39;ABCD&#39;))
+<pre><code>DatetimeIndex(['2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04',
+               '2013-01-05', '2013-01-06'],
+              dtype='datetime64[ns]', freq='D')
+</code></pre>
+<p>含日期时间索引与标签的 NumPy 数组生成<code>DataFrame</code></p>
+<pre><code class="language-python">df = pd.DataFrame(np.random.randn(6,4),index=datas, columns=list('ABCD'))
 df
 </code></pre>
 <div>
@@ -468,14 +471,14 @@ df
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -533,16 +536,13 @@ df
   </tbody>
 </table>
 </div>
-
-
-
-<p>用字典对象生成DataFrame </p>
-<pre><code class="lang-python">df2 = pd.DataFrame({&#39;A&#39;: 1.,
-                    &#39;B&#39;: pd.Timestamp(&#39;20130102&#39;),
-                    &#39;C&#39;: pd.Series(1,index=list(range(4))),
-                    &#39;D&#39;: np.array([3]*4, dtype=&#39;int32&#39;),
-                    &#39;E&#39;: pd.Categorical([&quot;test&quot;, &quot;train&quot;, &quot;test&quot;, &quot;train&quot;]),
-                    &#39;F&#39;: &#39;foo&#39;})
+<p>用字典对象生成DataFrame</p>
+<pre><code class="language-python">df2 = pd.DataFrame({'A': 1.,
+                    'B': pd.Timestamp('20130102'),
+                    'C': pd.Series(1,index=list(range(4))),
+                    'D': np.array([3]*4, dtype='int32'),
+                    'E': pd.Categorical([&quot;test&quot;, &quot;train&quot;, &quot;test&quot;, &quot;train&quot;]),
+                    'F': 'foo'})
 df2
 </code></pre>
 <div>
@@ -550,14 +550,14 @@ df2
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -611,11 +611,7 @@ df2
   </tbody>
 </table>
 </div>
-
-
-
-
-<pre><code class="lang-python">df2.dtypes
+<pre><code class="language-python">df2.dtypes
 </code></pre>
 <pre><code>A           float64
 B    datetime64[ns]
@@ -624,21 +620,22 @@ D             int32
 E          category
 F            object
 dtype: object
-</code></pre><pre><code class="lang-python">df.head()
+</code></pre>
+<pre><code class="language-python">df.head()
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -689,11 +686,7 @@ dtype: object
   </tbody>
 </table>
 </div>
-
-
-
-
-<pre><code class="lang-python">df.info
+<pre><code class="language-python">df.info
 </code></pre>
 <pre><code>&lt;bound method DataFrame.info of                    A         B         C         D
 2013-01-01  0.477423  0.183968 -0.139705 -0.727223
@@ -702,21 +695,22 @@ dtype: object
 2013-01-04 -1.395511  0.525819  0.112159 -0.160826
 2013-01-05  0.280020 -2.186553 -0.644597  1.163917
 2013-01-06  1.945874  0.014268 -1.506800  0.405446&gt;
-</code></pre><pre><code class="lang-python">df.tail(3)
+</code></pre>
+<pre><code class="language-python">df.tail(3)
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -753,20 +747,18 @@ dtype: object
   </tbody>
 </table>
 </div>
-
-
-
-
-<pre><code class="lang-python">df.index
+<pre><code class="language-python">df.index
 </code></pre>
-<pre><code>DatetimeIndex([&#39;2013-01-01&#39;, &#39;2013-01-02&#39;, &#39;2013-01-03&#39;, &#39;2013-01-04&#39;,
-               &#39;2013-01-05&#39;, &#39;2013-01-06&#39;],
-              dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
-</code></pre><pre><code class="lang-python">df.columns
+<pre><code>DatetimeIndex(['2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04',
+               '2013-01-05', '2013-01-06'],
+              dtype='datetime64[ns]', freq='D')
 </code></pre>
-<pre><code>Index([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;], dtype=&#39;object&#39;)
-</code></pre><p><code>DataFrame.to_numpy()</code>输出底层数据的 <code>NumPy</code> 对象。注意，<code>DataFrame</code>的列由多种数据类型组成时，该操作耗费系统资源较大，这也是<code>Pandas</code>和<code>NumPy</code>的本质区别：<code>NumPy</code>数组只有一种数据类型，<code>DataFrame</code>每列的数据类型各不相同。调用 <code>DataFrame.to_numpy()</code>时，Pandas 查找支持<code>DataFrame</code>里所有数据类型的<code>NumPy</code>数据类型。还有一种数据类型是<code>object</code>，可以把<code>DataFrame</code>列里的值强制转换为<code>Python</code>对象。</p>
-<pre><code class="lang-python">df.to_numpy()
+<pre><code class="language-python">df.columns
+</code></pre>
+<pre><code>Index(['A', 'B', 'C', 'D'], dtype='object')
+</code></pre>
+<p><code>DataFrame.to_numpy() </code>输出底层数据的 <code>NumPy</code> 对象。注意，<code>DataFrame</code>的列由多种数据类型组成时，该操作耗费系统资源较大，这也是<code>Pandas</code>和<code>NumPy</code>的本质区别：<code>NumPy</code>数组只有一种数据类型，<code>DataFrame</code>每列的数据类型各不相同。调用 <code>DataFrame.to_numpy()</code>时，Pandas 查找支持<code>DataFrame</code>里所有数据类型的<code>NumPy</code>数据类型。还有一种数据类型是<code>object</code>，可以把<code>DataFrame</code>列里的值强制转换为<code>Python</code>对象。</p>
+<pre><code class="language-python">df.to_numpy()
 </code></pre>
 <pre><code>array([[ 0.47742267,  0.18396775, -0.13970455, -0.72722311],
        [-0.168761  , -0.92293827,  0.3968894 , -2.77912839],
@@ -774,28 +766,30 @@ dtype: object
        [-1.3955112 ,  0.52581862,  0.11215897, -0.16082579],
        [ 0.2800197 , -2.18655291, -0.64459677,  1.16391673],
        [ 1.94587401,  0.01426759, -1.50679977,  0.40544621]])
-</code></pre><pre><code class="lang-python">df2.to_numpy()
 </code></pre>
-<pre><code>array([[1.0, Timestamp(&#39;2013-01-02 00:00:00&#39;), 1, 3, &#39;test&#39;, &#39;foo&#39;],
-       [1.0, Timestamp(&#39;2013-01-02 00:00:00&#39;), 1, 3, &#39;train&#39;, &#39;foo&#39;],
-       [1.0, Timestamp(&#39;2013-01-02 00:00:00&#39;), 1, 3, &#39;test&#39;, &#39;foo&#39;],
-       [1.0, Timestamp(&#39;2013-01-02 00:00:00&#39;), 1, 3, &#39;train&#39;, &#39;foo&#39;]],
+<pre><code class="language-python">df2.to_numpy()
+</code></pre>
+<pre><code>array([[1.0, Timestamp('2013-01-02 00:00:00'), 1, 3, 'test', 'foo'],
+       [1.0, Timestamp('2013-01-02 00:00:00'), 1, 3, 'train', 'foo'],
+       [1.0, Timestamp('2013-01-02 00:00:00'), 1, 3, 'test', 'foo'],
+       [1.0, Timestamp('2013-01-02 00:00:00'), 1, 3, 'train', 'foo']],
       dtype=object)
-</code></pre><pre><code class="lang-python">df.describe()
+</code></pre>
+<pre><code class="language-python">df.describe()
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -867,25 +861,21 @@ dtype: object
   </tbody>
 </table>
 </div>
-
-
-
-
-<pre><code class="lang-python">df.T
+<pre><code class="language-python">df.T
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -939,25 +929,22 @@ dtype: object
   </tbody>
 </table>
 </div>
-
-
-
 <p>按轴排序</p>
-<pre><code class="lang-python">df2.sort_index(axis=1,ascending=False)
+<pre><code class="language-python">df2.sort_index(axis=1,ascending=False)
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1011,25 +998,22 @@ dtype: object
   </tbody>
 </table>
 </div>
-
-
-
 <p>按值排序</p>
-<pre><code class="lang-python">df.sort_values(by=&#39;B&#39;)
+<pre><code class="language-python">df.sort_values(by='B')
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1087,10 +1071,8 @@ dtype: object
   </tbody>
 </table>
 </div>
-
-
-
-<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><pre><code class="lang-python">df[&#39;A&#39;]
+<h2 id="选择">选择</h2>
+<pre><code class="language-python">df['A']
 </code></pre>
 <pre><code>2013-01-01    0.477423
 2013-01-02   -0.168761
@@ -1099,21 +1081,22 @@ dtype: object
 2013-01-05    0.280020
 2013-01-06    1.945874
 Freq: D, Name: A, dtype: float64
-</code></pre><pre><code class="lang-python">df[0:3]
+</code></pre>
+<pre><code class="language-python">df[0:3]
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1150,25 +1133,21 @@ Freq: D, Name: A, dtype: float64
   </tbody>
 </table>
 </div>
-
-
-
-
-<pre><code class="lang-python">df[&#39;2013-01-02&#39;:&#39;20130104&#39;]       ## 时间的这两种书写方式一样
+<pre><code class="language-python">df['2013-01-02':'20130104']       ## 时间的这两种书写方式一样
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1205,32 +1184,31 @@ Freq: D, Name: A, dtype: float64
   </tbody>
 </table>
 </div>
-
-
-
-<h3 id="按标签选择"><a href="#按标签选择" class="headerlink" title="按标签选择"></a>按标签选择</h3><pre><code class="lang-python">df.loc[datas[0]]
+<h3 id="按标签选择">按标签选择</h3>
+<pre><code class="language-python">df.loc[datas[0]]
 </code></pre>
 <pre><code>A    0.477423
 B    0.183968
 C   -0.139705
 D   -0.727223
 Name: 2013-01-01 00:00:00, dtype: float64
-</code></pre><pre><code class="lang-python">df.loc[:,[&#39;A&#39;,&#39;B&#39;]]
-# df[[&#39;A&#39;,&#39;B&#39;]]       ## 等同
+</code></pre>
+<pre><code class="language-python">df.loc[:,['A','B']]
+# df[['A','B']]       ## 等同
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1274,25 +1252,21 @@ Name: 2013-01-01 00:00:00, dtype: float64
   </tbody>
 </table>
 </div>
-
-
-
-
-<pre><code class="lang-python">df.loc[datas[1]:datas[3], [&#39;A&#39;, &#39;B&#39;]]
+<pre><code class="language-python">df.loc[datas[1]:datas[3], ['A', 'B']]
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1321,35 +1295,34 @@ Name: 2013-01-01 00:00:00, dtype: float64
   </tbody>
 </table>
 </div>
-
-
-
-
-<pre><code class="lang-python">df.loc[datas[0], &#39;A&#39;]   # 等同于df.at[datas[0], &#39;A&#39;]
+<pre><code class="language-python">df.loc[datas[0], 'A']   # 等同于df.at[datas[0], 'A']
 </code></pre>
 <pre><code>0.4774226701301457
-</code></pre><h3 id="按位置选择-重要"><a href="#按位置选择-重要" class="headerlink" title="按位置选择(重要)"></a>按位置选择(重要)</h3><pre><code class="lang-python">df.iloc[3]
+</code></pre>
+<h3 id="按位置选择-重要">按位置选择(重要)</h3>
+<pre><code class="language-python">df.iloc[3]
 </code></pre>
 <pre><code>A   -1.395511
 B    0.525819
 C    0.112159
 D   -0.160826
 Name: 2013-01-04 00:00:00, dtype: float64
-</code></pre><pre><code class="lang-python">df.iloc[[1,2,4],[0,2]]
+</code></pre>
+<pre><code class="language-python">df.iloc[[1,2,4],[0,2]]
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1378,25 +1351,21 @@ Name: 2013-01-04 00:00:00, dtype: float64
   </tbody>
 </table>
 </div>
-
-
-
-
-<pre><code class="lang-python">df.iloc[:, 1:3]
+<pre><code class="language-python">df.iloc[:, 1:3]
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1440,10 +1409,8 @@ Name: 2013-01-04 00:00:00, dtype: float64
   </tbody>
 </table>
 </div>
-
-
-
-<h3 id="布尔索引-重要"><a href="#布尔索引-重要" class="headerlink" title="布尔索引(重要)"></a>布尔索引(重要)</h3><pre><code class="lang-python"># df.A
+<h3 id="布尔索引-重要">布尔索引(重要)</h3>
+<pre><code class="language-python"># df.A
 df[df.A &gt; 0]
 </code></pre>
 <div>
@@ -1451,14 +1418,14 @@ df[df.A &gt; 0]
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1495,25 +1462,21 @@ df[df.A &gt; 0]
   </tbody>
 </table>
 </div>
-
-
-
-
-<pre><code class="lang-python">df[df &gt; 0]
+<pre><code class="language-python">df[df &gt; 0]
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1571,26 +1534,24 @@ df[df.A &gt; 0]
   </tbody>
 </table>
 </div>
-
-
-
-<h3 id="isin-筛选-重要"><a href="#isin-筛选-重要" class="headerlink" title="isin()筛选(重要)"></a>isin()筛选(重要)</h3><pre><code class="lang-python">df2 = df.copy()
-df2[&#39;E&#39;] = [&#39;one&#39;, &#39;one&#39;, &#39;two&#39;, &#39;three&#39;, &#39;four&#39;, &#39;three&#39;]
-df2[df2[&#39;E&#39;].isin([&#39;two&#39;, &#39;four&#39;])]
+<h3 id="isin-筛选-重要">isin()筛选(重要)</h3>
+<pre><code class="language-python">df2 = df.copy()
+df2['E'] = ['one', 'one', 'two', 'three', 'four', 'three']
+df2[df2['E'].isin(['two', 'four'])]
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1623,10 +1584,8 @@ df2[df2[&#39;E&#39;].isin([&#39;two&#39;, &#39;four&#39;])]
   </tbody>
 </table>
 </div>
-
-
-
-<h3 id="缺失值"><a href="#缺失值" class="headerlink" title="缺失值"></a>缺失值</h3><pre><code class="lang-python">df1 = df.reindex(index=datas[0:4], columns=list(df.columns))
+<h3 id="缺失值">缺失值</h3>
+<pre><code class="language-python">df1 = df.reindex(index=datas[0:4], columns=list(df.columns))
 df1.iloc[[1,3],[0,2]] = np.nan
 df1
 </code></pre>
@@ -1635,14 +1594,14 @@ df1
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1686,25 +1645,22 @@ df1
   </tbody>
 </table>
 </div>
-
-
-
 <p>删除所有含缺失值的行：</p>
-<pre><code class="lang-python">df1.dropna(how=&#39;any&#39;)
+<pre><code class="language-python">df1.dropna(how='any')
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1734,25 +1690,22 @@ df1
   </tbody>
 </table>
 </div>
-
-
-
 <p>填充缺失值</p>
-<pre><code class="lang-python">df1.fillna(value=5)
+<pre><code class="language-python">df1.fillna(value=5)
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1796,25 +1749,22 @@ df1
   </tbody>
 </table>
 </div>
-
-
-
 <p>提取nan值的布尔掩码</p>
-<pre><code class="lang-python">pd.isna(df1)
+<pre><code class="language-python">pd.isna(df1)
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1858,19 +1808,19 @@ df1
   </tbody>
 </table>
 </div>
-
-
-
-<h2 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h2><h3 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h3><p>求每列的均值</p>
-<pre><code class="lang-python">df.mean()
+<h2 id="运算">运算</h2>
+<h3 id="统计">统计</h3>
+<p>求每列的均值</p>
+<pre><code class="language-python">df.mean()
 </code></pre>
 <pre><code>A    0.086677
 B   -0.301437
 C    0.019721
 D   -0.453802
 dtype: float64
-</code></pre><p>求每行的均值</p>
-<pre><code class="lang-python">df.mean(1)
+</code></pre>
+<p>求每行的均值</p>
+<pre><code class="language-python">df.mean(1)
 </code></pre>
 <pre><code>2013-01-01   -0.051384
 2013-01-02   -0.868485
@@ -1879,7 +1829,8 @@ dtype: float64
 2013-01-05   -0.346803
 2013-01-06    0.214697
 Freq: D, dtype: float64
-</code></pre><pre><code class="lang-python">s = pd.Series([1, 3, 5, np.nan, 6, 8], index=datas)
+</code></pre>
+<pre><code class="language-python">s = pd.Series([1, 3, 5, np.nan, 6, 8], index=datas)
 s.shift(3)
 </code></pre>
 <pre><code>2013-01-01    NaN
@@ -1889,21 +1840,22 @@ s.shift(3)
 2013-01-05    3.0
 2013-01-06    5.0
 Freq: D, dtype: float64
-</code></pre><pre><code class="lang-python">df.sub(s, axis=&#39;index&#39;)           # 减法运算
+</code></pre>
+<pre><code class="language-python">df.sub(s, axis='index')           # 减法运算
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1961,25 +1913,21 @@ Freq: D, dtype: float64
   </tbody>
 </table>
 </div>
-
-
-
-
-<pre><code class="lang-python">df
+<pre><code class="language-python">df
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2037,25 +1985,21 @@ Freq: D, dtype: float64
   </tbody>
 </table>
 </div>
-
-
-
-
-<pre><code class="lang-python">df.apply(np.cumsum)                 # 累加操作
+<pre><code class="language-python">df.apply(np.cumsum)                 # 累加操作
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2113,18 +2057,16 @@ Freq: D, dtype: float64
   </tbody>
 </table>
 </div>
-
-
-
-
-<pre><code class="lang-python">df.apply(lambda x: x.max() - x.min())
+<pre><code class="language-python">df.apply(lambda x: x.max() - x.min())
 </code></pre>
 <pre><code>A    3.341385
 B    2.763365
 C    3.407178
 D    3.943045
 dtype: float64
-</code></pre><h2 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h2><pre><code class="lang-python">s = pd.Series(np.random.randint(0, 7, size=10))
+</code></pre>
+<h2 id="直方图">直方图</h2>
+<pre><code class="language-python">s = pd.Series(np.random.randint(0, 7, size=10))
 s
 </code></pre>
 <pre><code>0    4
@@ -2138,7 +2080,8 @@ s
 8    6
 9    0
 dtype: int32
-</code></pre><pre><code class="lang-python">s.value_counts()
+</code></pre>
+<pre><code class="language-python">s.value_counts()
 </code></pre>
 <pre><code>4    2
 3    2
@@ -2147,8 +2090,10 @@ dtype: int32
 2    1
 0    1
 dtype: int64
-</code></pre><h2 id="删除与合并-重要"><a href="#删除与合并-重要" class="headerlink" title="删除与合并(重要)"></a>删除与合并(重要)</h2><pre><code class="lang-python">df.loc[:,&#39;E&#39;]=1.
-# df.drop(labels=[&#39;E&#39;],axis=0)
+</code></pre>
+<h2 id="删除与合并-重要">删除与合并(重要)</h2>
+<pre><code class="language-python">df.loc[:,'E']=1.
+# df.drop(labels=['E'],axis=0)
 df
 </code></pre>
 <div>
@@ -2156,14 +2101,14 @@ df
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2228,11 +2173,7 @@ df
   </tbody>
 </table>
 </div>
-
-
-
-
-<pre><code class="lang-python">pieces = [df[:3], df[3:]]
+<pre><code class="language-python">pieces = [df[:3], df[3:]]
 pieces
 </code></pre>
 <pre><code>[                            A         B         C         D    E
@@ -2243,25 +2184,27 @@ pieces
  2013-01-04 00:00:00 -1.395511  0.525819  0.112159 -0.160826  1.0
  2013-01-05 00:00:00  0.280020 -2.186553 -0.644597  1.163917  1.0
  2013-01-06 00:00:00  1.945874  0.014268 -1.506800  0.405446  1.0]
-</code></pre><pre><code class="lang-python">pd.concat(pieces)
 </code></pre>
-<h3 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h3><pre><code class="lang-python">left = pd.DataFrame({&#39;key&#39;: [&#39;foo&#39;, &#39;foo&#39;], &#39;lval&#39;: [1, 2]})
-right = pd.DataFrame({&#39;key&#39;: [&#39;foo&#39;, &#39;foo&#39;], &#39;rval&#39;: [4, 5]})
-pd.merge(left, right, on=&#39;key&#39;)
+<pre><code class="language-python">pd.concat(pieces)
+</code></pre>
+<h3 id="连接">连接</h3>
+<pre><code class="language-python">left = pd.DataFrame({'key': ['foo', 'foo'], 'lval': [1, 2]})
+right = pd.DataFrame({'key': ['foo', 'foo'], 'rval': [4, 5]})
+pd.merge(left, right, on='key')
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2300,27 +2243,23 @@ pd.merge(left, right, on=&#39;key&#39;)
   </tbody>
 </table>
 </div>
-
-
-
-
-<pre><code class="lang-python">left = pd.DataFrame({&#39;key&#39;: [&#39;foo&#39;, &#39;bar&#39;], &#39;lval&#39;: [1, 2]})
-right = pd.DataFrame({&#39;key&#39;: [&#39;foo&#39;, &#39;bar&#39;], &#39;rval&#39;: [4, 5]})
-pd.merge(left, right, on=&#39;key&#39;)
+<pre><code class="language-python">left = pd.DataFrame({'key': ['foo', 'bar'], 'lval': [1, 2]})
+right = pd.DataFrame({'key': ['foo', 'bar'], 'rval': [4, 5]})
+pd.merge(left, right, on='key')
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2347,10 +2286,8 @@ pd.merge(left, right, on=&#39;key&#39;)
   </tbody>
 </table>
 </div>
-
-
-
-<h2 id="添加（Append）"><a href="#添加（Append）" class="headerlink" title="添加（Append）"></a>添加（Append）</h2><pre><code class="lang-python">df = pd.DataFrame(np.random.randn(8, 4), columns=[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;])
+<h2 id="添加-append">添加（Append）</h2>
+<pre><code class="language-python">df = pd.DataFrame(np.random.randn(8, 4), columns=['A', 'B', 'C', 'D'])
 s = df.iloc[3]
 df.append(s, ignore_index=True)
 </code></pre>
@@ -2359,14 +2296,14 @@ df.append(s, ignore_index=True)
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2445,21 +2382,19 @@ df.append(s, ignore_index=True)
   </tbody>
 </table>
 </div>
-
-
-
-<h2 id="分组（Grouping）"><a href="#分组（Grouping）" class="headerlink" title="分组（Grouping）"></a>分组（Grouping）</h2><p>“group by” 指的是涵盖下列一项或多项步骤的处理流程：</p>
+<h2 id="分组-grouping">分组（Grouping）</h2>
+<p>“group by” 指的是涵盖下列一项或多项步骤的处理流程：</p>
 <ul>
 <li>分割：按条件把数据分割成多组；</li>
 <li>应用：为每组单独应用函数；</li>
 <li>组合：将处理结果组合成一个数据结构。</li>
 </ul>
-<pre><code class="lang-python">df = pd.DataFrame({&#39;A&#39;: [&#39;foo&#39;, &#39;bar&#39;, &#39;foo&#39;, &#39;bar&#39;,
-                          &#39;foo&#39;, &#39;bar&#39;, &#39;foo&#39;, &#39;foo&#39;],
-                   &#39;B&#39;: [&#39;one&#39;, &#39;one&#39;, &#39;two&#39;, &#39;three&#39;,
-                          &#39;two&#39;, &#39;two&#39;, &#39;one&#39;, &#39;three&#39;],
-                   &#39;C&#39;: np.random.randn(8),
-                   &#39;D&#39;: np.random.randn(8)})
+<pre><code class="language-python">df = pd.DataFrame({'A': ['foo', 'bar', 'foo', 'bar',
+                          'foo', 'bar', 'foo', 'foo'],
+                   'B': ['one', 'one', 'two', 'three',
+                          'two', 'two', 'one', 'three'],
+                   'C': np.random.randn(8),
+                   'D': np.random.randn(8)})
 df
 </code></pre>
 <div>
@@ -2467,14 +2402,14 @@ df
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2546,25 +2481,22 @@ df
   </tbody>
 </table>
 </div>
+<pre><code class="language-python">df.groupby(['A', 'B']).sum()
 
-
-
-
-<pre><code class="lang-python">df.groupby([&#39;A&#39;, &#39;B&#39;]).sum()
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2617,36 +2549,36 @@ df
   </tbody>
 </table>
 </div>
-
-
-
-<h2 id="重塑"><a href="#重塑" class="headerlink" title="重塑"></a>重塑</h2><pre><code class="lang-python">tuples = list(zip(*[[&#39;bar&#39;, &#39;bar&#39;, &#39;baz&#39;, &#39;baz&#39;,
-               &#39;foo&#39;, &#39;foo&#39;, &#39;qux&#39;, &#39;qux&#39;],
-              [&#39;one&#39;, &#39;two&#39;, &#39;one&#39;, &#39;two&#39;,
-               &#39;one&#39;, &#39;two&#39;, &#39;one&#39;, &#39;two&#39;]]))
+<h2 id="重塑">重塑</h2>
+<pre><code class="language-python">tuples = list(zip(*[['bar', 'bar', 'baz', 'baz',
+               'foo', 'foo', 'qux', 'qux'],
+              ['one', 'two', 'one', 'two',
+               'one', 'two', 'one', 'two']]))
 tuples
 </code></pre>
-<pre><code>[(&#39;bar&#39;, &#39;one&#39;),
- (&#39;bar&#39;, &#39;two&#39;),
- (&#39;baz&#39;, &#39;one&#39;),
- (&#39;baz&#39;, &#39;two&#39;),
- (&#39;foo&#39;, &#39;one&#39;),
- (&#39;foo&#39;, &#39;two&#39;),
- (&#39;qux&#39;, &#39;one&#39;),
- (&#39;qux&#39;, &#39;two&#39;)]
-</code></pre><pre><code class="lang-python">index = pd.MultiIndex.from_tuples(tuples, names=[&#39;first&#39;, &#39;second&#39;])
+<pre><code>[('bar', 'one'),
+ ('bar', 'two'),
+ ('baz', 'one'),
+ ('baz', 'two'),
+ ('foo', 'one'),
+ ('foo', 'two'),
+ ('qux', 'one'),
+ ('qux', 'two')]
+</code></pre>
+<pre><code class="language-python">index = pd.MultiIndex.from_tuples(tuples, names=['first', 'second'])
 index
 </code></pre>
-<pre><code>MultiIndex([(&#39;bar&#39;, &#39;one&#39;),
-            (&#39;bar&#39;, &#39;two&#39;),
-            (&#39;baz&#39;, &#39;one&#39;),
-            (&#39;baz&#39;, &#39;two&#39;),
-            (&#39;foo&#39;, &#39;one&#39;),
-            (&#39;foo&#39;, &#39;two&#39;),
-            (&#39;qux&#39;, &#39;one&#39;),
-            (&#39;qux&#39;, &#39;two&#39;)],
-           names=[&#39;first&#39;, &#39;second&#39;])
-</code></pre><pre><code class="lang-python">df = pd.DataFrame(np.random.randn(8, 2), index=index, columns=[&#39;A&#39;, &#39;B&#39;])
+<pre><code>MultiIndex([('bar', 'one'),
+            ('bar', 'two'),
+            ('baz', 'one'),
+            ('baz', 'two'),
+            ('foo', 'one'),
+            ('foo', 'two'),
+            ('qux', 'one'),
+            ('qux', 'two')],
+           names=['first', 'second'])
+</code></pre>
+<pre><code class="language-python">df = pd.DataFrame(np.random.randn(8, 2), index=index, columns=['A', 'B'])
 df
 </code></pre>
 <div>
@@ -2654,14 +2586,14 @@ df
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2726,11 +2658,7 @@ df
   </tbody>
 </table>
 </div>
-
-
-
-
-<pre><code class="lang-python">df2 = df[:4]
+<pre><code class="language-python">df2 = df[:4]
 df2
 </code></pre>
 <div>
@@ -2738,14 +2666,14 @@ df2
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2788,11 +2716,8 @@ df2
   </tbody>
 </table>
 </div>
-
-
-
 <p><img src="https://pic.rmb.bdstatic.com/bjh/8d777d647dd67bdd05a0eaeb99bc6f8b.jpeg" alt="image.png"></p>
-<pre><code class="lang-python">stacked = df2.stack()
+<pre><code class="language-python">stacked = df2.stack()
 stacked
 </code></pre>
 <pre><code>first  second   
@@ -2805,22 +2730,23 @@ baz    one     A   -0.663312
        two     A    0.199572
                B    0.828977
 dtype: float64
-</code></pre><p>解压：</p>
-<pre><code class="lang-python">stacked.unstack()
+</code></pre>
+<p>解压：</p>
+<pre><code class="language-python">stacked.unstack()
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2863,25 +2789,21 @@ dtype: float64
   </tbody>
 </table>
 </div>
-
-
-
-
-<pre><code class="lang-python">stacked.unstack(1)
+<pre><code class="language-python">stacked.unstack(1)
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2924,25 +2846,21 @@ dtype: float64
   </tbody>
 </table>
 </div>
-
-
-
-
-<pre><code class="lang-python">stacked.unstack(0)
+<pre><code class="language-python">stacked.unstack(0)
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -2985,14 +2903,12 @@ dtype: float64
   </tbody>
 </table>
 </div>
-
-
-
-<h2 id="数据透视表"><a href="#数据透视表" class="headerlink" title="数据透视表"></a>数据透视表</h2><pre><code class="lang-python">df = pd.DataFrame({&#39;A&#39;: [&#39;one&#39;, &#39;one&#39;, &#39;two&#39;, &#39;three&#39;] * 3,
-                   &#39;B&#39;: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;] * 4,
-                   &#39;C&#39;: [&#39;foo&#39;, &#39;foo&#39;, &#39;foo&#39;, &#39;bar&#39;, &#39;bar&#39;, &#39;bar&#39;] * 2,
-                   &#39;D&#39;: np.random.randn(12),
-                   &#39;E&#39;: np.random.randn(12)})
+<h2 id="数据透视表">数据透视表</h2>
+<pre><code class="language-python">df = pd.DataFrame({'A': ['one', 'one', 'two', 'three'] * 3,
+                   'B': ['A', 'B', 'C'] * 4,
+                   'C': ['foo', 'foo', 'foo', 'bar', 'bar', 'bar'] * 2,
+                   'D': np.random.randn(12),
+                   'E': np.random.randn(12)})
 df
 </code></pre>
 <div>
@@ -3000,14 +2916,14 @@ df
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3120,25 +3036,21 @@ df
   </tbody>
 </table>
 </div>
-
-
-
-
-<pre><code class="lang-python">pd.pivot_table(df, values=&#39;D&#39;, index=[&#39;A&#39;, &#39;B&#39;], columns=[&#39;C&#39;])
+<pre><code class="language-python">pd.pivot_table(df, values='D', index=['A', 'B'], columns=['C'])
 </code></pre>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3207,8 +3119,6 @@ df
   </tbody>
 </table>
 </div>
-
-
 
             </div>
             <hr/>
@@ -3720,9 +3630,13 @@ df
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            A City-Wide Crowdsourcing Delivery System with Reinforcement Learning背景众包交付系统众包交付的实际因素
+                            A City-Wide Crowdsourcing Delivery System with Reinforcement Learning
+背景
+众包交付系统
+众包交付的实际因素
+
 时间限制：订单到顾客接受货物的时间具有限制
-多跳：从送货站到收货站
+多跳：从送货站
                         
                     </div>
                     <div class="publish-info">
@@ -3772,9 +3686,13 @@ df
                     <div class="summary block-with-text">
                         
                             简要
-统计学习或机器学习一般包括监督学习、无监督学习、强化学习，有时还包括半监督学习、主动学习监督学习
+
+统计学习或机器学习一般包括监督学习、无监督学习、强化学习，有时还包括半监督学习、主动学习
+
+监督学习
+
 监督学习指从标注数据中学习预测模型的机器学习问题，其本质是学习输入到输出的映射的统计规律。
-输入变量$X$和输出变量$Y$有不同的类型，
+输入变量XXX和输出变量YYY有不同
                         
                     </div>
                     <div class="publish-info">

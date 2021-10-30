@@ -431,7 +431,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    609
+                    607
                 </div>
                 
 
@@ -443,32 +443,41 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="偏微分方程数值解"><a href="#偏微分方程数值解" class="headerlink" title="偏微分方程数值解"></a>偏微分方程数值解</h1><h2 id="工具箱使用"><a href="#工具箱使用" class="headerlink" title="工具箱使用"></a>工具箱使用</h2><p>步骤如下：</p>
+                <h1>偏微分方程数值解</h1>
+<h2 id="工具箱使用">工具箱使用</h2>
+<p>步骤如下：</p>
 <ol>
-<li>画区域，<code>Draw</code>或者直接在菜单栏上找，（画圆时，需要按住<code>Ctrl</code>）</li>
+<li>画区域，<code>Draw</code>或者直接在菜单栏上找，（画圆时，需要按住<code> Ctrl</code>）</li>
 <li>设置边界条件，<code>Boundary</code>进入边界模式，按住<code>shift</code>选择边界进行设置</li>
 <li>设置方程：<code>PDE Specification</code></li>
 <li>网格剖分</li>
 <li>解方程：<code>Solve PDE</code></li>
 <li>绘图：<code>Plot Parameters</code></li>
-<li>输出数值解：<code>Export Solution</code></li>
+<li>输出数值解：<code> Export Solution</code></li>
 </ol>
-<h2 id="偏微分方程模型"><a href="#偏微分方程模型" class="headerlink" title="偏微分方程模型"></a>偏微分方程模型</h2><ol>
-<li>椭圆方程<ul>
+<h2 id="偏微分方程模型">偏微分方程模型</h2>
+<ol>
+<li>椭圆方程</li>
+</ol>
+<ul>
 <li>散射问题</li>
 <li>最小曲面问题（泛函极值问题）：利用变分极值转化为非线性偏微分方程</li>
 <li>非线性椭圆型方程</li>
 </ul>
-</li>
-<li>抛物型方程<ul>
+<ol start="2">
+<li>抛物型方程</li>
+</ol>
+<ul>
 <li>热传导方程</li>
 </ul>
-</li>
-<li>双曲型方程<ul>
-<li>波动方程<h2 id="有限差分"><a href="#有限差分" class="headerlink" title="有限差分"></a>有限差分</h2>核心：用差商代替微商</li>
-</ul>
-</li>
+<ol start="3">
+<li>双曲型方程</li>
 </ol>
+<ul>
+<li>波动方程</li>
+</ul>
+<h2 id="有限差分">有限差分</h2>
+<p>核心：用差商代替微商</p>
 <p><strong>对于椭圆型：</strong></p>
 <ul>
 <li>五点差分格式</li>
@@ -477,20 +486,25 @@
 </ul>
 <p><strong>对于抛物型：</strong></p>
 <ol>
-<li><p>常系数扩散方程</p>
+<li>常系数扩散方程</li>
+</ol>
 <ul>
 <li>1.1 差分格式</li>
 <li>1.2 加权格式</li>
 <li>1.3 三层格式</li>
 <li>1.4 跳点格式</li>
 </ul>
-</li>
-<li>初值问题<ul>
+<ol start="2">
+<li>初值问题</li>
+</ol>
+<ul>
 <li>Saul‘ev算法</li>
 <li>分组显示方法</li>
 </ul>
-</li>
-<li>对流扩散方程<ul>
+<ol start="3">
+<li>对流扩散方程</li>
+</ol>
+<ul>
 <li>修正中心显格式</li>
 <li>迎风差分格式</li>
 <li>Samarskii格式</li>
@@ -498,32 +512,37 @@
 <li>隐式格式</li>
 <li>特征差分格式</li>
 </ul>
-</li>
-<li>变系数方程<ul>
+<ol start="4">
+<li>变系数方程</li>
+</ol>
+<ul>
 <li>Taylor展开法</li>
 <li>Keller盒式格式</li>
 </ul>
-</li>
-<li>多维问题<ul>
+<ol start="5">
+<li>多维问题</li>
+</ol>
+<ul>
 <li>交替方向隐式格式</li>
 <li>局部一维格式</li>
 <li>预测-校正格式</li>
 <li>跳点格式</li>
 </ul>
-</li>
-<li>非线性方程<ul>
+<ol start="6">
+<li>非线性方程</li>
+</ol>
+<ul>
 <li>Richtmyer线性化方法</li>
 <li>拟线性扩散方程的隐式格式</li>
 <li>三层格式</li>
-<li>预测-校正法<br><strong>对于双曲型：</strong></li>
+<li>预测-校正法<br>
+<strong>对于双曲型：</strong></li>
 </ul>
-</li>
-</ol>
 <p>有限元法如下：</p>
 <p><img src="https://imgkr2.cn-bj.ufileos.com/abb604ee-8a69-4146-a675-107ff61f1314.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&amp;Signature=dzxISHcvgn1cWgTxJpMySKhIqmA%253D&amp;Expires=1596254814" alt=""></p>
 <p>有限差分法如下：</p>
 <p><img src="https://imgkr2.cn-bj.ufileos.com/9c568a22-9f72-40c2-a319-3e7c1927e746.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&amp;Signature=9LF02XAVWrCIjyXTxRX4aTYX0xg%253D&amp;Expires=1596254909" alt=""></p>
-<pre><code class="lang-matlab">v0=100;%上边界
+<pre><code class="language-matlab">v0=100;%上边界
 hx=17;hy=10;%确定网格步长上下界
 v1=zeros(hy,hx);
 v1(hy,:)=ones(1,hx)*v0;%上边界
@@ -552,10 +571,12 @@ hold on;%保屏
 x=1:hx;y=1:hy;
 [xx,yy]=meshgrid(x,y);%形成栅格
 [Gx,Gy]=gradient(v2,0.6,0.6);%计算梯度
-quiver(xx,yy,Gx,Gy,&#39;r&#39;);%画矢量图
+quiver(xx,yy,Gx,Gy,'r');%画矢量图
 hold off
 </code></pre>
-<h2 id="椭圆型"><a href="#椭圆型" class="headerlink" title="椭圆型"></a>椭圆型</h2><h3 id="五点差分格式"><a href="#五点差分格式" class="headerlink" title="五点差分格式"></a>五点差分格式</h3><p><a href="https://www.cnblogs.com/xtu-hudongdong/p/6512071.html" target="_blank" rel="noopener">五点差分格式</a></p>
+<h2 id="椭圆型">椭圆型</h2>
+<h3 id="五点差分格式">五点差分格式</h3>
+<p><a href="https://www.cnblogs.com/xtu-hudongdong/p/6512071.html" target="_blank" rel="noopener">五点差分格式</a></p>
 <p>未完待续。。。</p>
 
             </div>
@@ -1076,8 +1097,13 @@ hold off
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            通信原理信息论信息量$I$单位(bit)I=-log_2 P(x)平均信息量(或熵)$H(x)$单位(b/符号)描述信源的不确定性：
-H(x)=-\sum_{i=1}^M P(x_i)log_2 P(x_i)当每个符号等概率$P(x_i)=
+                            通信原理信息论
+信息量III单位(bit)
+I=−log2P(x)I=-log_2 P(x)
+I=−log2​P(x)
+平均信息量(或熵)H(x)H(x)H(x)单位(b/符号)
+描述信源的不确定性：
+H(x)=−∑i=1MP(xi)log
                         
                     </div>
                     <div class="publish-info">
@@ -1130,10 +1156,13 @@ H(x)=-\sum_{i=1}^M P(x_i)log_2 P(x_i)当每个符号等概率$P(x_i)=
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            微分方程数值解核心思想：用差分代替微分
-常微分方程eg1:\begin{equation}
+                            微分方程数值解
+核心思想：用差分代替微分
+常微分方程
+eg1:$$\begin{equation}
 \begin{cases}
-    y'=y-\frac{2x}{y},   0
+y’=y-\frac{2x}{y},   0&lt;x&lt;1 \\
+y\left( 0 \right) =1
                         
                     </div>
                     <div class="publish-info">
