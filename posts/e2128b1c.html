@@ -427,7 +427,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    803
+                    805
                 </div>
                 
 
@@ -439,9 +439,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="加载数据">加载数据</h2>
-<p>PyTorch有两个处理数据的库:<code>torch.utils.data.DataLoader</code>和<code>torch.utils.data.Dataset</code>。数据集存储样本及其对应的标签，<code>DataLoader</code>在数据集周围包装一个可迭代对象。</p>
-<pre><code class="language-python">import torch
+                <h2 id="加载数据"><a href="#加载数据" class="headerlink" title="加载数据"></a>加载数据</h2><p>PyTorch有两个处理数据的库:<code>torch.utils.data.DataLoader</code>和<code>torch.utils.data.Dataset</code>。数据集存储样本及其对应的标签，<code>DataLoader</code>在数据集周围包装一个可迭代对象。</p>
+<pre><code class="lang-python">import torch
 from torch import nn
 from torch.utils.data import DataLoader
 from torchvision import datasets
@@ -449,7 +448,7 @@ from torchvision.transforms import ToTensor, Lambda, Compose
 import matplotlib.pyplot as plt
 </code></pre>
 <p>torchvision。数据集模块包含许多真实世界的视觉数据的数据集对象，如CIFAR, COCO(完整列表在这里)。在本教程中，我们使用FashionMNIST数据集。每个TorchVision Dataset包含两个参数transform和target_transform，分别修改样本和标签。</p>
-<pre><code class="language-python"># Download training data from open datasets.
+<pre><code class="lang-python"># Download training data from open datasets.
 training_data = datasets.FashionMNIST(
     root=&quot;data&quot;,
     train=True,
@@ -466,7 +465,7 @@ test_data = datasets.FashionMNIST(
 )
 </code></pre>
 <p>我们将 Dataset 作为参数传递给 DataLoader。它包装了一个遍历数据集的迭代器，并支持自动批处理、采样、洗牌和多进程数据加载。这里我们定义了一个64的批量大小，也就是说，dataloader 迭代器中的每个元素都将返回一个包含64个特性和标签的批量。</p>
-<pre><code class="language-python">batch_size = 64
+<pre><code class="lang-python">batch_size = 64
 
 # Create data loaders.
 train_dataloader = DataLoader(training_data, batch_size=batch_size)
@@ -477,8 +476,7 @@ for X, y in test_dataloader:
     print(&quot;Shape of y: &quot;, y.shape, y.dtype)
     break
 </code></pre>
-<h2 id="创建模型">创建模型</h2>
-<pre><code class="language-python"># Get cpu or gpu device for training.
+<h2 id="创建模型"><a href="#创建模型" class="headerlink" title="创建模型"></a>创建模型</h2><pre><code class="lang-python"># Get cpu or gpu device for training.
 device = &quot;cuda&quot; if torch.cuda.is_available() else &quot;cpu&quot;
 print(&quot;Using {} device&quot;.format(device))
 
@@ -503,13 +501,12 @@ class NeuralNetwork(nn.Module):
 model = NeuralNetwork().to(device)
 print(model)
 </code></pre>
-<h2 id="优化模型参数">优化模型参数</h2>
-<pre><code class="language-python">loss_fn = nn.CrossEntropyLoss()                                            ## 定义损失函数---交叉熵
+<h2 id="优化模型参数"><a href="#优化模型参数" class="headerlink" title="优化模型参数"></a>优化模型参数</h2><pre><code class="lang-python">loss_fn = nn.CrossEntropyLoss()                                            ## 定义损失函数---交叉熵
 optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)                   ## 定义随机梯度优化器SGD
 </code></pre>
 <p>在一个单独的训练循环中，模型对训练数据集进行预测(分批输入)，并反向传播预测误差以调整模型的参数。</p>
 <p>我们还根据测试数据集检查模型的性能，以确保它正在学习。</p>
-<pre><code class="language-python">def test(dataloader, model, loss_fn):
+<pre><code class="lang-python">def test(dataloader, model, loss_fn):
     size = len(dataloader.dataset)
     num_batches = len(dataloader)
     model.eval()
@@ -525,23 +522,21 @@ optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)                   ## �
     print(f&quot;Test Error: \n Accuracy: {(100*correct):&gt;0.1f}%, Avg loss: {test_loss:&gt;8f} \n&quot;)
 </code></pre>
 <p>训练过程是在几个迭代(阶段)中进行的。在每个epoch期间，模型学习参数以做出更好的预测。我们打印模型在每个时期的准确性和损失;我们希望看到精确度的提高和损失的减少。</p>
-<pre><code class="language-python">epochs = 5
+<pre><code class="lang-python">epochs = 5
 for t in range(epochs):
     print(f&quot;Epoch {t+1}\n-------------------------------&quot;)
     train(train_dataloader, model, loss_fn, optimizer)
     test(test_dataloader, model, loss_fn)
 print(&quot;Done!&quot;)
 </code></pre>
-<h2 id="保存模型">保存模型</h2>
-<pre><code class="language-python">torch.save(model.state_dict(), &quot;model.pth&quot;)
+<h2 id="保存模型"><a href="#保存模型" class="headerlink" title="保存模型"></a>保存模型</h2><pre><code class="lang-python">torch.save(model.state_dict(), &quot;model.pth&quot;)
 print(&quot;Saved PyTorch Model State to model.pth&quot;)
 </code></pre>
-<h2 id="加载模型">加载模型</h2>
-<pre><code class="language-python">model = NeuralNetwork()
+<h2 id="加载模型"><a href="#加载模型" class="headerlink" title="加载模型"></a>加载模型</h2><pre><code class="lang-python">model = NeuralNetwork()
 model.load_state_dict(torch.load(&quot;model.pth&quot;))
 </code></pre>
 <p>对testdata进行预测：</p>
-<pre><code class="language-python">classes = [
+<pre><code class="lang-python">classes = [
     &quot;T-shirt/top&quot;,
     &quot;Trouser&quot;,
     &quot;Pullover&quot;,
@@ -559,7 +554,7 @@ x, y = test_data[0][0], test_data[0][1]
 with torch.no_grad():
     pred = model(x)
     predicted, actual = classes[pred[0].argmax(0)], classes[y]
-    print(f'Predicted: &quot;{predicted}&quot;, Actual: &quot;{actual}&quot;')
+    print(f&#39;Predicted: &quot;{predicted}&quot;, Actual: &quot;{actual}&quot;&#39;)
 </code></pre>
 
             </div>
@@ -1077,13 +1072,9 @@ with torch.no_grad():
                     <div class="summary block-with-text">
                         
                             简要
-
-统计学习或机器学习一般包括监督学习、无监督学习、强化学习，有时还包括半监督学习、主动学习
-
-监督学习
-
+统计学习或机器学习一般包括监督学习、无监督学习、强化学习，有时还包括半监督学习、主动学习监督学习
 监督学习指从标注数据中学习预测模型的机器学习问题，其本质是学习输入到输出的映射的统计规律。
-输入变量XXX和输出变量YYY有不同
+输入变量$X$和输出变量$Y$有不同的类型，
                         
                     </div>
                     <div class="publish-info">
@@ -1136,9 +1127,7 @@ with torch.no_grad():
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            pytorch模板
-torch.nn.Module
-我们有时候不需要很复杂的网络或者想自己搭建一个网络，这时候我们就可以继承torch.nn.Module类，快速构建一个前向传播的网络结构，当然torch.nn.Module类还可以构建损失
+                            pytorch模板torch.nn.Module我们有时候不需要很复杂的网络或者想自己搭建一个网络，这时候我们就可以继承torch.nn.Module类，快速构建一个前向传播的网络结构，当然torch.nn.Module类还可以构建损失函数
                         
                     </div>
                     <div class="publish-info">

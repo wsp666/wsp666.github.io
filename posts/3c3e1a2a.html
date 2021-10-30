@@ -435,18 +435,15 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>PAT代替密码验证</h1>
-<p>2021年8月13日git终止密码验证提交程序，强制使用PAT验证方式，这是一件好事，减少密码泄露。</p>
-<pre><code>fatal: unable to access 'https://github.com/wsp666/wsp666.github.io/': The requested URL returned error: 403
-FATAL Something's wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
+                <h1 id="PAT代替密码验证"><a href="#PAT代替密码验证" class="headerlink" title="PAT代替密码验证"></a>PAT代替密码验证</h1><p>2021年8月13日git终止密码验证提交程序，强制使用PAT验证方式，这是一件好事，减少密码泄露。</p>
+<pre><code>fatal: unable to access &#39;https://github.com/wsp666/wsp666.github.io/&#39;: The requested URL returned error: 403
+FATAL Something&#39;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
 Error: Spawn failed
     at ChildProcess.&lt;anonymous&gt; (D:\Hexo\blog\node_modules\hexo-util\lib\spawn.js:51:21)
     at ChildProcess.emit (events.js:210:5)
     at ChildProcess.cp.emit (D:\Hexo\blog\node_modules\cross-spawn\lib\enoent.js:34:29)
     at Process.ChildProcess._handle.onexit (internal/child_process.js:272:12)
-</code></pre>
-<h2 id="方法">方法</h2>
-<p>通过&quot;github -&gt; account -&gt; settings -&gt; Developer settings -&gt; Personal access tokens&quot;处，点击<code>Generate new token</code>。因为只是需要<code>git push</code>之类的操作，所以勾选<code>repo</code>选项，即可。随后token生成成功，然后再在本地<code>git bash</code>中进行<code>git push</code>，账号还是原来的github账号，密码改为填写刚刚生成的token即可。之后就不会再重复输入密码了。</p>
+</code></pre><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>通过”github -&gt; account -&gt; settings -&gt; Developer settings -&gt; Personal access tokens”处，点击<code>Generate new token</code>。因为只是需要<code>git push</code>之类的操作，所以勾选<code>repo</code>选项，即可。随后token生成成功，然后再在本地<code>git bash</code>中进行<code>git push</code>，账号还是原来的github账号，密码改为填写刚刚生成的token即可。之后就不会再重复输入密码了。</p>
 <p><img src="https://i.loli.net/2021/08/14/QFcM4T6uP8DyeVj.png" alt="image.png"></p>
 <p>保存好代码后直接替换之前的密码即可。可在凭据管理器中查看相关信息。</p>
 
@@ -960,11 +957,9 @@ Error: Spawn failed
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            SVD奇异分解
-SVD也是对矩阵进行分解，但是和特征分解不同，SVD并不要求要分解的矩阵为方阵。假设我们的矩阵A是一个m×n的矩阵，那么我们定义矩阵A的SVD为：
-A=UΣVTA=U\varSigma V^T
-A=UΣVT
-其中UUU是一个
+                            SVD奇异分解SVD也是对矩阵进行分解，但是和特征分解不同，SVD并不要求要分解的矩阵为方阵。假设我们的矩阵A是一个m×n的矩阵，那么我们定义矩阵A的SVD为：
+
+A=U\varSigma V^T其中$U$是一个$m\times m$的矩阵
                         
                     </div>
                     <div class="publish-info">
@@ -1021,10 +1016,9 @@ A=UΣVT
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            PyTorch训练神经网络
-可以使用torch.nn包来构建神经网络。
+                            PyTorch训练神经网络可以使用torch.nn包来构建神经网络。
 nn包则依赖于autograd包来定义模型并对它们求导。一个nn.Module包含各个层和一个forward(input)方法，该方法返回output。
-如图这个神经网
+如图这个神经网络
                         
                     </div>
                     <div class="publish-info">
@@ -1046,16 +1040,16 @@ nn包则依赖于autograd包来定义模型并对它们求导。一个nn.Module�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">机器学习</span>
-                    </a>
-                    
                     <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
                         <span class="chip bg-color">深度学习</span>
                     </a>
                     
                     <a href="/tags/pytorch/">
                         <span class="chip bg-color">pytorch</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
                     </a>
                     
                 </div>

@@ -427,7 +427,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    231
+                    259
                 </div>
                 
 
@@ -440,19 +440,19 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>代码如下，时间紧促，下次详细说明</p>
-<pre><code class="language-matlab">syms x y z;
+<pre><code class="lang-matlab">syms x y z;
 f=(x^2+9/4*y^2+z^2-1)^3-x^2*z^3-9/80*y^2*z^3;
 f=matlabFunction(f);
 [x,y,z] = meshgrid(-1.5:.02:1.5,-1:.02:1,-1.5:.02:1.5);    % 画图范围,设置[-1.5,1.5]区间
 v = f(x,y,z);
 h = patch(isosurface(x,y,z,v,0));    %创建补片对象的句柄
 isonormals(x,y,z,v,h)        %计算法向量
-set(h,'FaceColor','r','EdgeColor','None');
+set(h,&#39;FaceColor&#39;,&#39;r&#39;,&#39;EdgeColor&#39;,&#39;None&#39;);
 alpha(1)      %设置透明度
 grid on; view([1,1,1]); axis equal; camlight; lighting gouraud  %设置光照
 axis off;
 
-pos1=get(gca,'position')
+pos1=get(gca,&#39;position&#39;)
 pos2=pos1;
 pos2(2)=pos2(2)+0.01;
 pos2(1)=pos2(1)-0.03;
@@ -461,23 +461,23 @@ pos2(4)=pos2(4)+0.08;
 
 for ii=1:10
     pause(1)
-    set(gca,'position',pos1)
+    set(gca,&#39;position&#39;,pos1)
     pause(0.1)
-    set(gca,'position',pos2)
+    set(gca,&#39;position&#39;,pos2)
     pause(0.1)
-    set(gca,'position',pos1)
+    set(gca,&#39;position&#39;,pos1)
     pause(0.1)
-    set(gca,'position',pos2)
+    set(gca,&#39;position&#39;,pos2)
     pause(0.1)
-    set(gca,'position',pos1)
+    set(gca,&#39;position&#39;,pos1)
     pause(0.1)
-    set(gca,'position',pos2)
+    set(gca,&#39;position&#39;,pos2)
     pause(0.1)
-    set(gca,'position',pos1)
+    set(gca,&#39;position&#39;,pos1)
     pause(0.1)
-    set(gca,'position',pos2)
+    set(gca,&#39;position&#39;,pos2)
     pause(0.1)
-    set(gca,'position',pos1)
+    set(gca,&#39;position&#39;,pos1)
 end
 </code></pre>
 <p><img src="https://imgkr.cn-bj.ufileos.com/5f665075-497a-4bea-a27e-9f0f649c9e89.gif" alt=""></p>
@@ -996,9 +996,8 @@ end
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            WHUT杯数学竞赛好题几例
-雨中漫步
-(1)∫−∞+∞dx(x2+2x+2)n\displaystyle{\int_{-\infty}^{+\infty} \frac{d x}{\left(x^{2}+2 x+2\right)^{n}}}∫
+                            WHUT杯数学竞赛好题几例雨中漫步(1)$\displaystyle{\int_{-\infty}^{+\infty} \frac{d x}{\left(x^{2}+2 x+2\right)^{n}}}$
+解：$x+1=\tan t\tex
                         
                     </div>
                     <div class="publish-info">
